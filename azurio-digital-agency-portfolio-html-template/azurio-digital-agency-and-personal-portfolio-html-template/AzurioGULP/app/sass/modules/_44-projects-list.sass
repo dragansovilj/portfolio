@@ -1,0 +1,92 @@
+.mxd-projects-list
+  position: relative
+  width: 100%
+  margin-bottom: 10rem
+  &.no-margin-bottom
+    margin-bottom: 0
+  & > .mxd-projects-list__item:nth-child(n+2)
+    margin-top: -1px
+  +MQ(M)
+    margin-bottom: 9.3rem
+  +MQ(XL)
+    margin-bottom: 17.3rem
+    &.no-margin-bottom
+      margin-bottom: 0
+    @media (hover) and (prefers-reduced-motion: no-preference)
+      & > .mxd-projects-list__item
+        .mxd-projects-list__inner
+          transition: opacity var(--_animspeed-medium), scale var(--_animspeed-medium) var(--_animbezier)
+      &:hover > .mxd-projects-list__item:not(:hover)
+        .mxd-projects-list__inner
+          opacity: .3
+          scale: 0.984
+  +MQ(XXXL)
+    margin-bottom: 19.3rem
+
+.mxd-projects-list__item
+  position: relative
+  display: flex
+  flex-direction: column
+  padding: 5.4rem 0 5.2rem 0
+  +MQ(XL)
+    padding: 5.4rem 0
+
+.mxd-projects-list__divider
+  position: absolute
+  left: 3rem
+  width: calc( 100% - 6rem )
+  height: 1px
+  background-color: var(--st-muted)
+  &.top
+    top: 0
+  &.bottom
+    bottom: 0
+
+.mxd-projects-list__inner
+  position: relative
+
+.mxd-projects-list__niche,
+.mxd-projects-list__meta,
+.mxd-projects-list__date
+  +MQ(XL)
+    padding-top: 0.5rem
+
+.mxd-projects-list__niche
+  margin-bottom: 1.7rem
+  +MQ(M)
+    margin-bottom: 2.2rem
+  +MQ(XL)
+    margin-bottom: 0
+
+.mxd-projects-list__title
+  h3,
+  p
+    font: normal 700 3rem/1.2 var(--_font-default)
+    letter-spacing: -0.1rem
+    color: var(--t-bright)
+    span
+      color: var(--t-medium)
+    &.permanent
+      color: var(--nl-white)
+    &.accent
+      color: var(--pt-t-accent-bright)
+    &.opposite
+      color: var(--t-opp-bright)
+  +MQ(M)
+    h3,
+    p
+      font-size: 4rem
+
+.mxd-projects-list__meta
+  margin-top: 2.2rem
+  +MQ(M)
+    margin-top: 3rem
+  +MQ(XL)
+    margin-top: 0
+
+.mxd-projects-list__date
+  margin-top: 2.2rem
+  +MQ(M)
+    margin-top: 3rem
+  +MQ(XL)
+    margin-top: 0

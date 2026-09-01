@@ -1,0 +1,88 @@
+.testimonials-slider
+  position: relative
+  position: relative
+  height: auto
+  padding: 0 3rem
+  &.no-padding
+    padding: 0
+  +MQ(M)
+    padding: 0 6rem
+  +MQ(XL)
+    padding: 0
+    // padding-left: 4rem
+    // overflow: hidden
+
+.testimonials-slider__shadow
+  +MQ(XL)
+    +position(absolute, 0 0 null null)
+    width: 10rem
+    height: 100%
+    background: linear-gradient(to right, rgba(var(--base-rgb), 0) 0%,rgba(var(--base-rgb), 1) 100%)
+    z-index: 1
+
+.swiper-testimonials
+  position: relative
+  height: 100%
+  padding-bottom: 6rem
+  +MQ(L)
+    &.no-padding
+      padding-bottom: 0
+
+.swiper-slide
+  width: 100%
+  filter: blur(8px)
+  opacity: 0.5
+  transition: filter var(--_animspeed-slow), opacity var(--_animspeed-slow) var(--_animbezier)
+  &.mxd-fullwidth-slide
+    width: 100%
+  &.swiper-slide-active
+    filter: blur(0)
+    opacity: 1
+  +MQ(M)
+    width: auto
+    &.mxd-fullwidth-slide
+      width: 100%
+
+// Testimonials cards
+.mxd-testimonials-card
+  margin: 0
+  &.slider-card
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: auto
+    +MQ(M)
+      justify-content: space-between
+      height: 640px
+      max-width: 460px
+    +MQ(XXL)
+      max-width: 500px
+    +MQ(XXXL)
+      height: 700px
+      max-width: 630px
+
+.swiper-horizontal
+  .mxd-slider-btn
+    display: flex
+    flex-direction: column
+    height: 3rem
+    justify-content: center
+    // background-color: green
+    +position(absolute, auto auto 0 auto)
+    width: auto
+    margin: 0
+    &::after
+      display: none
+
+  .mxd-slider-btn-prev
+    left: 0
+  .mxd-slider-btn-next
+    right: 0
+    +MQ(M)
+      right: auto
+      left: calc( 460px - 70px )
+    +MQ(XXL)
+      left: calc( 500px - 70px )
+    +MQ(XXXL)
+      left: calc( 630px - 70px )

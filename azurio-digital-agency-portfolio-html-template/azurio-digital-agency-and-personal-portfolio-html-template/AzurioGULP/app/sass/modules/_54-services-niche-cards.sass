@@ -1,0 +1,146 @@
+.mxd-niche-cards
+  position: relative
+
+.mxd-niche-cards__column
+  position: relative
+
+.mxd-niche-cards__item
+  position: relative
+  height: 100%
+  padding-bottom: 3rem
+  +MQ(M)
+    padding-bottom: 6rem
+
+.mxd-niche-cards__inner
+  position: relative
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  // padding: 2.8rem 3rem 3rem 3rem
+  background-color: var(--base-tint)
+  overflow: hidden
+  &.opposite
+    background-color: var(--base-opp)
+  &.permanent
+    background-color: var(--nl-black)
+  &.fixed-height-desktop
+    height: auto
+    min-height: 420px
+  &.space-between-desktop
+    justify-content: flex-start
+  +MQ(M)
+    // padding: 3.6rem 4rem 4rem 4rem
+  +MQ(XL)
+    &.fixed-height-desktop
+      height: 420px
+    &.space-between-desktop
+      justify-content: space-between
+  +MQ(XXXL)
+    &.fixed-height-desktop
+      height: 500px
+
+.mxd-niche-cards__title
+  width: 100%
+  padding: 2.8rem 3rem 0 3rem
+  z-index: 2
+  +MQ(M)
+    padding: 3.6rem 4rem 0 4rem
+
+.mxd-niche-cards__name
+  margin-bottom: 1.9rem
+  p
+    font: normal 700 3rem/1.2 var(--_font-default)
+    letter-spacing: -0.1rem
+    color: var(--t-bright)
+    span
+      color: var(--t-medium)
+    &.permanent
+      color: var(--nl-white)
+    &.accent
+      color: var(--pt-t-accent-bright)
+    &.opposite
+      color: var(--t-opp-bright)
+    .char
+      transform: translateX(0)
+  +MQ(M)
+    p
+      font-size: 3.6rem
+  +MQ(XL)
+    p
+      font-size: 4rem
+
+.mxd-niche-cards__tags
+  display: flex
+  flex-direction: column
+  padding-top: 0.4rem
+  margin-bottom: 2.2rem
+
+.mxd-niche-cards__descr
+  width: 100%
+  padding: 0 3rem 3rem 3rem
+  z-index: 2
+  &.wide,
+  &.short
+    // max-width: 220px
+  +MQ(M)
+    padding: 0 4rem 4rem 4rem
+    &.wide
+      max-width: 360px
+    &.short
+      max-width: 300px
+
+.mxd-niche-cards__image
+  position: relative
+  width: 100%
+  z-index: 1
+  &.absolute-desktop-bottom,
+  &.absolute-desktop-full
+    position: relative
+  &.absolute-desktop-aside
+    padding: 0.5rem 3rem 0 3rem
+    // +position(absolute, null -8rem -20rem null)
+    // width: 400px
+  img
+    display: block
+    width: 100%
+    height: auto
+  +MQ(XL)
+    &.absolute-desktop-bottom
+      +position(absolute, null null 0 0)
+      width: 100%
+      height: auto
+    &.absolute-desktop-full
+      +position(absolute, 0 0 null null)
+      width: 100%
+      height: 100%
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    &.absolute-desktop-aside
+      +position(absolute, null -8rem -3rem null)
+      width: 200px
+  +MQ(XXL)
+    &.absolute-desktop-aside
+      width: 240px
+      bottom: -2rem
+  +MQ(XXXL)
+    &.absolute-desktop-aside
+      right: -8rem
+      bottom: -3rem
+      width: 320px
+
+.mxd-niche-cards__gradient
+  +position(absolute, 0 0 null null)
+  width: 100%
+  height: 100%
+  &.gradient-linear
+    background: linear-gradient(180deg,rgba(var(--base-tint-rgb), 1) 10%, rgba(var(--base-tint-rgb), 0.6) 50%, rgba(var(--base-tint-rgb), 0) 100%)
+  &.gradient-radial
+    background: radial-gradient(circle closest-side, rgba(var(--nl-black-rgb), 0.2), rgba(var(--nl-black-rgb), 0.9))
+  +MQ(XL)
+    &.gradient-linear
+      background: #FFFFFF
+      background: linear-gradient(90deg,rgba(var(--base-tint-rgb), 1) 0%, rgba(var(--base-tint-rgb), 0.2) 80%, rgba(var(--base-tint-rgb), 0) 100%)

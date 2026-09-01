@@ -1,0 +1,139 @@
+.mxd-divider-xl,
+.mxd-divider-l
+  display: flex
+  justify-content: center
+  +MQ(M)
+    padding: 20rem 0
+    // padding-top: 19.3rem
+    // padding-bottom: 18.5rem
+  +MQ(XL)
+    &.mxd-divider-fullheight
+      align-items: center
+      height: 100vh
+      padding: 0
+
+.mxd-divider-xl
+  &.padding-top-default
+    padding-top: 20rem
+  &.padding-top-subtitle
+    padding-top: 13.4rem
+  &.padding-bottom-default
+    padding-bottom: 14rem
+  +MQ(M)
+    &.padding-top-subtitle
+      padding-top: 16.3rem
+    &.padding-bottom-default
+      padding-bottom: 17rem
+  +MQ(XL)
+    &.padding-top-subtitle
+      padding-top: 17.3rem
+    &.padding-bottom-default
+      padding-bottom: 18rem
+  +MQ(XXXL)
+    &.padding-top-subtitle
+      padding-top: 19.3rem
+    &.padding-bottom-default
+      padding-bottom: 20rem
+
+.mxd-divider-xl__content,
+.mxd-divider-l__content
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 1.5rem
+  overflow: hidden
+  &.difference
+    mix-blend-mode: difference
+  +MQ(M)
+    max-width: 800px
+    gap: 2rem
+  +MQ(XL)
+    gap: 2.3rem
+  +MQ(XXXL)
+    gap: 2.4rem
+
+.mxd-divider-l__content
+  +MQ(M)
+    max-width: 1140px
+
+.mxd-divider-xl__btngroup
+  &.difference
+    mix-blend-mode: difference
+
+.mxd-divider-xl__caption
+  text-align: center
+  margin-bottom: 2rem
+  &.difference
+    mix-blend-mode: difference
+  h2
+    position: relative
+    display: block
+    // line-height: 1.3
+    // .line
+    //   transform: translateY(0)
+  +MQ(M)
+    margin-bottom: 2.4rem
+  +MQ(XL)
+    margin-bottom: 3rem
+
+.mxd-divider-l__caption
+  text-align: center
+
+.mxd-divider-l__text
+  font: normal 700 3rem/1.3 var(--_font-default)
+  letter-spacing: -0.1rem
+  color: var(--t-bright)
+  span
+    color: var(--t-medium)
+  &.permanent
+    color: var(--nl-white)
+  &.opposite
+    color: var(--t-opp-bright)
+  +MQ(M)
+    font-size: 7.6rem
+    letter-spacing: -0.3rem
+
+.mxd-divider-gif
+  position: relative
+  width: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  img
+    display: block
+    width: 100%
+    height: auto
+
+.mxd-divider-gif__front
+  position: relative
+  width: 18rem
+  height: auto
+  overflow: hidden
+  z-index: 2
+  +MQ(M)
+    width: 26rem
+
+.mxd-divider-gif__back
+  position: relative
+  width: 10rem
+  height: auto
+  overflow: hidden
+  z-index: 1
+  // background-color: var(--base)
+  // z-index: 1
+  // &.opposite
+  //   background-color: var(--base-opp)
+  // &.accent
+  //   background-color: var(--accent)
+  &.left
+    margin-right: -1rem
+  &.right
+    margin-left: -1rem
+  img
+    opacity: 0.3
+  +MQ(M)
+    width: 15rem
+  // img
+  //   display: block
+  //   width: 100%
+  //   height: auto

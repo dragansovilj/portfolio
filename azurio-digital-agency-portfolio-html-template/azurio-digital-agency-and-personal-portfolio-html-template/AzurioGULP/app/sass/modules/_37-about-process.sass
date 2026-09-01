@@ -1,0 +1,74 @@
+.mxd-process-points
+  position: relative
+  width: 100%
+
+.mxd-process-points__item
+  position: relative
+  display: flex
+  flex-direction: column
+  gap: 2rem
+  padding-top: 4.8rem
+  padding-bottom: 5.2rem
+  +MQ(M)
+    gap: 2.7rem
+    padding-top: 4.4rem
+  +MQ(XL)
+    padding-top: 3.2rem
+    padding-bottom: 0
+
+.mxd-process-points__divider
+  position: absolute
+  left: 3rem
+  width: calc( 100% - 6rem )
+  height: 1px
+  background-color: var(--st-bright)
+  &.opposite
+    background-color: var(--base-opp)
+  &.accent
+    background-color: var(--pt-t-accent-bright)
+  &.top
+    top: 0
+  &.bottom
+    bottom: 0
+  +MQ(XL)
+    &.bottom
+      display: none
+
+.mxd-process-points__title
+  display: flex
+  gap: 1.4rem
+  align-items: center
+  p
+    font: normal 700 3rem/1.2 var(--_font-default)
+    letter-spacing: -0.1rem
+    color: var(--t-bright)
+    span
+      color: var(--t-medium)
+    &.permanent
+      color: var(--nl-white)
+    &.accent
+      color: var(--pt-t-accent-bright)
+    &.opposite
+      color: var(--t-opp-bright)
+  +MQ(M)
+    p
+      font-size: 4rem
+
+.mxd-process-points__icon
+  display: flex
+  align-items: center
+  color: var(--t-bright)
+  &.accent
+    color: var(--pt-t-accent-bright)
+  i
+    font-size: 3.4rem
+  +MQ(M)
+    i
+      font-size: 4rem
+
+.mxd-process-points__descr
+
+.mxd-process-points__time
+  padding-top: 0.1rem
+  +MQ(M)
+    padding-top: 0.4rem

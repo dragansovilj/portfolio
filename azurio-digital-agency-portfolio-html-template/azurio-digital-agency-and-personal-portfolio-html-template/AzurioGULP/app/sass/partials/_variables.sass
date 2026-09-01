@@ -1,0 +1,256 @@
+:root
+  --_size: 1.6rem
+  --_font-default: 'Manrope', sans-serif
+  --_font-accent: 'JetBrains Mono', sans-serif
+  --_animspeed-fast: 0.1s
+  --_animspeed-medium: 0.3s
+  --_animspeed-slow: 0.6s
+  --_animbezier: cubic-bezier(0.23, 0.65, 0.74, 1.09)
+
+  // --t  - text
+  // --st - stroke
+  // --fw - font weight
+  // --nl - neutral
+  // --pt - permanent
+
+  /* light color scheme */
+  --base--light: #EEEAE8
+  --base-rgb--light: 238, 234, 232
+  --base-tint--light: #F9F7F7
+  --base-tint-rgb--light: 249, 247, 247
+  --base-bright--light: #ffffff
+  --base-bright-rgb--light: 255, 255, 255
+  --accent--light: #002bba
+  --highlight--light: #819ffe
+  --base-opp--light: #0f0f0f
+  --base-opp-rgb--light: 15, 15, 15
+
+  --t-bright--light: #121212
+  --t-medium--light: #575960
+  --t-muted--light: #7d7f89
+  --t-muted-extra--light: #dbd8d8
+
+  --t-opp-bright--light: #FFFFFF
+  --t-opp-medium--light: #8e93a1
+  --t-opp-muted--light: #36363c
+  --t-opp-muted-extra--light: #191a1d
+
+  --st-muted--light: #b7b2b1
+  --st-medium--light: #949291
+  --st-bright--light: #0f0f0f
+ 
+  --bg-demo-screen-01--light: url(../img/demo/screens/01.webp)
+  --bg-demo-screen-02--light: url(../img/demo/screens/02.webp)
+  --bg-demo-screen-03--light: url(../img/demo/screens/03.webp)
+  --bg-demo-screen-04--light: url(../img/demo/screens/04.webp)
+  --bg-demo-screen-05--light: url(../img/demo/screens/05.webp)
+  --bg-demo-screen-06--light: url(../img/demo/screens/06.webp)
+  --bg-demo-screen-07--light: url(../img/demo/screens/07.webp)
+  --bg-demo-screen-08--light: url(../img/demo/screens/08.webp)
+  --bg-demo-screen-09--light: url(../img/demo/screens/09.webp)
+  --bg-demo-screen-10--light: url(../img/demo/screens/10.webp)
+
+  /* dark color scheme */
+  --base--dark: #0f0f0f
+  --base-rgb--dark: 15, 15, 15
+  --base-tint--dark: #171719
+  --base-tint-rgb--dark: 23, 23, 25
+  --base-bright--dark: #000000
+  --base-bright-rgb--dark: 0, 0, 0
+  --accent--dark: #002bba
+  --highlight--dark: #002bba
+  --base-opp--dark: #EEEAE8
+  --base-opp-rgb--dark: 238, 234, 232
+
+  --t-bright--dark: #FFFFFF
+  --t-medium--dark: #8e93a1
+  --t-muted--dark: #36363c
+  --t-muted-extra--dark: #191a1d
+
+  --t-opp-bright--dark: #161616
+  --t-opp-medium--dark: #666870
+  --t-opp-muted--dark: #7d7f89
+  --t-opp-muted-extra--dark: #dbd8d8
+
+  --st-muted--dark: #1f2124
+  --st-medium--dark: #313336
+  --st-bright--dark: #ffffff
+
+  --bg-demo-screen-01--dark: url(../img/demo/screens/01-d.webp)
+  --bg-demo-screen-02--dark: url(../img/demo/screens/02-d.webp)
+  --bg-demo-screen-03--dark: url(../img/demo/screens/03-d.webp)
+  --bg-demo-screen-04--dark: url(../img/demo/screens/04-d.webp)
+  --bg-demo-screen-05--dark: url(../img/demo/screens/05-d.webp)
+  --bg-demo-screen-06--dark: url(../img/demo/screens/06-d.webp)
+  --bg-demo-screen-07--dark: url(../img/demo/screens/07-d.webp)
+  --bg-demo-screen-08--dark: url(../img/demo/screens/08-d.webp)
+  --bg-demo-screen-09--dark: url(../img/demo/screens/09-d.webp)
+  --bg-demo-screen-10--dark: url(../img/demo/screens/10-d.webp)
+
+  /* permanent colors */
+  --pt-base: #FFFFFF
+  --pt-base-dark: #0f0f0f
+
+  --pt-t-accent-bright: #FFFFFF
+  --pt-t-accent-medium: #A7B2E3
+  --pt-t-accent-muted: #8E9EE4
+
+  /* neutral colors */
+  --nl-white: #ffffff
+  --nl-white-06: rgba(255, 255, 255, 0.6)
+  --nl-white-rgb: 255, 255, 255
+  --nl-black: #000000
+  --nl-black-rgb: 0, 0, 0
+  --nl-black-06: rgba(0, 0, 0, 0.6)
+  --nl-black-04: rgba(0, 0, 0, 0.4)
+
+/* defaults */
+@media ( prefers-color-scheme: light )
+  :root
+    --base: var(--base--light)
+    --base-rgb: var(--base-rgb--light)
+    --base-tint: var(--base-tint--light)
+    --base-tint-rgb: var(--base-tint-rgb--light)
+    --base-bright: var(--base-bright--light)
+    --base-bright-rgb: var(--base-bright-rgb--light)
+    --accent: var(--accent--light)
+    --highlight: var(--highlight--light)
+    --base-opp: var(--base-opp--light)
+    --base-opp-rgb: var(--base-opp-rgb--light)
+
+    --t-bright: var(--t-bright--light)
+    --t-medium: var(--t-medium--light)
+    --t-muted: var(--t-muted--light)
+    --t-muted-extra: var(--t-muted-extra--light)
+
+    --t-opp-bright: var(--t-opp-bright--light)
+    --t-opp-medium: var(--t-opp-medium--light)
+    --t-opp-muted: var(--t-opp-muted--light)
+    --t-opp-muted-extra: var(--t-opp-muted-extra--light)
+
+    --st-muted: var(--st-muted--light)
+    --st-medium: var(--st-medium--light)
+    --st-bright: var(--st-bright--light)
+
+    --bg-demo-screen-01: var(--bg-demo-screen-01--light)
+    --bg-demo-screen-02: var(--bg-demo-screen-02--light)
+    --bg-demo-screen-03: var(--bg-demo-screen-03--light)
+    --bg-demo-screen-04: var(--bg-demo-screen-04--light)
+    --bg-demo-screen-05: var(--bg-demo-screen-05--light)
+    --bg-demo-screen-06: var(--bg-demo-screen-06--light)
+    --bg-demo-screen-07: var(--bg-demo-screen-07--light)
+    --bg-demo-screen-08: var(--bg-demo-screen-08--light)
+    --bg-demo-screen-09: var(--bg-demo-screen-09--light)
+    --bg-demo-screen-10: var(--bg-demo-screen-10--light)
+
+@media ( prefers-color-scheme: dark )
+  :root
+    --base: var(--base--dark)
+    --base-rgb: var(--base-rgb--dark)
+    --base-tint: var(--base-tint--dark)
+    --base-tint-rgb: var(--base-tint-rgb--dark)
+    --base-bright: var(--base-bright--dark)
+    --base-bright-rgb: var(--base-bright-rgb--dark)
+    --accent: var(--accent--dark)
+    --highlight: var(--highlight--dark)
+    --base-opp: var(--base-opp--dark)
+    --base-opp-rgb: var(--base-opp-rgb--dark)
+
+    --t-bright: var(--t-bright--dark)
+    --t-medium: var(--t-medium--dark)
+    --t-muted: var(--t-muted--dark)
+    --t-muted-extra: var(--t-muted-extra--dark)
+
+    --t-opp-bright: var(--t-opp-bright--dark)
+    --t-opp-medium: var(--t-opp-medium--dark)
+    --t-opp-muted: var(--t-opp-muted--dark)
+    --t-opp-muted-extra: var(--t-opp-muted-extra--dark)
+
+    --st-muted: var(--st-muted--dark)
+    --st-medium: var(--st-medium--dark)
+    --st-bright: var(--st-bright--dark)
+
+    --bg-demo-screen-01: var(--bg-demo-screen-01--dark)
+    --bg-demo-screen-02: var(--bg-demo-screen-02--dark)
+    --bg-demo-screen-03: var(--bg-demo-screen-03--dark)
+    --bg-demo-screen-04: var(--bg-demo-screen-04--dark)
+    --bg-demo-screen-05: var(--bg-demo-screen-05--dark)
+    --bg-demo-screen-06: var(--bg-demo-screen-06--dark)
+    --bg-demo-screen-07: var(--bg-demo-screen-07--dark)
+    --bg-demo-screen-08: var(--bg-demo-screen-08--dark)
+    --bg-demo-screen-09: var(--bg-demo-screen-09--dark)
+    --bg-demo-screen-10: var(--bg-demo-screen-10--dark)
+
+[color-scheme="light"]
+  --base: var(--base--light)
+  --base-rgb: var(--base-rgb--light)
+  --base-tint: var(--base-tint--light)
+  --base-tint-rgb: var(--base-tint-rgb--light)
+  --base-bright: var(--base-bright--light)
+  --base-bright-rgb: var(--base-bright-rgb--light)
+  --accent: var(--accent--light)
+  --highlight: var(--highlight--light)
+  --base-opp: var(--base-opp--light)
+  --base-opp-rgb: var(--base-opp-rgb--light)
+
+  --t-bright: var(--t-bright--light)
+  --t-medium: var(--t-medium--light)
+  --t-muted: var(--t-muted--light)
+  --t-muted-extra: var(--t-muted-extra--light)
+
+  --t-opp-bright: var(--t-opp-bright--light)
+  --t-opp-medium: var(--t-opp-medium--light)
+  --t-opp-muted: var(--t-opp-muted--light)
+  --t-opp-muted-extra: var(--t-opp-muted-extra--light)
+
+  --st-muted: var(--st-muted--light)
+  --st-medium: var(--st-medium--light)
+  --st-bright: var(--st-bright--light)
+
+  --bg-demo-screen-01: var(--bg-demo-screen-01--light)
+  --bg-demo-screen-02: var(--bg-demo-screen-02--light)
+  --bg-demo-screen-03: var(--bg-demo-screen-03--light)
+  --bg-demo-screen-04: var(--bg-demo-screen-04--light)
+  --bg-demo-screen-05: var(--bg-demo-screen-05--light)
+  --bg-demo-screen-06: var(--bg-demo-screen-06--light)
+  --bg-demo-screen-07: var(--bg-demo-screen-07--light)
+  --bg-demo-screen-08: var(--bg-demo-screen-08--light)
+  --bg-demo-screen-09: var(--bg-demo-screen-09--light)
+  --bg-demo-screen-10: var(--bg-demo-screen-10--light)
+
+[color-scheme="dark"]
+  --base: var(--base--dark)
+  --base-rgb: var(--base-rgb--dark)
+  --base-tint: var(--base-tint--dark)
+  --base-tint-rgb: var(--base-tint-rgb--dark)
+  --base-bright: var(--base-bright--dark)
+  --base-bright-rgb: var(--base-bright-rgb--dark)
+  --accent: var(--accent--dark)
+  --highlight: var(--highlight--dark)
+  --base-opp: var(--base-opp--dark)
+  --base-opp-rgb: var(--base-opp-rgb--dark)
+
+  --t-bright: var(--t-bright--dark)
+  --t-medium: var(--t-medium--dark)
+  --t-muted: var(--t-muted--dark)
+  --t-muted-extra: var(--t-muted-extra--dark)
+
+  --t-opp-bright: var(--t-opp-bright--dark)
+  --t-opp-medium: var(--t-opp-medium--dark)
+  --t-opp-muted: var(--t-opp-muted--dark)
+  --t-opp-muted-extra: var(--t-opp-muted-extra--dark)
+
+  --st-muted: var(--st-muted--dark)
+  --st-medium: var(--st-medium--dark)
+  --st-bright: var(--st-bright--dark)
+
+  --bg-demo-screen-01: var(--bg-demo-screen-01--dark)
+  --bg-demo-screen-02: var(--bg-demo-screen-02--dark)
+  --bg-demo-screen-03: var(--bg-demo-screen-03--dark)
+  --bg-demo-screen-04: var(--bg-demo-screen-04--dark)
+  --bg-demo-screen-05: var(--bg-demo-screen-05--dark)
+  --bg-demo-screen-06: var(--bg-demo-screen-06--dark)
+  --bg-demo-screen-07: var(--bg-demo-screen-07--dark)
+  --bg-demo-screen-08: var(--bg-demo-screen-08--dark)
+  --bg-demo-screen-09: var(--bg-demo-screen-09--dark)
+  --bg-demo-screen-10: var(--bg-demo-screen-10--dark)

@@ -1,0 +1,35 @@
+.mxd-about-team
+  position: relative
+
+.mxd-about-team__img
+  display: flex
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+  +MQ(XL)
+    &.fullheight-xl
+      flex: 1
+
+.mxd-about-team__data
+  display: flex
+  flex-direction: column-reverse
+  padding-top: 5rem
+  +MQ(M)
+    padding-top: 9rem
+  +MQ(XL)
+    height: 100%
+    flex-direction: column
+    padding-top: 0
+
+.mxd-about-team__info
+  position: relative
+  margin-bottom: 5.3rem
+  +MQ(M)
+    margin-bottom: 9.3rem
+  +MQ(XL)
+    margin-bottom: 0
+    padding-top: 5rem
+    &.fullheight-xl
+      flex: 1

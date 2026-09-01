@@ -1,0 +1,121 @@
+.mxd-showcase-clip
+  position: relative
+  z-index: 10
+
+.mxd-showcase-clip__trigger
+  height: 100vh
+  position: relative
+  overflow: hidden
+  img
+    width: 100%
+    max-width: 100%
+    object-fit: cover
+    display: inline-block
+
+.mxd-showcase-clip__cover
+  +position(absolute, 0 0 0 0)
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.3)
+  &.cover-blur
+    backdrop-filter: blur(10px)
+
+.mxd-showcase-clip__track
+  +position(absolute, 0 0 0 0)
+  width: 100%
+  height: 100%
+
+.mxd-showcase-clip__sticky
+  width: 100%
+  height: 100vh
+  position: sticky
+  top: 0
+
+.mxd-showcase-clip__item
+  +position(absolute, 0 0 0 0)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  gap: 2rem
+  width: 100%
+  height: 100%
+  margin-left: auto
+  margin-right: auto
+  text-align: center
+  padding: 0 3rem
+  // background-color: pink
+  +MQ(L)
+    flex-direction: row
+    justify-content: space-between
+    text-align: left
+    gap: 2em
+    max-width: 1920px
+    padding: 0 6rem
+  +MQ(XXXL)
+    padding: 0 10rem
+
+.mxd-showcase-clip__image
+  width: 100%
+  max-width: 40ch
+  aspect-ratio: 1 / 1
+  flex: none
+  overflow: hidden
+  +MQ(L)
+    position: absolute
+    +center
+    width: 40rem
+    max-width: none
+  +MQ(XXXL)
+    width: 46rem
+
+.mxd-showcase-clip__bg
+  height: 100%
+  // opacity: 0.8
+
+.mxd-showcase-clip__title
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  max-width: 30ch
+  margin: 0 auto
+  // background-color: red
+  font: normal 700 3rem/1.2 var(--_font-default)
+  letter-spacing: -0.1rem
+  color: var(--t-bright)
+  span
+    color: var(--t-medium)
+  &.permanent
+    color: var(--nl-white)
+  &.accent
+    color: var(--pt-t-accent-bright)
+  &.opposite
+    color: var(--t-opp-bright)
+  .char
+    transform: translateX(0)
+  +MQ(M)
+    font-size: 3.6rem
+  +MQ(L)
+    align-items: flex-start
+    justify-content: flex-start
+    margin: 0
+    max-width: calc( 50% - 20rem )
+    padding-right: 6rem
+  +MQ(XL)
+    font-size: 4rem
+  +MQ(XXXL)
+    max-width: calc( 50% - 23rem )
+    padding-right: 10rem
+
+.mxd-showcase-clip__tags
+  display: flex
+  flex-direction: column
+  // background-color: blue
+  +MQ(L)
+    align-items: flex-end
+    width: calc( 50% - 20rem )
+    padding-left: 6rem
+  +MQ(XXXL)
+    width: calc( 50% - 23rem )
+    padding-left: 10rem

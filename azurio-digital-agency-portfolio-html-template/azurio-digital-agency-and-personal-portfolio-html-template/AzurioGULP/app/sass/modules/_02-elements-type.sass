@@ -1,0 +1,473 @@
+.mxd-split-lines
+  .line
+    transform: translateY(0)
+
+h1
+  font: normal 600 6rem/1.1 var(--_font-default)
+  letter-spacing: -0.24rem
+  color: var(--t-bright)
+  sup
+    vertical-align: super
+    font-size: 74%
+    color: var(--t-muted)
+  span
+    color: var(--t-medium)
+    &.typed-strings,
+    &#typed
+      color: var(--t-bright)
+      white-space: nowrap
+      b
+        white-space: nowrap
+  &.small 
+    font-size: 5rem
+  &.permanent
+    color: var(--nl-white)
+    span
+      color: var(--nl-white-06)
+  &.large
+    line-height: 1.1
+  +MQ(M)
+    letter-spacing: -0.3rem
+    &.small 
+      font-size: 7.5rem
+    &.medium
+      font-size: 8.5rem
+    &.large
+      font-size: 9rem
+      line-height: 1.2
+      white-space: nowrap
+  +MQ(XL)
+    &.small 
+      font-size: 9.5rem
+    &.medium
+      font-size: 12rem
+    &.large
+      font-size: 12rem
+  +MQ(XXL)
+    &.large
+      font-size: 14rem
+      letter-spacing: -0.5rem
+  +MQ(XXXL)
+    &.large
+      font-size: 15rem
+
+h2
+  font: normal 600 4.4rem/1.1 var(--_font-default)
+  letter-spacing: -0.18rem
+  color: var(--t-bright)
+  &.permanent
+    color: var(--nl-white)
+  &.opposite
+    color: var(--t-opp-bright)
+  &.accent
+    color: var(--pt-t-accent-bright)
+  .char
+    transform: translateX(0)
+  +MQ(M)
+    font-size: 5.4rem
+    letter-spacing: -0.18rem
+  +MQ(XL)
+    font-size: 7.5rem
+    letter-spacing: -0.3rem
+  +MQ(XXXL)
+    font-size: 9.5rem
+
+.title-number
+  font: normal 500 4.2rem/1 var(--_font-accent)
+  letter-spacing: -0.24rem
+  color: var(--t-muted)
+  &.permanent
+    color: var(--nl-white-06)
+  +MQ(M)
+    font-size: 5.2rem
+    letter-spacing: -0.3rem
+  +MQ(XL)
+    font-size: 6rem
+  +MQ(XXXL)
+    font-size: 7.4rem
+
+h3
+  font: normal 700 4rem/1.2 var(--_font-default)
+  letter-spacing: -0.1rem
+  color: var(--t-bright)
+  span
+    color: var(--t-medium)
+  &.small
+    font-size: 3.4rem
+  &.permanent
+    color: var(--nl-white)
+  +MQ(M)
+    font-size: 5rem
+    &.small
+      font-size: 4.4rem
+
+h4
+  font: normal 700 3rem/1.2 var(--_font-default)
+  letter-spacing: -0.1rem
+  color: var(--t-bright)
+  span
+    color: var(--t-medium)
+  &.permanent
+    color: var(--nl-white)
+  &.accent
+    color: var(--pt-t-accent-bright)
+  &.opposite
+    color: var(--t-opp-bright)
+  .char
+    transform: translateX(0)
+  +MQ(M)
+    font-size: 3.6rem
+  +MQ(XL)
+    font-size: 4rem
+
+h5
+  font: normal 700 2.6rem/1.2 var(--_font-default)
+  letter-spacing: -0.1rem
+  color: var(--t-bright)
+  span
+    color: var(--t-medium)
+  +MQ(M)
+    font-size: 3rem
+  +MQ(XL)
+    font-size: 3.4rem
+
+h6
+  font: normal 700 2rem/1.2 var(--_font-default)
+  letter-spacing: -0.04rem
+  color: var(--t-bright)
+  a
+    color: var(--t-bright)
+  &.opposite
+    color: var(--t-opp-bright)
+    a
+      color: var(--t-opp-bright)
+  +MQ(M)
+    font-size: 2.4rem
+
+p
+  font: normal 500 var(--_size)/1.4 var(--_font-default)
+  color: var(--t-medium)
+  &.t-160
+    line-height: 1.6
+  &.t-120
+    line-height: 1.2
+  &.t-accent
+    color: var(--pt-t-accent-medium)
+  &.t-bright
+    color: var(--t-bright)
+  &.t-medium
+    font-size: 1.6rem
+  &.t-large
+    font-size: 2rem
+  &.t-extra
+    font-size: 2rem
+  &.t-bold
+    font-weight: 700
+    color: var(--t-bright)
+    a
+      color: var(--t-bright)
+    span
+      color: var(--t-medium)
+  &.t-opposite
+    color: var(--t-opp-bright)
+    span
+      color: var(--t-opp-medium)
+  &.t-permanent
+    color: var(--nl-white)
+    span
+      color: var(--nl-white-06)
+  &.t-accent-bright
+    color: var(--pt-t-accent-bright)
+    span
+      color: var(--pt-t-accent-medium)
+  +MQ(M)
+    &.t-medium
+      font-size: 1.8rem
+    &.t-extra
+      font-size: 2.8rem
+      letter-spacing: -0.06rem
+  +MQ(XL)
+    &.t-aside
+      max-width: 360px
+  +MQ(XXXL)
+    &.t-large
+      font-size: 2.4rem
+    &.t-extra
+      font-size: 3.4rem
+      letter-spacing: -0.08rem
+
+.manifest
+  font: normal 700 2.8rem/1.2 var(--_font-default)
+  letter-spacing: -0.1rem
+  color: var(--t-bright)
+  span
+    color: var(--t-medium)
+  &.manifest-accent
+    color: var(--pt-t-accent-bright)
+    span
+      color: var(--pt-t-accent-muted)
+  +MQ(M)
+    &.manifest-m
+      font-size: 4.4rem
+    &.manifest-l
+      font-size: 4rem
+  +MQ(XL)
+    &.manifest-s
+      font-size: 4.4rem
+    &.manifest-m
+      font-size: 4.8rem
+    &.manifest-l
+      font-size: 5.4rem
+  +MQ(XXXL)
+    &.manifest-s
+      font-size: 4.4rem
+    &.manifest-m
+      font-size: 6.6rem
+    &.manifest-l
+      font-size: 7.5rem
+
+// breadcrumbs
+.breadcrumbs__nav
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
+  gap: 0.5rem
+  span
+    font: normal 600 1.4rem/1.6 var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: 0.05rem
+    color: var(--t-medium)
+    &::after
+      content: '/'
+      display: inline-flex
+    &:last-of-type
+      &::after
+        display: none
+    a
+      display: inline
+      color: var(--t-medium)
+      letter-spacing: 0.05rem
+    &.current-item
+      text-decoration: underline
+  &.permanent
+    span
+      color: var(--nl-white)
+
+.tag
+  display: inline-block
+  font: normal 600 var(--_size)/1.6 var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: 0.05rem
+
+.tag-s
+  font-size: 1.2rem
+
+.tag-s-mobile
+  font-size: 1.2rem
+  +MQ(XXXL)
+    font-size: 1.4rem
+
+.tag-m
+  font-size: 1.4rem
+
+.tag-bg
+  display: inline-flex
+  gap: 1.2rem
+  padding: 0.8rem 1.2rem
+  border-radius: 0.4rem
+  line-height: 1.2
+  &.default
+    background-color: var(--base-opp)
+    color: var(--t-opp-bright)
+  &.accent
+    background-color: var(--accent)
+    color: var(--pt-t-accent-bright)
+  &.muted
+    background-color: var(--st-muted)
+    color: var(--t-bright)
+  &.permanent
+    background-color: var(--nl-white)
+    color: var(--nl-black)
+
+.tag-permanent
+  font-weight: 400
+  color: var(--nl-white)
+
+.tag-opposite
+  color: var(--t-opp-medium)
+
+.tag-medium
+  color: var(--t-medium)
+
+.tag-medium-opposite
+  color: var(--t-opp-medium)
+
+.meta-tag,
+.meta-time,
+.meta-date,
+.meta-author,
+.meta-niche
+  display: flex
+  gap: 0
+  font: normal 600 1.4rem/1.6 var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: 0.05rem
+  color: var(--t-medium)
+  &.comma-tag
+    &::after
+      content: ","
+  &.slash-tag
+    &::after
+      content: "/"
+      margin: 0 1rem
+  a
+    color: var(--t-medium)
+  +MQ(M)
+    font-size: 1.4rem
+
+.meta-time,
+.meta-author
+  color: var(--t-bright)
+  a
+    color: var(--t-bright)
+
+// socials line
+.mxd-socials-line
+  display: flex
+  column-gap: 2.4rem
+  row-gap: 0.4rem
+  flex-wrap: wrap
+  &.column
+    flex-direction: column
+  &.centered-mobile
+    justify-content: center
+  li
+    display: inline-flex
+  +MQ(XL)
+    flex-direction: row
+    column-gap: 3.4rem
+    row-gap: 0
+    &.column
+      flex-direction: row
+    &.centered-mobile
+      justify-content: flex-start
+
+.mxd-socials-line__link
+  display: block
+  font: normal 600 1.4rem/1.6 var(--_font-accent)
+  color: var(--t-medium)
+  overflow: hidden
+  span
+    display: inline-block
+    font: normal 600 1.4rem/1.6 var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: 0.05rem
+  &.opposite
+    color: var(--t-opp-medium)
+  &.permanent
+    color: rgba(var(--nl-white-rgb), 0.7)
+  .no-touch &:hover
+    color: var(--t-bright)
+    &.opposite
+      color: var(--t-opp-bright)
+    &.permanent
+      color: rgba(var(--nl-white-rgb), 1)
+
+// footer data text
+.footer-data
+  display: block
+  overflow: hidden
+  color: var(--t-medium)
+  font: normal 600 1.4rem/1.6 var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: -0.05rem
+  a
+    display: inline-flex
+    font: normal 600 1.4rem/1.6 var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: -0.05rem
+    color: var(--t-medium)
+    .no-touch &:hover
+      color: var(--t-bright)
+  span
+    display: inline-flex
+  &.opposite
+    color: var(--t-opp-medium)
+    a
+      color: var(--t-opp-medium)
+      .no-touch &:hover
+        color: var(--t-opp-bright)
+  &.bright
+    color: var(--t-bright)
+    letter-spacing: normal
+    a
+      color: var(--t-bright)
+      letter-spacing: normal
+      .no-touch &:hover
+        color: var(--t-medium)
+
+// Link titles
+.project-name-s
+  font: normal 700 2.4rem/1.2 var(--_font-default)
+  letter-spacing: -0.04rem
+  color: var(--t-bright)
+  transition: color var(--_animspeed-medium) ease
+  &.permanent
+    color: var(--nl-white)
+
+.project-name-m
+  font: normal 700 3.2rem/1.2 var(--_font-default)
+  letter-spacing: -0.04rem
+  color: var(--t-bright)
+  transition: color var(--_animspeed-medium) ease
+  &.permanent
+    color: var(--nl-white)
+
+.blog-name-s
+  font: normal 700 1.8rem/1.2 var(--_font-default)
+  letter-spacing: -0.04rem
+  color: var(--t-bright)
+  transition: color var(--_animspeed-medium) ease
+  &.permanent
+    color: var(--nl-white)
+
+.blog-name-m
+  font: normal 700 2.2rem/1.2 var(--_font-default)
+  letter-spacing: -0.04rem
+  color: var(--t-bright)
+  transition: color var(--_animspeed-medium) ease
+  &.permanent
+    color: var(--nl-white)
+
+.mxd-hero__mark
+  display: flex
+  align-items: center
+  gap: 1rem
+  font: normal 600 1.4rem var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: 0.05rem
+  color: var(--t-medium)
+  &.permanent
+    font-weight: 500
+    color: var(--nl-white)
+  .mark-icon
+    display: inline-flex
+    flex-basis: 1rem
+    flex-grow: 0
+    flex-shrink: 0
+    width: 1rem
+    height: 1rem
+    border-radius: 50%
+    background-color: #98F160
+    animation: green-glow 1s infinite
+  .mark-text
+    display: inline-flex
+
+@keyframes green-glow
+  0%
+    box-shadow: 0 0 0 0 rgba(152, 241, 96, 0.6)
+    transition: box-shadow 0.3s ease-in-out
+  100%
+    box-shadow: 0 0 0 10px transparent
+    transform: translate3d(0, 0, 0)
+    transition: box-shadow 0.4s ease-in-out

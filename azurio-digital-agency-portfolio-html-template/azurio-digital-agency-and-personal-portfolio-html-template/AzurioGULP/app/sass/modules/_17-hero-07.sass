@@ -1,0 +1,92 @@
+.mxd-hero-07
+  position: relative
+  width: 100%
+  height: auto
+  padding-top: 6.6rem
+  // padding-bottom: 13.4rem
+  +MQ(M)
+    // padding-bottom: 19.4rem
+  +MQ(XL)
+    height: 100vh
+    padding-top: 0
+    padding-bottom: 0
+
+.mxd-hero-07__wrap
+  position: relative
+  max-width: 1920px
+  margin: 0 auto
+  +MQ(XL)
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+
+.mxd-hero-07__top
+  position: relative
+  text-align: center
+  padding: 0
+  +MQ(M)
+    padding: 0 3rem
+  +MQ(XXXL)
+    padding: 0 7rem
+
+.mxd-hero-07__bottom
+  padding: 0
+  +MQ(M)
+    padding: 0 3rem
+  +MQ(XL)
+    +position(absolute, null null 4.3rem 0)
+    width: 100%
+  +MQ(XXXL)
+    padding: 0 7rem
+
+.mxd-hero-07__headline
+  padding-top: 13.4rem
+  +MQ(M)
+    padding-top: 19.8rem
+  +MQ(XL)
+    padding-top: 0
+
+.mxd-hero-07__objects
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 3rem
+  margin-bottom: 6rem
+  img
+    width: 100%
+    height: auto
+    // width: 11vw
+    // height: 11vw
+    object-fit: contain
+    display: block
+    pointer-events: none
+    will-change: transform
+  +MQ(M)
+    margin-bottom: 10rem
+  +MQ(XL)
+    grid-template-columns: repeat(5, 1fr)
+    margin-bottom: 0
+    img
+      width: 15vw
+      height: 15vw
+  +MQ(XL)
+    padding-bottom: 2rem
+    gap: 3rem
+
+.mxd-hero-07__object
+
+.mxd-hero-07__subtitle
+  margin-bottom: 1.8rem
+  +MQ(M)
+    margin-bottom: 2.3rem
+  +MQ(XL)
+    margin-bottom: 3.5rem
+
+.mxd-hero-07__title
+  margin-bottom: 5.1rem
+  +MQ(M)
+    margin-bottom: 8.7rem
+  +MQ(XL)
+    margin-bottom: 3.7rem
+
+.mxd-hero-07__marquee

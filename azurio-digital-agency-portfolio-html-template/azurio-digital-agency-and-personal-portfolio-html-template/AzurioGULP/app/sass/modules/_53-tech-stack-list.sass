@@ -1,0 +1,58 @@
+.mxd-tech-stack
+  position: relative
+  margin-top: 7.5rem
+  +MQ(M)
+    margin-top: 9.5rem
+  +MQ(XL)
+    margin-top: 0
+
+.mxd-tech-stack__column
+  position: relative
+
+.mxd-tech-stack__item
+  position: relative
+  width: 100%
+  display: flex
+  align-items: center
+  gap: 2.2rem
+  margin-top: -0.1rem
+  padding: 3rem 0.2rem 3rem 0.2rem
+
+.mxd-tech-stack__divider
+  position: absolute
+  left: 0
+  width: 100%
+  height: 1px
+  background-color: var(--t-medium)
+  &.divider-top
+    top: 0
+  &.divider-bottom
+    bottom: 0
+
+.mxd-tech-stack__logo
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 5rem
+  height: 5rem
+  color: var(--t-bright)
+  background-color: var(--t-muted-extra)
+  border-radius: 0.3rem
+  padding: 1rem
+  img,
+  svg
+    display: block
+    width: auto
+    height: 100%
+  svg
+    fill: currentColor
+
+.mxd-tech-stack__name
+  p
+    font: normal 700 2rem/1.2 var(--_font-default)
+    letter-spacing: -0.03rem
+    color: var(--t-bright)
+    transform-origin: center
+    transition: opacity var(--_animspeed-medium), scale var(--_animspeed-medium) var(--_animbezier)
+

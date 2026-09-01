@@ -1,0 +1,520 @@
+.mxd-menu
+  +position(fixed, 0 null null 0)
+  width: 100%
+  height: 100svh
+  pointer-events: none
+  overflow: hidden
+  z-index: 11
+  // background-color: green
+
+.mxd-menu__backdrop
+  +position(fixed, 0 null null 0)
+  width: 100%
+  height: 100svh
+  background: rgba(var(--base-rgb), 0)
+  backdrop-filter: blur(0px)
+  pointer-events: none
+  z-index: 0
+  will-change: backdrop-filter, background
+
+.mxd-menu__contain
+  +position(fixed, 3rem 3rem null null)
+  pointer-events: all
+  z-index: 12
+  mix-blend-mode: difference
+  +MQ(M)
+    right: 6rem
+  +MQ(XXXL)
+    right: 10rem
+
+.mxd-menu__toggle
+  display: flex
+  align-items: center
+  cursor: pointer
+  // mix-blend-mode: difference
+  // background-color: red
+
+.mxd-menu__hamburger
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  gap: 0.8rem
+  width: 5.5rem
+  height: 3.6rem
+  overflow: hidden
+  // mix-blend-mode: difference
+  &.active
+    .hamburger__line
+      width: 5rem
+      &:nth-child(1)
+        transform: translateY(0.5rem) rotate(45deg)
+      &:nth-child(2)
+        transform: translateY(-0.5rem) rotate(-45deg)
+  +MQ(M)
+    height: 4rem
+
+.hamburger__line
+  position: relative
+  flex: none
+  width: 100%
+  height: 0.2rem
+  // border-radius: 0.3rem
+  background-color: var(--nl-white)
+  z-index: 2
+  transition: all var(--_animspeed-medium) var(--_animbezier)
+  transform-origin: center
+  will-change: transform
+  // mix-blend-mode: difference
+
+.mxd-menu__overlay,
+.mxd-menu__content
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100svh
+  overflow: hidden
+  z-index: 1
+  // background-color: blue
+
+.mxd-menu__overlay
+  background-color: var(--base-opp)
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)
+  will-change: clip-path
+
+.mxd-menu__content
+  display: flex
+  transform: translateY(-50%)
+  will-change: transform
+  pointer-events: all
+
+.mxd-menu__media
+  display: none
+  flex: 2
+  // height: 100%
+  // opacity: 0
+  // will-change: opacity
+  will-change: transform
+  overflow: hidden
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+  video
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+    will-change: transform
+  +MQ(XL)
+    display: block
+    z-index: 1
+
+.menu-media__wrapper
+  position: relative
+  width: 100%
+  height: 100%
+  will-change: transform
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+  video
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+    will-change: transform
+
+.mxd-menu__logo
+  +position(absolute, 3rem null null 3rem)
+  // mix-blend-mode: difference
+  z-index: 9
+  +MQ(M)
+    left: 6rem
+  +MQ(XL)
+    z-index: 2
+  +MQ(XXXL)
+    left: 10rem
+
+.menu-logo
+  display: flex
+  align-items: center
+  gap: 1.2rem
+  color: var(--t-bright)
+  +MQ(XL)
+    color: var(--nl-white)
+
+.menu-logo__image
+  display: inline-flex
+  width: auto
+  height: 3.6rem
+  fill: currentColor
+  +MQ(M)
+    height: 4rem
+
+.menu-logo__text
+  display: flex
+  flex-direction: column
+  gap: 0.4rem
+  padding-top: 0.3rem
+  font: normal 700 1.8rem/0.8 var(--_font-accent)
+  text-transform: uppercase
+  color: var(--t-bright)
+  span
+    display: inline-flex
+  +MQ(M)
+    gap: 0.5rem
+    padding-top: 0.3rem
+    font-size: 2rem
+    font-weight: 600
+  +MQ(XL)
+    // color: var(--nl-white)
+
+.mxd-menu__logo
+  .menu-logo
+    mix-blend-mode: difference
+    color: var(--t-opp-bright)
+    svg
+      fill: var(--t-opp-bright)
+  .menu-logo__text
+    color: var(--t-opp-bright)
+  +MQ(XL)
+    .menu-logo
+      color: var(--nl-white)
+      svg
+        fill: var(--nl-white)
+    .menu-logo__text
+      color: var(--nl-white)
+
+.mxd-menu__navigation
+  flex: 3
+  position: relative
+  display: flex
+  width: 100%
+  max-width: 100%
+  height: 100%
+  // background-color: #cf00a2
+  +MQ(XL)
+
+.mxd-menu__inner
+  position: relative
+  display: flex
+  flex-direction: column
+  width: 100%
+  height: 100%
+  padding: 10rem 3rem 0 3rem
+  overflow-y: scroll
+  overscroll-behavior-y: contain
+  scrollbar-width: none
+  &::-webkit-scrollbar
+    display: none
+    -webkit-appearance: none !important
+    width: 0 !important
+    height: 0
+  +MQ(M)
+    &::-webkit-scrollbar
+      display: none
+      width: 0 !important
+  +MQ(M)
+    padding: 10rem 6rem 0 6rem
+  +MQ(XL)
+    flex-direction: row
+    padding: 0 6rem
+    overflow: hidden
+  +MQ(XXXL)
+    padding: 0 10rem
+
+.mxd-menu__left,
+.menu-data__left
+  +MQ(XL)
+    width: 66.67%
+    padding-right: 3rem
+  +MQ(XXXL)
+    padding-right: 5rem
+
+.mxd-menu__right,
+.menu-data__right
+  +MQ(XL)
+    width: 33.33%
+    padding-left: 3rem
+  +MQ(XXXL)
+    padding-left: 5rem
+
+.mxd-menu__left
+  // position: relative
+  +MQ(XL)
+    height: 100%
+    max-height: 100%
+    overflow-y: scroll
+    overscroll-behavior-y: contain
+    scrollbar-width: none
+    &::-webkit-scrollbar
+      display: none
+      -webkit-appearance: none !important
+      width: 0 !important
+      height: 0
+
+.mxd-menu__right
+  // background-color: pink
+  +MQ(XL)
+    padding-top: 10rem
+
+.mxd-menu__caption
+  margin-bottom: 7.5rem
+  z-index: 3
+  p
+    font: normal 500 1.4rem/1.4 var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: -0.05rem
+    color: var(--t-opp-medium)
+  +MQ(XL)
+    +position(absolute, 0 null null 0)
+    width: 100%
+    height: 10rem
+    display: flex
+    align-items: center
+    margin-bottom: 0
+    padding: 0 6rem
+  +MQ(XXXL)
+    padding: 0 10rem
+
+.main-menu
+  position: relative
+  +MQ(XL)
+    padding-top: 14.5rem
+    padding-bottom: 14.7rem
+  +MQ(XXXL)
+    padding-top: 16.5rem
+
+.main-menu__content
+
+.main-menu__accordion
+  display: flex
+  flex-direction: column
+
+.main-menu__item
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  width: 100%
+  color: var(--t-opp-bright)
+  // margin-top: -0.1rem
+  padding: 2.2rem 0 2.9rem 0
+  &.open
+    .main-menu__toggle
+      svg
+        transform: rotate(90deg)
+      .no-touch &:hover
+        .main-menu__caption
+          color: var(--t-opp-bright)
+    .main-menu__caption
+      color: var(--t-opp-medium)
+  +MQ(M)
+    padding: 2.2rem 0 2.9rem 0
+  +MQ(XXXL)
+    padding: 2.7rem 0 3.4rem 0
+
+.main-menu__divider
+  position: absolute
+  left: 0
+  width: 100%
+  height: 1px
+  background-color: var(--t-opp-muted)
+  &.divider-top
+    top: 0
+  &.divider-bottom
+    bottom: 0
+ 
+.main-menu__toggle
+  position: relative
+  width: 100%
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  cursor: pointer
+  -webkit-tap-highlight-color: transparent
+  img,
+  svg
+    display: inline-flex
+    width: 1.7rem
+    height: 1.7rem
+    transition: transform var(--_animspeed-medium) var(--_animbezier)
+  svg
+    fill: currentColor
+  .no-touch &:hover
+    .main-menu__caption
+      color: var(--t-opp-medium)
+    svg
+      fill: var(--t-opp-bright)
+
+.main-menu__link
+  display: flex
+  align-items: center
+  gap: 1.6rem
+  +MQ(M)
+    gap: 2.2rem
+  +MQ(XL)
+    .line-mask
+      padding-bottom: 5px
+      margin-bottom: -5px
+  +MQ(XXXL)
+    .line-mask
+      padding-bottom: 7px
+      margin-bottom: -7px
+
+.main-menu__number
+  font: normal 500 1.4rem/1.2 var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: -0.05rem
+  color: var(--t-opp-medium)
+  // &::before
+  //   content: "/"
+  //   margin-right: 0.5rem
+
+.main-menu__caption
+  font: normal 700 3.4rem/1 var(--_font-default)
+  letter-spacing: -0.1rem
+  color: var(--t-opp-bright)
+  +MQ(M)
+    font-size: 3.4rem
+  +MQ(XL)
+    transition: color var(--_animspeed-medium)
+  +MQ(XXXL)
+    font-size: 4.4rem
+
+.main-menu__arrow
+  display: flex
+  padding-top: 0.8rem
+  overflow: hidden
+
+.submenu
+  position: relative
+  padding-top: 2.1rem
+  padding-left: 4.6rem
+  display: none
+  +MQ(M)
+    padding-left: 5.2rem
+    padding-bottom: 0.2rem
+  +MQ(XXXL)
+    padding-top: 2.7rem
+    padding-left: 5.3rem
+
+.submenu__item
+  display: flex
+  flex-direction: column
+  width: 100%
+  margin-bottom: 1.4rem
+  &:last-of-type
+    margin-bottom: 0
+  a
+    display: inline-flex
+    justify-content: flex-start
+    height: auto
+    font: normal 500 1.8rem/1.2 var(--_font-default)
+    color: var(--t-opp-bright)
+    padding-left: 0
+    .no-touch &:hover
+      color: var(--t-opp-medium)
+  &.active
+    a
+      text-decoration: underline
+  +MQ(XXXL)
+    margin-bottom: 1.6rem
+    a
+      font-size: 2rem
+
+.menu-contact
+  display: flex
+  flex-direction: column
+  gap: 2.8rem
+  margin-top: 7.4rem
+  +MQ(XL)
+    margin-top: 0
+    padding-top: 4rem
+  +MQ(XXXL)
+    padding-top: 5.8rem
+
+.menu-contact__item
+  display: flex
+  flex-direction: column
+
+.menu-contact__list
+  display: flex
+  flex-direction: column
+  gap: 0.2rem
+  li
+    display: flex
+    flex-direction: column
+    a
+      color: var(--t-opp-medium)
+      .no-touch &:hover
+        color: var(--t-opp-bright) !important
+
+.mxd-menu__shadow
+  display: none
+  +position(absolute, null null 0 0)
+  width: 100%
+  height: 10rem
+  background: linear-gradient(to bottom, rgba(var(--base-opp-rgb), 0) 0%, rgba(var(--base-opp-rgb), 1) 80%, rgba(var(--base-opp-rgb), 1) 100%)
+  z-index: 2
+  &.shadow-top
+    display: block
+    +position(fixed, 0 null null 0)
+    height: 14rem
+    background: linear-gradient(to bottom, rgba(var(--base-opp-rgb), 1) 0%, rgba(var(--base-opp-rgb), 1) 20%, rgba(var(--base-opp-rgb), 0) 100%)
+  +MQ(XL)
+    display: block
+    &.shadow-top
+      +position(absolute, 0 null null 0)
+
+.mxd-menu__data
+  padding: 2.8rem 0 3rem 0
+  +MQ(M)
+    padding: 2.8rem 0 6rem 0
+  +MQ(XL)
+    +position(absolute, null null 0 0)
+    width: 100%
+    display: flex
+    flex-direction: row
+    padding: 3rem 6rem
+    overflow: hidden
+    z-index: 3
+    // background-color: green
+  +MQ(XXXL)
+    padding: 3rem 10rem
+
+.menu-data__right
+  +MQ(XL)
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.menu-data__text
+  display: flex
+  align-items: center
+  gap: 0.5rem
+  font: normal 500 1.4rem/1.6 var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: -0.05rem
+  color: var(--t-opp-medium)
+  overflow: hidden
+  a
+    display: inline-flex
+    font: normal 500 1.4rem/1.2 var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: -0.05rem
+    color: var(--t-opp-bright)
+    .no-touch &:hover
+      color: var(--t-medium)
+  span
+    display: inline-flex
+  svg
+    display: inline-flex
+    width: 1.5rem
+    height: 1.5rem
+    fill: var(--t-opp-medium)

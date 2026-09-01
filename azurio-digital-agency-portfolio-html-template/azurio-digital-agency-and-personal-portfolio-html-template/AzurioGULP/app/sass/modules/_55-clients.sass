@@ -1,0 +1,41 @@
+.mxd-clients
+  position: relative
+  width: 100%
+  display: flex
+  flex-direction: column
+  gap: 5.4rem
+  +MQ(XL)
+    gap: 9.5rem
+    padding-top: 2.4rem
+
+.mxd-clients__row
+
+.mxd-clients__item
+  display: flex
+  flex-direction: column
+  gap: 1.2rem
+  margin-bottom: 5.4rem
+  &:last-of-type
+    margin-bottom: 0
+  +MQ(L)
+    margin-bottom: 0
+  +MQ(XL)
+    gap: 2.2rem
+    margin-bottom: 0
+  // background-color: pink
+
+.mxd-clients__logo
+  width: 100%
+  height: 4.2rem
+  // background-color: pink
+  img,
+  svg
+    display: block
+    width: auto
+    height: 100%
+  svg
+    fill: var(--t-bright)
+  +MQ(M)
+    height: 4.8rem
+
+.mxd-clients__descr

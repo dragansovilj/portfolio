@@ -1,0 +1,91 @@
+.mxd-demo-components
+  position: relative
+  padding: 0 3rem
+  +MQ(M)
+    padding: 0 6rem
+  +MQ(XL)
+    height: 165px
+  +MQ(XXXL)
+    height: 209px
+    padding: 0 10rem
+
+.mxd-demo-components__wrap
+  position: relative
+  +MQ(XL)
+    position: absolute
+    top: 0
+    +center(x)
+
+.mxd-demo-components__objects
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  background-color: red
+
+.mxd-demo-components__object
+  position: absolute
+  height: auto
+  display: none
+  img
+    display: block
+    width: 100%
+    height: auto
+  &.obj-01
+    z-index: 1
+  &.obj-02
+    z-index: 3
+  +MQ(XL)
+    display: block
+    &.obj-01
+      width: 23.2rem
+      bottom: -3.8rem
+      left: -15rem
+    &.obj-02
+      width: 16rem
+      top: 3.4rem
+      right: -9.4rem
+
+.mxd-demo-components__title
+  margin-bottom: 2.9rem
+  z-index: 2
+  +MQ(M)
+    margin-bottom: 3.2rem
+  +MQ(XL)
+    text-align: center
+    margin-bottom: 0
+
+.mxd-demo-components__tags
+  display: flex
+  gap: 3rem
+  .tag
+    white-space: nowrap
+  .tags-column
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    padding-top: 0.4rem
+  +MQ(XL)
+    align-items: center
+    justify-content: space-between
+    height: 100%
+    .tags-column
+      &:nth-of-type(2)
+        align-items: flex-end
+
+.marquee-components-top
+  padding-bottom: 7rem
+  +MQ(M)
+    padding-bottom: 12.8rem
+  +MQ(XL)
+    padding-bottom: 12.4rem
+  +MQ(XXXL)
+    padding-bottom: 12rem
+
+.marquee-components-bottom
+  padding-top: 7.3rem
+  +MQ(M)
+    padding-top: 13.3rem
+  +MQ(XL)
+    padding-top: 12.6rem
+  +MQ(XXXL)
+    padding-top: 12.3rem

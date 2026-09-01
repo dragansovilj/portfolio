@@ -1,0 +1,90 @@
+// Import Data
+@import "partials/data"
+/*! File name: loader.css
+  ------------------------------------------------
+
+  ------------------------------------------------
+  Table of Contents
+  ------------------------------------------------
+    01. Loader
+  ------------------------------------------------
+  Table of Contents End
+  ------------------------------------------------ */
+
+// Import Bourbon
+@import "bourbon"
+
+// Import Libs, Mixins and Variables
+@import "partials/layout"
+@import "partials/mixins"
+
+.mxd-page-transition
+  +position(fixed, 0 0 0 0)
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #000000
+  // background-color: #1eff00
+  transform: translateY(0%)
+  will-change: transform
+  z-index: 999
+
+.mxd-loader
+  +position(fixed, 0 0 0 0)
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 1000
+  font: normal 600 1.4rem/1.6 'JetBrains Mono', sans-serif
+  text-transform: uppercase
+  letter-spacing: 0.05rem
+  color: #e3e3f0
+  display: none
+
+.mxd-loader__top
+  +position(absolute, 0 null null 0)
+  width: 100%
+  padding: 3rem
+  display: flex
+  justify-content: center
+  align-items: center
+  opacity: 1
+  will-change: opacity
+
+.mxd-loader__bottom
+  +position(absolute, null null 0 0)
+  width: 100%
+  padding: 3rem
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  opacity: 1
+  will-change: opacity
+
+.mxd-loader__images
+  position: relative
+  width: 200px
+  height: 200px
+  -webkit-clip-path: polygon(100% 100%, 100% 100%, 0% 100%, 0% 100%)
+  clip-path: polygon(100% 100%, 100% 100%, 0% 100%, 0% 100%)
+  will-change: clip-path
+  img
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+    object-fit: cover
+    opacity: 0
+    will-change: opacity
+    backface-visibility: hidden
+    transform: translateZ(0)
+    &:first-child
+      opacity: 1
+  +MQ(XXXL)
+    width: 300px
+    height: 300px

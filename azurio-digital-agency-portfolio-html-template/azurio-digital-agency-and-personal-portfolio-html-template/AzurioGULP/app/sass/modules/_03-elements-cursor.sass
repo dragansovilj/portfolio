@@ -1,0 +1,121 @@
+.mxd-cursor
+  +position(fixed, 0 null null 0)
+  pointer-events: none
+  width: 0
+  height: 0
+  z-index: 10000
+  &.difference
+    mix-blend-mode: difference
+
+.mxd-cursor__dot
+  position: absolute
+  display: block
+  width: 0rem
+  height: 0rem
+  border-radius: 50%
+  background-color: var(--base-opp)
+  backdrop-filter: blur(4px)
+  transform: translate(-50%, -50%) scale(1)
+  transition-property: background-color, width, height
+  transition-duration: var(--_animspeed-medium)
+  transition-timing-function: var(--_animbezier)
+  z-index: 3
+  &.expand
+    width: 10rem
+    height: 10rem
+  &.active
+    background-color: var(--base-opp)
+  &.active-opposite
+    background-color: var(--base)
+  &.active-accent
+    background-color: var(--accent)
+  &.active-permanent
+    background-color: var(--pt-base)
+  &.cursor-btn-link
+    width: 2rem
+    height: 2rem
+    background-color: var(--nl-white)
+
+.mxd-cursor__text
+  position: absolute
+  margin: 0
+  text-align: center
+  color: var(--t-opp-bright)
+  font: normal 600 1.4rem/1.2 var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: 0.05rem
+  padding-top: 0.4rem
+  transform: translate(-50%, -50%) scale(0)
+  transition: transform 0.2s var(--_animbezier)
+  z-index: 4
+  &.permanent
+    color: var(--nl-black)
+  &.accent
+    color: var(--nl-white)
+  &.show
+    display: block
+    transform: translate(-50%, -50%) scale(1)
+
+.mxd-cursor__image
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 36rem
+  height: 36rem
+  overflow: hidden
+  transform: translate(-50%, -50%)
+  transform-origin: center center
+  visibility: hidden
+  clip-path: inset(50% 50% 50% 50% round 50%)
+  -webkit-clip-path: inset(50% 50% 50% 50% round 50%)
+  transition: clip-path var(--_animspeed-medium) var(--_animbezier), visibility 0s linear var(--_animspeed-medium)
+  will-change: clip-path
+  z-index: 1
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+  &.show
+    visibility: visible
+    clip-path: inset(0% 0% 0% 0% round 0%)
+    -webkit-clip-path: inset(0% 0% 0% 0% round 0%)
+    transition: clip-path var(--_animspeed-slow) var(--_animbezier), visibility 0s
+    
+
+// trail cursor v01/v02
+
+.mxd-trail-wrapper,
+.mxd-trail-transparent-wrapper
+  position: absolute
+  inset: 0%
+  overflow: hidden
+  pointer-events: none
+  z-index: 0
+
+.mxd-trail-content,
+.mxd-trail-transparent-content
+  position: relative
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+.mxd-trail-image
+  display: inline-block
+  position: absolute
+  inset: 0% auto auto 0%
+  width: 22rem
+  height: 22rem
+  object-fit: cover
+  will-change: transform
+  opacity: 0
+  pointer-events: none
+
+.mxd-trail-transparent-image
+  display: inline-block
+  position: absolute
+  object-fit: contain
+  will-change: transform, opacity, clip-path, z-index
+  transform-origin: center center
+  opacity: 0
+  pointer-events: none

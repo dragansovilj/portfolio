@@ -1,0 +1,366 @@
+.inner-headline
+  position: relative
+  width: 100%
+  padding-top: 3rem
+  &.fullheight
+    height: 100svh
+    padding-top: 9.3rem
+  &.margin-bottom-title-medium,
+  &.margin-bottom-subtitle,
+  &.margin-bottom-tags-m
+    margin-bottom: 7.4rem
+  &.margin-bottom-details
+    margin-bottom: 3.8rem
+  +MQ(M)
+    &.fullheight
+      padding-top: 10rem
+    &.margin-bottom-title-medium,
+    &.margin-bottom-subtitle
+      margin-bottom: 13.4rem
+    &.margin-bottom-tags-m
+      margin-bottom: 13.4rem
+    &.margin-bottom-details
+      margin-bottom: 5.4rem
+  +MQ(XL)
+    &.margin-bottom-title-medium
+      margin-bottom: 12rem
+    &.margin-bottom-subtitle,
+    &.margin-bottom-tags-m
+      margin-bottom: 13rem
+    &.margin-bottom-details
+      margin-bottom: 4.9rem
+
+.inner-headline__absolute
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow: hidden
+  // background-color: green
+
+.inner-headline__centered
+  position: absolute
+  +center
+  width: 100%
+  padding: 0 3rem
+  // position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+  // background-color: red
+  +MQ(M)
+    padding: 0 6rem
+  +MQ(XXXL)
+    width: 1400px
+
+.inner-headline__dataline
+  +position(absolute, null null 0 0)
+  width: 100%
+  padding-bottom: 3rem
+
+.headline-dataline
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 2.2rem
+  +MQ(XL)
+    flex-direction: row
+    justify-content: space-between
+    gap: 6rem
+
+.inner-headline__bg
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  overflow: hidden
+  z-index: -1
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+  video
+    display: block
+    +position(absolute, 0 null null 0)
+    width: 100%
+    height: 100%
+    background-color: transparent
+    background-position: center center
+    background-size: contain
+    object-fit: cover
+
+.inner-headline__cover
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  background-color: var(--nl-black-04)
+
+.inner-headline__breadcrumbs
+  +MQ(XXXL)
+    // &.pre-title-large
+    //   margin-bottom: 14.3rem
+
+.inner-headline__bottom
+  +position(absolute, null null 0 0)
+  width: 100%
+  padding-bottom: 4rem
+  +MQ(M)
+    padding-bottom: 5.5rem
+  +MQ(XL)
+    padding-bottom: 4rem
+  +MQ(XXXL)
+    padding-bottom: 8rem
+
+.inner-headline__content
+  &.has-medium-title
+    padding-top: 12.2rem
+  &.has-large-title
+    padding-top: 11.7rem
+  +MQ(M)
+    &.has-medium-title
+      padding-top: 17.7rem
+    &.has-large-title
+      padding-top: 16.3rem
+  +MQ(XL)
+    &.has-medium-title
+      padding-top: 16.9rem
+    &.has-large-title
+      padding-top: 15.3rem
+  +MQ(XXL)
+    &.has-large-title
+      padding-top: 14.7rem
+  +MQ(XXXL)
+    &.has-large-title
+      padding-top: 14.3rem
+
+.inner-headline__link
+  position: relative
+  margin-bottom: 1.5rem
+  +MQ(M)
+    margin-bottom: 1.9rem
+  +MQ(XL)
+    margin-bottom: 2.5rem
+
+.inner-headline__title
+  &.centered
+    text-align: center
+  &.no-sup
+    padding-top: 0.6rem
+  &.pre-subtitle-medium
+    margin-bottom: 2.3rem
+  &.pre-subtitle-large
+    margin-bottom: 2.3rem
+  &.banners-hover
+    a
+      color: var(--t-medium)
+  +MQ(M)
+    &.no-sup
+      padding-top: 0.8rem
+    &.pre-subtitle-medium
+      margin-bottom: 3.1rem
+    &.pre-subtitle-large
+      margin-bottom: 2.4rem
+  +MQ(XL)
+    &.pre-subtitle-medium
+      margin-bottom: 2.1rem
+    &.pre-subtitle-large
+      margin-bottom: 1.5rem
+  +MQ(XXL)
+    &.pre-subtitle-large
+      margin-bottom: 1rem
+  +MQ(XXXL)
+    &.no-sup
+      padding-top: 1.3rem
+    &.centered
+      max-width: 1400px
+    // &.pre-subtitle-medium
+    //   margin-bottom: 2.1rem
+    &.pre-subtitle-large
+      margin-bottom: 0.8rem
+
+.inner-headline__trigger
+  +MQ(XL)
+    text-decoration: none
+    background: linear-gradient(to right, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), linear-gradient(to right, var(--t-medium), var(--t-medium))
+    background-size: 100% 3px, 0 3px
+    background-position: 100% 100%, 0 90%
+    background-repeat: no-repeat
+    transition: background-size var(--_animspeed-slow), color var(--_animspeed-slow)
+    .no-touch &:hover
+      background-size: 0 3px, 100% 3px
+
+.inner-headline__subtitle
+  p,
+  a
+    font: normal 700 2.8rem/1.2 var(--_font-default)
+    letter-spacing: -0.1rem
+    color: var(--t-bright)
+    span
+      color: var(--t-medium)
+  +MQ(M)
+    p,
+    a
+      font-size: 3.4rem
+  +MQ(XL)
+    p,
+    a
+      font-size: 4.4rem
+
+.inner-headline__columns
+  display: flex
+  gap: 3rem
+  width: 100%
+  max-width: 385px
+  padding-top: 3.3rem
+  // margin-bottom: 2rem
+  .tags-column
+    flex: 1 1 0
+    display: flex
+    flex-direction: column
+  +MQ(M)
+    gap: 6rem
+    padding-top: 4.4rem
+  +MQ(XL)
+    padding-bottom: 0.4rem
+    // margin-bottom: 0
+
+.inner-headline__tags,
+.inner-headline__btngroup
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  // padding-top: 0.4rem
+  &.tags-medium-title
+    padding-top: 3rem
+  &.tags-large-subtitle
+    padding-top: 3.3rem
+  &.align-end-desktop
+    align-items: flex-start
+  +MQ(M)
+    &.tags-medium-title
+      padding-top: 4rem
+    &.tags-large-subtitle
+      padding-top: 4.5rem
+  +MQ(XL)
+    height: 100%
+    justify-content: flex-end
+    &.tags-medium-title
+      padding-top: 0
+      padding-bottom: 1.4rem
+    &.tags-large-subtitle
+      padding-bottom: 0.4rem
+    &.align-end-desktop
+      align-items: flex-end
+
+.inner-headline__tags
+  gap: 0.2rem
+
+.inner-headline__caption
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  &.split-caption
+    padding-top: 2.8rem
+  &.split-caption-title
+    padding-top: 2.5rem
+  &.pre-grid
+    margin-bottom: 7.3rem
+  &.pre-form
+    margin-bottom: 4.8rem
+  +MQ(M)
+    &.split-caption
+      padding-top: 4.2rem
+    &.split-caption-title
+      padding-top: 3.5rem
+    &.pre-grid
+      margin-bottom: 9.3rem
+    &.pre-form
+      margin-bottom: 6.8rem
+  +MQ(XL)
+    &.split-caption
+      padding-top: 2rem
+    &.split-caption-title
+      padding-top: 2rem
+  +MQ(XXXL)
+    &.split-caption
+      padding-top: 1.8rem
+    &.split-caption-title
+      padding-top: 1.8rem
+
+.headline-banner-01,
+.headline-banner-02
+  position: absolute
+  overflow: hidden
+  // clip-path: inset(0% 0% 100% 0%)
+  pointer-events: none
+  display: none
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+  +MQ(XL)
+    display: block
+    &.landscape
+      width: 28rem
+      height: 21rem
+    &.portrait
+      width: 24.8rem
+      height: 31rem
+    &.image-01
+      top: -6rem
+      left: -8rem
+    &.image-02
+      bottom: -8rem
+      left: 29rem
+    &.image-03
+      top: -6rem
+      right: 29rem
+    &.image-04
+      bottom: -4rem
+      right: -7rem
+    &.image-05
+      top: -8rem
+      left: -8rem
+    &.image-06
+      bottom: -7rem
+      left: 35rem
+    &.image-07
+      top: -7rem
+      right: 30rem
+    &.image-08
+      bottom: -5rem
+      right: -7rem
+  +MQ(XXXL)
+    &.landscape
+      width: 32rem
+      height: 24rem
+    &.portrait
+      width: 28rem
+      height: 35rem
+    &.image-01
+      top: -10rem
+      left: -14rem
+    &.image-02
+      bottom: -10rem
+      left: 27rem
+    &.image-03
+      top: -7rem
+      right: 27rem
+    &.image-04
+      bottom: -8rem
+      right: -14rem
+    &.image-05
+      top: -10rem
+      left: -12rem
+    &.image-06
+      bottom: -10rem
+      left: 30rem
+    &.image-07
+      top: -7rem
+      right: 30rem
+    &.image-08
+      bottom: -8rem
+      right: -14rem

@@ -1,0 +1,95 @@
+.mxd-blog-list
+  position: relative
+  width: 100%
+  & > .mxd-blog-list__item:nth-child(n+2)
+    margin-top: -1px
+  +MQ(XL)
+    @media (hover) and (prefers-reduced-motion: no-preference)
+      & > .mxd-blog-list__item
+        .mxd-blog-list__meta,
+        .mxd-blog-list__data,
+        .mxd-blog-list__inner
+          transition: opacity var(--_animspeed-medium), scale var(--_animspeed-medium), transform var(--_animspeed-medium) var(--_animbezier)
+      &:hover > .mxd-blog-list__item:not(:hover)
+        .mxd-blog-list__inner
+          opacity: .3
+          scale: 0.984
+        .mxd-blog-list__meta
+          transform: translateY(0.6rem)
+        .mxd-blog-list__data
+          transform: translateY(-0.5rem)
+
+.mxd-blog-list__item
+  position: relative
+  display: flex
+  flex-direction: column
+  padding: 5.4rem 0 5.2rem 0
+  +MQ(XL)
+    padding: 5.4rem 0
+
+.mxd-blog-list__divider
+  position: absolute
+  left: 3rem
+  width: calc( 100% - 6rem )
+  height: 1px
+  background-color: var(--st-muted)
+  &.top
+    top: 0
+  &.bottom
+    bottom: 0
+
+.mxd-blog-list__meta
+  display: flex
+  gap: 1.2rem
+  // padding: 0 3rem
+  margin-bottom: 1.7rem
+  +MQ(M)
+    margin-bottom: 2.2rem
+
+.mxd-blog-list__content
+  display: flex
+  flex-direction: column
+  padding: 0 3rem
+  // background-color: pink
+  +MQ(XL)
+    flex-direction: row
+    gap: 6rem
+
+.mxd-blog-list__title
+  max-width: 710px
+  p
+    font: normal 700 3rem/1.2 var(--_font-default)
+    letter-spacing: -0.1rem
+    color: var(--t-bright)
+    span
+      color: var(--t-medium)
+  &.permanent
+    p
+      color: var(--nl-white)
+  &.accent
+    p
+      color: var(--pt-t-accent-bright)
+  &.opposite
+    p
+      color: var(--t-opp-bright)
+  +MQ(M)
+    p
+      font-size: 4rem
+
+.mxd-blog-list__excerpt
+  margin-top: 1.9rem
+  p
+    max-width: 510px
+  +MQ(M)
+    margin-top: 2.7rem
+  +MQ(XL)
+    // width: 40%
+    margin-top: 0
+    padding-top: 0.5rem
+
+.mxd-blog-list__data
+  display: flex
+  gap: 1.2rem
+  margin-top: 2.2rem
+  +MQ(M)
+    margin-top: 3.1rem

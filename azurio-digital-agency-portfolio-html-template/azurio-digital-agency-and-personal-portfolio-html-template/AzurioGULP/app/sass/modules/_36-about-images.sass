@@ -1,0 +1,50 @@
+.mxd-about-images
+  position: relative
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.mxd-about-images__wrap
+  position: relative
+  width: 100%
+  // max-width: 1400px
+
+.mxd-about-images__item
+  position: relative
+  display: flex
+  flex-direction: column
+  gap: 0.6rem
+  &.margin-bottom-mobile
+    margin-bottom: 7.4rem
+  +MQ(M)
+  +MQ(XL)
+    height: 100%
+    &.margin-bottom-mobile
+      margin-bottom: 0
+    &.justify-start
+      justify-content: flex-start
+      padding-top: 10rem
+    &.justify-end
+      justify-content: flex-end
+      padding-bottom: 10rem
+
+.mxd-about-images__inner
+  position: relative
+  display: flex
+  flex-direction: column
+  gap: 0.6rem
+
+.mxd-about-images__img
+  img
+    display: block
+    width: 100%
+    height: auto
+
+.mxd-about-images__descr
+  display: flex
+  flex-direction: column
+  +MQ(M)
+    flex-direction: row
+    justify-content: space-between
+    gap: 6rem

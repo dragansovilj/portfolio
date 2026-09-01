@@ -1,0 +1,124 @@
+.mxd-services-list
+  position: relative
+  width: 100%
+  margin-top: -100vh
+  &.no-marquee
+    margin-top: 0
+  // margin-bottom: 10rem
+  & > .mxd-services-list__item:nth-child(n+2)
+    margin-top: -1px
+  +MQ(XL)
+    // margin-bottom: 12rem
+    @media (hover) and (prefers-reduced-motion: no-preference)
+      & > .mxd-services-list__item
+        .mxd-services-list__inner
+          transition: opacity var(--_animspeed-medium), scale var(--_animspeed-medium) var(--_animbezier)
+      &:hover > .mxd-services-list__item:not(:hover)
+        .mxd-services-list__inner
+          opacity: .3
+          scale: 0.984
+
+.mxd-section__marquee-bg
+  position: sticky
+  top: 0
+  width: 100%
+  height: 100vh
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  overflow: hidden
+  // background-color: red
+
+.marquee-bg__content
+  transition: opacity var(--_animspeed-medium) ease-in-out
+
+.marquee-bg__top
+  display: flex
+  justify-content: center
+  width: 100%
+  min-height: 6px
+
+.marquee-bg__center
+  position: absolute
+  +center(y)
+  display: flex
+  justify-content: center
+  min-height: 6px
+  width: 100%
+
+.marquee-bg__bottom
+  display: flex
+  justify-content: center
+  width: 100%
+  min-height: 6px
+
+.marquee-bg__sticky
+  position: sticky
+  top: 0
+  width: 100%
+  height: 100vh
+  // background-color: green
+
+.mxd-services-list__item
+  position: relative
+  display: flex
+  flex-direction: column
+  padding: 5.4rem 0 5.2rem 0
+  // background-color: pink
+  +MQ(XL)
+    padding: 5.4rem 0
+
+.mxd-services-list__divider
+  position: absolute
+  left: 3rem
+  width: calc( 100% - 6rem )
+  height: 1px
+  background-color: var(--st-medium)
+  &.top
+    top: 0
+  &.bottom
+    bottom: 0
+
+.mxd-services-list__inner
+  position: relative
+
+.mxd-services-list__number
+  +MQ(XL)
+    padding-top: 0.5rem
+
+.mxd-services-list__descr
+  max-width: 400px
+  margin-top: 2rem
+  p
+    line-height: 1.4
+  +MQ(M)
+    max-width: 560px
+    margin-top: 2.7rem
+  +MQ(XL)
+    margin-top: 0
+    padding-top: 0.3rem
+
+.mxd-services-list__number
+  margin-bottom: 1.7rem
+  +MQ(M)
+    margin-bottom: 2.2rem
+  +MQ(XL)
+    margin-bottom: 0
+
+.mxd-services-list__title
+  h3
+    font: normal 700 3rem/1.2 var(--_font-default)
+    letter-spacing: -0.1rem
+    color: var(--t-bright)
+    span
+      color: var(--t-medium)
+    &.permanent
+      color: var(--nl-white)
+    &.accent
+      color: var(--pt-t-accent-bright)
+    &.opposite
+      color: var(--t-opp-bright)
+  +MQ(M)
+    h3
+      font-size: 4rem

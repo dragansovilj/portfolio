@@ -1,0 +1,352 @@
+.mxd-footer
+  position: relative
+  display: flex
+  flex-direction: column
+  width: 100%
+  background-color: var(--base)
+  overflow: hidden
+  &.opposite
+    background-color: var(--base-opp)
+
+.mxd-footer__item
+
+.mxd-footer__controls-middle
+  display: flex
+  justify-content: flex-end
+  margin-bottom: 2.8rem
+  &.caption-small
+    margin-bottom: 2.6rem
+  &.controls-landing
+    margin-top: 8.8rem
+    justify-content: flex-start
+  +MQ(M)
+    margin-bottom: 2.9rem
+    &.controls-landing
+      margin-top: 16.4rem
+  +MQ(XL)
+    margin-top: 17.3rem
+    &.controls-landing
+      margin-top: 17.3rem
+  +MQ(XXL)
+    &.controls-landing
+      justify-content: flex-end
+      margin-top: 16.8rem
+  +MQ(XXXL)
+    margin-top: 19.2rem
+    &.caption-small
+      margin-bottom: 2.1rem
+    &.controls-landing
+      margin-top: 18.8rem
+
+.mxd-footer__data
+  position: relative
+  padding: 3.8rem 0 3.8rem 0
+  &.caption-small
+    padding: 3.6rem 0 3.8rem 0
+  +MQ(M)
+    padding: 3.7rem 0 3.7rem 0
+    &.caption-small
+      padding: 3.4rem 0 3.8rem 0
+  +MQ(L)
+    &.caption-small
+      padding: 3.2rem 0 3.8rem 0
+  +MQ(XL)
+    padding: 3.3rem 0 3.4rem 0
+  +MQ(XXXL)
+    padding: 3.3rem 0 3.4rem 0
+    &.caption-small
+      padding: 2.7rem 0 3.8rem 0
+
+.mxd-footer__data-item
+  display: flex
+  +MQ(XL)
+    &.justify-end
+      justify-content: flex-end
+
+.mxd-footer__footer-blocks
+  position: relative
+  display: flex
+  flex-direction: column
+  &.bottom-blocks
+    padding: 0 0 3.6rem 0
+  +MQ(XL)
+    flex-direction: row
+    gap: 6rem
+    &.bottom-blocks
+      padding: 3.3rem 0 3.6rem 0
+
+.footer-blocks__column
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  flex: 1
+  &.justify-start
+    justify-content: flex-start
+  &.justify-end
+    justify-content: flex-start
+    text-align: left
+  +MQ(XL)
+    flex-direction: row
+    &.justify-start
+      justify-content: flex-start
+    &.justify-end
+      justify-content: flex-end
+      text-align: right
+
+.footer-blocks__controls
+  display: flex
+  margin-top: 3.1rem
+  +MQ(XL)
+    margin-top: 0
+
+.footer-blocks__data
+  display: flex
+  flex-direction: column
+  gap: 0.2rem
+  margin-bottom: 3.2rem
+  +MQ(M)
+    flex-direction: column
+    margin-bottom: 3.2rem
+  // +MQ(XL)
+  //   gap: 0
+
+.mxd-footer__fw-mark
+  position: relative
+  // background-color: pink
+
+.fw-mark__wrap
+  container-type: inline-size
+  padding-top: 0.7rem
+  
+
+.fw-mark__content
+  display: flex
+  font-size: 28cqw
+  line-height: 0.746
+  // background-color: red
+  span
+    font-style: normal
+    font-weight: 500
+    line-height: 0.746
+    font-family: var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: normal
+    color: var(--t-bright)
+    white-space: nowrap
+  .char
+    transform: translateX(0)
+  &.opposite
+    span
+      color: var(--t-opp-bright)
+  &.small
+    font-size: 19.3cqw
+    span
+      letter-spacing: -0.2cqw
+      line-height: 0.8
+      margin-left: -1.2cqw
+  +MQ(L)
+    font-size: 28cqw
+
+.footer-blocks__nav-v01
+  position: relative
+  width: 100%
+  +MQ(M)
+    margin-bottom: 15.4rem
+  +MQ(XL)
+    margin-bottom: 16.4rem
+  +MQ(XXXL)
+    margin-bottom: 18.4rem
+
+.footer-nav-v01
+  display: flex
+  flex-direction: column
+  padding: 3.6rem 0 2.9rem 0
+  // background-color: pink
+  +MQ(M)
+    flex-direction: row
+    justify-content: space-between
+    padding: 3.6rem 0 0 0
+
+.footer-nav-v01__item
+  display: inline-flex
+  position: relative
+  overflow: hidden
+  a
+    display: block
+    color: var(--t-bright)
+    &.opposite
+      color: var(--t-opp-bright)
+    span
+      display: inline-block
+      font: normal 600 2.2rem/1.6 var(--_font-accent)
+      text-transform: uppercase
+      letter-spacing: -0.05rem
+
+.mxd-footer__nav02
+  position: relative
+  width: 100%
+  padding-top: 13.4rem
+  +MQ(M)
+    padding-top: 16.4rem
+  +MQ(XL)
+    padding-top: 17.4rem
+  +MQ(XXXL)
+    padding-top: 19.4rem
+
+.mxd-footer__socials-list
+  position: relative
+  width: 100%
+  padding-bottom: 8.7rem
+  +MQ(M)
+    padding-top: 4.6rem
+    padding-bottom: 16.3rem
+  +MQ(XL)
+    padding-top: 17.4rem
+    padding-bottom: 0
+  +MQ(XXXL)
+    padding-top: 19.4rem
+    padding-bottom: 0
+
+.mxd-footer-nav02__block
+  display: flex
+  flex-direction: column
+  gap: 1.6rem
+  margin-bottom: 4.6rem
+  +MQ(M)
+    &:last-of-type
+      margin-bottom: 0
+
+.mxd-footer-nav02__title
+
+.mxd-footer-nav02__list
+  ul
+    display: flex
+    flex-direction: column
+    gap: 1rem
+    li
+      display: inline-flex
+      a
+        display: inline-flex
+        align-items: center
+        gap: 1.2rem
+        font: normal 700 2.4rem/1.2 var(--_font-default)
+        letter-spacing: -0.05rem
+        color: var(--t-bright)
+        transition: color var(--_animspeed-fast) ease-in-out
+        span,
+        svg,
+        i
+          display: inline-flex
+          position: relative
+        i
+          font-size: 1.8rem
+          overflow: hidden
+        svg
+          width: 1.5rem
+          height: 1.5rem
+          fill: var(--t-bright)
+  &.small
+    ul
+      li
+        a
+          font-size: 1.8rem
+  +MQ(XL)
+    ul
+      li
+        a
+          .no-touch &:hover
+            color: var(--t-medium)
+    @media (hover) and (prefers-reduced-motion: no-preference)
+      & > .socials-list__item
+        // transition: opacity .3s ease
+        transition: opacity var(--_animspeed-medium) var(--_animbezier)
+      &:hover > .socials-list__item:not(:hover)
+        opacity: .3
+        .socials-list__info,
+        .socials-list__arrow
+          scale: 0.964
+          transform-origin: center
+          transition: opacity var(--_animspeed-medium), scale var(--_animspeed-medium) var(--_animbezier)
+
+.socials-list__item
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+  position: relative
+  width: 100%
+  padding: 2.5rem 0.2rem 2.7rem 0.2rem
+  margin-top: -0.1rem
+  transition: opacity var(--_animspeed-medium) var(--_animbezier)
+  &:first-of-type
+    margin-top: 0.5rem
+  &.no-margin
+    &:first-of-type
+      margin-top: 0
+
+.socials-list__divider
+  position: absolute
+  left: 0
+  width: 100%
+  height: 1px
+  background-color: var(--t-medium)
+  &.accent
+    background-color: var(--pt-t-accent-medium)
+  &.divider-top
+    top: 0
+  &.divider-bottom
+    bottom: 0
+
+.socials-list__arrow
+  display: inline-flex
+  span,
+  svg,
+  i
+    display: inline-flex
+    position: relative
+  i
+    font-size: 1.8rem
+    overflow: hidden
+  svg
+    width: 1.5rem
+    height: 1.5rem
+    fill: var(--t-bright)
+  &.accent
+    svg
+      fill: var(--pt-t-accent-bright)
+
+.socials-list__info
+  display: flex
+  align-items: center
+  gap: 2.2rem
+
+.socials-list__number
+  font: normal 600 1.4rem/1.6 var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: 0.05rem
+  color: var(--t-medium)
+  transform-origin: center
+  transition: opacity var(--_animspeed-medium), scale var(--_animspeed-medium) var(--_animbezier)
+  // &::before
+  //   content: "["
+  // &::after
+  //   content: "]"
+  &.accent
+    color: var(--pt-t-accent-medium)
+
+.socials-list__name
+  font: normal 700 2rem/1.2 var(--_font-default)
+  letter-spacing: -0.03rem
+  color: var(--t-bright)
+  transform-origin: center
+  transition: opacity var(--_animspeed-medium), scale var(--_animspeed-medium) var(--_animbezier)
+  &.accent
+    color: var(--pt-t-accent-bright)
+
+.footer-blocks__socials
+  position: relative
+  margin-top: 3.5rem
+  +MQ(XL)
+    display: flex
+    align-items: center
+    margin-top: 0

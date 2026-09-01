@@ -1,0 +1,89 @@
+.mxd-testimonials-project
+  position: relative
+
+.mxd-testimonials-project__item
+  margin-bottom: 7.4rem
+  &:last-of-type
+    margin-bottom: 0
+  &.manifest-item
+    margin-bottom: 6.8rem
+    &:last-of-type
+      margin-bottom: 0
+  +MQ(XL)
+    margin-bottom: 0
+    &.manifest-item
+      margin-bottom: 0
+
+.mxd-testimonials-project__inner
+
+.mxd-testimonials-project__subtitle
+  &.pre-manifest
+    margin-bottom: 1.8rem
+  &.pre-grid
+    margin-bottom: 3rem
+  p
+    display: block
+    overflow: hidden
+    color: var(--t-medium)
+    font: normal 600 1.4rem/1.6 var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: -0.05rem
+    span
+      display: inline-flex
+  +MQ(XL)
+    &.pre-manifest
+      margin-bottom: 3.6rem
+    &.pre-grid
+      margin-bottom: 5.5rem
+
+.mxd-testimonials-project__manifest
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 2.8rem
+  +MQ(XL)
+    gap: 3.8rem
+    max-width: 760px
+    &.fullwidth
+      max-width: none
+
+.mxd-testimonials-project__author
+  display: flex
+  align-items: center
+  gap: 2.2rem
+
+.mxd-testimonials-project__photo
+  width: 5rem
+  height: 5rem
+  &.round
+    border-radius: 50%
+    overflow: hidden
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+  +MQ(M)
+    width: 6rem
+    height: 6rem
+
+.mxd-testimonials-project__data
+  display: flex
+  flex-direction: column
+  gap: 0.2rem
+
+.mxd-testimonials-project__name
+  font: normal 700 2rem/1.2 var(--_font-default)
+  color: var(--t-bright)
+  +MQ(M)
+    font-size: 2.4rem
+
+.mxd-testimonials-project__position
+  display: inline-block
+  font: normal 600 1.2rem/1.6 var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: 0.05rem
+  a
+    color: var(--t-bright)
+  +MQ(M)
+    font-size: 1.4rem

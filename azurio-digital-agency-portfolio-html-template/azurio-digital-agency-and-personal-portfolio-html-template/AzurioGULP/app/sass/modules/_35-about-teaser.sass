@@ -1,0 +1,78 @@
+.mxd-teaser
+  position: relative
+  width: 100%
+  overflow: hidden
+  padding-top: 13.4rem
+  +MQ(M)
+    padding-top: 16.4rem
+  +MQ(XL)
+    padding-top: 13rem
+  +MQ(XXXL)
+    padding-top: 15rem
+
+.mxd-teaser__wrap
+  margin-bottom: 7.3rem
+  +MQ(M)
+    margin-bottom: 9rem
+  +MQ(XL)
+    padding-bottom: 16.3rem
+    margin-bottom: 0
+  +MQ(XXXL)
+    padding-bottom: 17.9rem
+    margin-bottom: 0
+
+.mxd-teaser__content
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 2.5rem
+  +MQ(M)
+    gap: 1.9rem
+
+.mxd-teaser__btngroup
+  display: flex
+  justify-content: center
+
+.mxd-teaser__captions
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 1rem
+
+.mxd-teaser__textblock
+  display: flex
+  align-items: stretch
+  gap: 0.3em
+  font: normal 600 2.8rem/1.2 var(--_font-default)
+  letter-spacing: -0.1rem
+  color: var(--t-bright)
+  will-change: transform, opacity
+  span,
+  i
+    position: relative
+    display: inline-flex
+  i
+    align-items: center
+    height: 2.8rem
+  img
+    display: block
+    width: auto
+    height: 100%
+    // object-fit: cover
+  +MQ(M)
+    font-size: 5rem
+    letter-spacing: -0.14rem
+    i
+      height: 5.1rem
+  +MQ(XL)
+    font-size: 7.5rem
+    letter-spacing: -0.3rem
+    i
+      height: 7.4rem
+  +MQ(XXXL)
+    font-size: 9.5rem
+    i
+      height: 9.4rem
+
+.mxd-teaser__icon
+  align-items: center

@@ -1,0 +1,167 @@
+.mxd-hero-04
+  position: relative
+  width: 100%
+  // height: 350vh
+  // height: calc(var(--vh) * 350)
+  // background-color: pink
+
+.mxd-hero-04__wrap
+  // background-color: #ff0095
+  position: relative
+  width: 100%
+  height: 100vh
+  height: calc(var(--vh) * 100)
+  overflow: hidden
+  +MQ(XL)
+    height: 100vh
+
+.mxd-hero-04__controls
+  position: absolute
+  left: 0
+  +center(y)
+  width: 100%
+  display: flex
+  flex-direction: column
+  gap: 0.4rem
+  padding: 0
+  z-index: 3
+  // mix-blend-mode: difference
+  +MQ(M)
+    flex-direction: row
+    justify-content: space-between
+    gap: 6rem
+    padding: 0 3rem
+  +MQ(XXXL)
+    padding: 0 7rem
+
+.mxd-hero-04__arrow
+  display: none
+  +MQ(XL)
+    display: block
+    position: absolute
+    right: 6rem
+    bottom: 6rem
+    width: 172px
+    height: 172px
+    z-index: 3
+    overflow: hidden
+    mix-blend-mode: difference
+    svg
+      display: inline-block
+      fill: var(--nl-white)
+  +MQ(XXL)
+    width: 188px
+    height: 188px
+  +MQ(XXXL)
+    right: 10rem
+    bottom: 10rem
+    width: 214px
+    height: 214px
+
+.mxd-hero-04__slider
+  position: relative
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+.mxd-hero-04__slides
+  position: relative
+  width: 300%
+  height: 100%
+  display: flex
+  gap: 0
+  will-change: transform
+  transform: translateX(0)
+
+.mxd-hero-04__slide
+  position: relative
+  flex: 1
+  // width: 20rem
+  height: 100%
+
+.mxd-hero-04__media
+  position: absolute
+  width: 100%
+  height: 100%
+  overflow: hidden
+  img
+    position: relative
+    width: 100%
+    height: 100%
+    object-fit: cover
+    will-change: transform
+    transform: translateX(0) scale(1.25)
+
+.mxd-hero-04__cover
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  background-color: rgba(var(--nl-black-rgb), 0.4)
+  mix-blend-mode: soft-light
+  +MQ(XL)
+    // background-color: rgba(var(--nl-black-rgb), 0.2)
+
+.mxd-hero-04__title
+  display: block
+  position: absolute
+  left: 0
+  bottom: 5.3rem
+  padding: 0
+  width: 100%
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+  z-index: 2
+  text-decoration: none
+  +MQ(M)
+    bottom: 5.3rem
+    padding: 0 3rem
+  +MQ(XL)
+    bottom: 5rem
+    width: max-content
+  +MQ(XXL)
+    bottom: 5rem
+  +MQ(XXXL)
+    bottom: 9rem
+    padding: 0 7rem
+
+.mxd-hero-04__name
+  margin-bottom: 2.3rem
+  p
+    font: normal 600 6rem/1.1 var(--_font-default)
+    letter-spacing: -0.24rem
+    color: var(--nl-white)
+    span
+      color: rgba(var(--nl-white-rgb), 0.8)
+  +MQ(M)
+    margin-bottom: 2.4rem
+    p
+      font-size: 9rem
+      line-height: 1.2
+  +MQ(XL)
+    margin-bottom: 1.5rem
+    p
+      font-size: 12rem
+  +MQ(XXL)
+    margin-bottom: 1rem
+    p
+      font-size: 14rem
+  +MQ(XXXL)
+    margin-bottom: 0.8rem
+    p
+      font-size: 15rem
+
+.mxd-hero-04__descr
+  p,
+  a
+    font: normal 700 2.8rem/1.2 var(--_font-default)
+    letter-spacing: -0.1rem
+    color: var(--nl-white)
+    span
+      color: var(--nl-white-06)
+  +MQ(M)
+    p,
+    a
+      font-size: 3.4rem
+  +MQ(XL)
+    p,
+    a
+      font-size: 4.4rem

@@ -1,0 +1,413 @@
+.btn
+  position: relative
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  gap: 1.4rem
+  border: none
+  outline: 0
+  padding: 0
+  font: inherit
+  background-color: transparent
+  cursor: pointer
+  text-decoration: none
+  user-select: none
+
+.btn-form
+  justify-content: end
+  width: 5.8rem
+  height: 5.8rem
+  border-width: 2px
+  font: normal 400 2.2rem/1.5 var(--_font-accent)
+  transform: scale(1)
+  transition: transform var(--_animspeed-medium), color var(--_animspeed-medium) var(--_animbezier)
+  // background-color: pink
+  i
+    display: inline-flex
+    position: relative
+    font-size: 2.2rem
+    overflow: hidden
+  .no-touch &:hover
+    transform: scale(1.04)
+    &.no-scale
+      transform: scale(1)
+
+.btn-absolute-right
+  +position(absolute, 0 0 null null)
+
+.btn-round
+  width: 5rem
+  height: 5rem
+  border-radius: 50%
+  font: normal 500 2rem var(--_font-accent)
+  text-transform: uppercase
+  overflow: hidden
+  i
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    // background-color: green
+    svg
+      display: block
+      width: 1.7rem
+      height: 1.7rem
+
+.btn-round-permanent
+  background-color: var(--nl-white)
+  color: var(--nl-black)
+  svg
+    fill: var(--nl-black)
+
+.btn-default
+
+.btn-default-icon
+  gap: 2rem
+  font: normal 500 2rem var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: 0.05rem
+  padding: 0.4rem 0.4rem 0.4rem 2rem
+  border-radius: 0.4rem
+  i
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 4rem
+    height: 4rem
+    border-radius: 0.2rem
+    background-color: rgba(var(--nl-white-rgb), 0.16)
+    overflow: hidden
+    svg
+      display: block
+      width: 1.8rem
+      height: auto
+  .btn-caption
+    display: inline-flex
+
+.btn-default-icon-left
+  padding: 0.4rem 2rem 0.4rem 0.4rem
+
+.btn-default-icon-large
+  font-size: 2.2rem
+  i
+    width: 5rem
+    height: 5rem
+    svg
+      width: 2.2rem
+
+.btn-default-icon-small
+  gap: 1.4rem
+  font: normal 500 1.5rem var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: 0.05rem
+  padding: 0.4rem 0.4rem 0.4rem 1.4rem
+  border-radius: 0.4rem
+  i
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 3.4rem
+    height: 3.4rem
+    border-radius: 0.2rem
+    background-color: rgba(var(--nl-white-rgb), 0.16)
+    overflow: hidden
+    svg
+      display: block
+      width: 1.5rem
+      height: auto
+  .btn-caption
+    display: inline-flex
+
+.btn-default-fullwidth
+  width: 100%
+  justify-content: space-between
+
+.btn-default-fullwidth-mobile
+  width: 100%
+  justify-content: space-between
+  +MQ(M)
+    width: auto
+    justify-content: flex-start
+
+.btn-default-accent
+  background-color: var(--accent)
+  border: 1px solid var(--accent)
+  color: var(--pt-t-accent-bright)
+  i
+    svg
+      fill: var(--pt-t-accent-bright)
+
+.btn-default-permanent
+  background-color: var(--nl-white)
+  color: var(--nl-black)
+  i
+    background-color: rgba(var(--nl-black-rgb), 0.2)
+    svg
+      fill: var(--nl-black)
+
+.btn-default-outline
+  background-color: transparent
+  border: 1px solid var(--t-bright)
+  color: var(--t-bright)
+  i
+    background-color: var(--st-muted)
+    svg
+      fill: var(--t-bright)
+
+.btn-line
+  gap: 1rem
+  font: normal 500 1.6rem/1.6 var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: 0.05rem
+  span
+    display: inline-flex
+    white-space: nowrap
+  &::before
+    content: "["
+  &::after
+    content: "]"
+  &::before,
+  &::after
+    transition: transform var(--_animspeed-medium) var(--_animbezier)
+  .no-touch &:hover
+    &::before
+      transform: translateX(-0.2rem)
+    &::after
+      transform: translateX(0.2rem)
+  +MQ(M)
+    font-size: 1.8rem
+
+.btn-line-small
+  font-size: 1.4rem
+  +MQ(M)
+    font-size: 1.4rem
+
+.btn-line-icon
+  gap: 1.2rem
+  font: normal 700 1.8rem/1.6 var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: -0.05rem
+  white-space: nowrap
+  span,
+  svg,
+  i
+    display: inline-flex
+    position: relative
+  i
+    font-size: 1.8rem
+    overflow: hidden
+  svg
+    width: 1.6rem
+    height: 1.6rem
+    margin-bottom: 0.3rem
+
+.btn-line-icon-small
+  font-size: 1.4rem
+  font-weight: 600
+  i
+    font-size: 1.4rem
+  svg
+    width: 1.4rem
+    height: 1.4rem
+    margin-bottom: 0.1rem
+
+.btn-line-default
+  color: var(--t-bright)
+  svg
+    fill: var(--t-bright)
+
+.btn-line-medium
+  color: var(--t-medium)
+  svg
+    fill: var(--t-medium)
+  .no-touch &:hover
+    color: var(--t-bright)
+    svg
+      fill: var(--t-bright)
+
+.btn-line-permanent
+  color: var(--nl-white)
+  svg
+    fill: var(--nl-white)
+
+.btn-line-opposite
+  color: var(--t-opp-bright)
+
+.slide-right
+  &:hover
+    i
+      svg,
+      &::before
+        animation: 0.6s var(--_animbezier) 1 both slideRight
+
+.slide-right-up
+  &:hover
+    i
+      &::before,
+      svg
+        animation: 0.6s var(--_animbezier) 0s 1 both slideRightUp
+
+.slide-right-down
+  &:hover
+    i
+      &::before
+        animation: 0.6s var(--_animbezier) 0.3s 1 both slideRightDown
+
+.slide-left
+  &:hover
+    i
+      &::before,
+      svg
+        animation: 0.6s var(--_animbezier) 0s 1 both slideLeft
+
+.slide-left-up
+  &:hover
+    i
+      &::before
+        animation: 0.6s var(--_animbezier) 0s 1 both slideLeftUp
+
+.slide-left-down
+  &:hover
+    i
+      &::before
+        animation: 0.6s var(--_animbezier) 0s 1 both slideLeftDown
+
+.slide-down
+  &:hover
+    i
+      &::before,
+      svg
+        animation: 0.6s var(--_animbezier) 1 both slideDown
+
+.slide-up
+  &:hover
+    i
+      &::before,
+      svg
+        animation: 0.6s var(--_animbezier) 0s 1 both slideUp
+
+.anim-no-delay
+  &:hover
+    i
+      &::before
+        animation-delay: 0s
+
+@keyframes slideRight
+  0%
+    transform: translateX(0)
+  50%
+    transform: translateX(100%)
+  51%
+    opacity: 0
+  52%
+    transform: translateX(-100%)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+@keyframes slideRightUp
+  0%
+    transform: translateX(0) translateY(0)
+  50%
+    transform: translateX(100%) translateY(-100%)
+  51%
+    opacity: 0
+  52%
+    transform: translateX(-100%) translateY(100%)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateX(0) translateY(0)
+
+@keyframes slideRightDown
+  0%
+    transform: translateX(0) translateY(0)
+  50%
+    transform: translateX(100%) translateY(100%)
+  51%
+    opacity: 0
+  52%
+    transform: translateX(-100%) translateY(-100%)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateX(0) translateY(0)
+
+@keyframes slideLeft
+  0%
+    transform: translateX(0)
+  50%
+    transform: translateX(-100%)
+  51%
+    opacity: 0
+  52%
+    transform: translateX(100%)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+@keyframes slideLeftUp
+  0%
+    transform: translateX(0) translateY(0)
+  50%
+    transform: translateX(-100%) translateY(-100%)
+  51%
+    opacity: 0
+  52%
+    transform: translateX(100%) translateY(100%)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateX(0) translateY(0)
+
+@keyframes slideLeftDown
+  0%
+    transform: translateX(0) translateY(0)
+  50%
+    transform: translateX(-100%) translateY(100%)
+  51%
+    opacity: 0
+  52%
+    transform: translateX(100%) translateY(-100%)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateX(0) translateY(0)
+
+@keyframes slideDown
+  0%
+    transform: translateY(0)
+  50%
+    transform: translateY(100%)
+  51%
+    opacity: 0
+  52%
+    transform: translateY(-100%)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateY(0)
+
+@keyframes slideUp
+  0%
+    transform: translateY(0)
+  50%
+    transform: translateY(-100%)
+  51%
+    opacity: 0
+  52%
+    transform: translateY(100%)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateY(0)

@@ -1,0 +1,90 @@
+.mxd-awards
+  +MQ(XL)
+    @media (hover) and (prefers-reduced-motion: no-preference)
+      & > .mxd-awards__item
+        .mxd-awards__title,
+        .mxd-awards__tags,
+        .mxd-awards__date
+          transition: opacity var(--_animspeed-medium), scale var(--_animspeed-medium) var(--_animbezier)
+      &:hover > .mxd-awards__item:not(:hover)
+        .mxd-awards__title,
+        .mxd-awards__tags,
+        .mxd-awards__date
+          opacity: .3
+
+.mxd-awards__item
+  display: block
+  margin-bottom: 7.3rem
+  &:last-of-type
+    margin-bottom: 0
+  +MQ(XL)
+    margin-bottom: 0
+    .no-touch &:hover
+      .mxd-awards__image
+        img
+          clip-path: inset(0% 0% 0% 0%)
+          transition: clip-path 0s
+
+.mxd-awards__inner
+
+.mxd-awards__title,
+.mxd-awards__tags,
+.mxd-awards__date
+  position: relative
+  display: flex
+  flex-direction: column
+  p
+    font: normal 700 2.6rem/1.2 var(--_font-default)
+    letter-spacing: -0.04rem
+    color: var(--t-bright)
+  +MQ(XL)
+    height: 100%
+    align-items: flex-start
+    justify-content: center
+    p
+      font-size: 3.4rem
+      letter-spacing: -0.1rem
+
+.mxd-awards__title
+  margin-bottom: 0.1rem
+
+.mxd-awards__image
+  position: relative
+  width: 100%
+  height: 160px
+  margin-bottom: 1.9rem
+  img
+    display: inline-flex
+    width: 100%
+    height: 100%
+    object-fit: cover
+  +MQ(XL)
+    max-height: 100px
+    margin-bottom: 0
+    img
+      max-height: 100px
+      clip-path: inset(0% 100% 0% 0%)
+      will-change: clip-path
+      transition: clip-path 0.6s
+
+.mxd-awards__tags
+  color: var(--t-medium)
+  a
+    color: var(--t-medium)
+  // display: flex
+  // flex-direction: column
+  // align-items: flex-start
+
+.mxd-awards__date
+  // position: relative
+  // display: flex
+  // flex-direction: column
+  p
+    font: normal 600 1.4rem/1.6 var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: 0.05rem
+    color: var(--t-medium)
+  +MQ(XL)
+    // height: 100%
+    // justify-content: center
+    align-items: flex-end

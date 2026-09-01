@@ -1,0 +1,112 @@
+.mxd-blog-grid
+  position: relative
+
+.mxd-blog-grid__gallery
+  display: flex
+  align-items: flex-start
+  +MQ(L)
+    &.pre-object-link-desktop
+      margin-bottom: 7.6rem
+  +MQ(XL)
+    @media (hover) and (prefers-reduced-motion: no-preference)
+      & > .mxd-blog-item
+        transition: opacity var(--_animspeed-medium), scale var(--_animspeed-medium), transform var(--_animspeed-medium) var(--_animbezier)
+      &:hover > .mxd-blog-item:not(:hover)
+        // opacity: .3
+        // scale: 0.97
+        .mxd-blog-item__media
+          clip-path: inset(0.4rem 0 0.4rem 0)
+          transform: translateY(-0.4rem)
+        .mxd-blog-item__caption
+          transform: translateY(-0.8rem)
+
+.mxd-blog-item
+  display: flex
+  flex-direction: column
+  padding: 0 3rem
+  margin-bottom: 6.6rem
+  transform-origin: top center
+  opacity: 1
+  transform: scale(1)
+  transition: opacity var(--_animspeed-medium), transform var(--_animspeed-medium) var(--_animbezier)
+  &:last-of-type
+    margin-bottom: 0
+  &.has-margin-bottom
+    margin-bottom: 6.6rem
+  +MQ(M)
+    margin-bottom: 6.8rem
+  +MQ(L)
+    margin-bottom: 0
+  .no-touch &:hover
+    .mxd-blog-item__tags
+      .tag
+        transform: translateY(0.8rem)
+        &:nth-of-type(2)
+          transform: translateY(1.2rem)
+        &:nth-of-type(3)
+          transform: translateY(1.6rem)
+        &:nth-of-type(4)
+          transform: translateY(2rem)
+        &:nth-of-type(5)
+          transform: translateY(2.4rem)
+        &:nth-of-type(6)
+          transform: translateY(2.8rem)
+        &:nth-of-type(7)
+          transform: translateY(3.2rem)
+        &:nth-of-type(8)
+          transform: translateY(3.6rem)
+    .mxd-blog-item__title
+      transform: translateY(0.8rem)
+      .blog-name-m,
+      .blog-item-s
+        line-height: 1.4
+    .mxd-blog-item__media
+      transform: translateY(0.6rem)
+      img
+        transform: scale(1)
+
+
+.mxd-blog-item-s
+  padding: 0 1.5rem
+  
+.mxd-blog-item__date
+  margin-bottom: 0.6rem
+
+.mxd-blog-item__media
+  display: inline-block
+  clip-path: inset(0rem 0 0rem 0)
+  overflow: hidden
+  transition: transform var(--_animspeed-medium), clip-path var(--_animspeed-medium) var(--_animbezier)
+  img
+    display: block
+    width: 100%
+    height: auto
+    transform: scale(1.08)
+    transform-origin: top center
+    will-change: transform
+    transition: transform var(--_animspeed-medium)
+    // image-rendering: pixelated
+    // filter: blur(20px)
+
+.mxd-blog-item__caption
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  gap: 6rem
+  margin-top: 1.8rem
+  transition: all 0.3s ease-in-out
+
+.mxd-blog-item__title
+  transition: transform var(--_animspeed-medium) var(--_animbezier)
+  max-width: 80%
+  .blog-name-m,
+  .blog-name-s
+    transition: all var(--_animspeed-medium) var(--_animbezier)
+
+.mxd-blog-item__tags
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  padding-top: 0.4rem
+  .tag
+    transition: transform var(--_animspeed-medium) var(--_animbezier)

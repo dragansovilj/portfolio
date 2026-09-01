@@ -1,0 +1,158 @@
+.mxd-stack-cards
+  position: relative
+  display: flex
+  flex-direction: column
+  gap: 25svh
+  width: 100%
+  overflow: hidden
+  background-color: var(--base)
+  &.opposite
+    background-color: var(--base-opp)
+
+.mxd-stack-cards__card
+  position: relative
+  display: block
+  width: 100%
+  height: 100svh
+  user-select: none
+  &:nth-child(2)
+    margin-top: 50vh
+
+.card__marquees
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  // background-color: pink
+
+.card__wrapper
+  position: relative
+  width: 100%
+  height: 100%
+  will-change: transform
+
+.card__image
+  position: absolute
+  width: 100%
+  height: 100%
+  border-radius: 0px
+  overflow: hidden
+  will-change: clip-path
+  img,
+  video
+    position: relative
+    width: 100%
+    height: 100%
+    object-fit: cover
+    will-change: transform
+    // transform: scale(2)
+  // img
+  //   transform: scale(2)
+
+.card__cover
+  +position(absolute, 0 0 0 0)
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.3)
+  &.cover-darken
+    background-color: rgba(0, 0, 0, 0.6)
+
+.card__content
+  position: absolute
+  width: 100%
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 1
+  
+  .card-description
+    position: relative
+    width: 80%
+    margin-bottom: 2em
+    text-align: center
+    transform: translateX(4rem)
+    opacity: 0
+    p
+      font-size: 1.6rem
+      color: #fff
+  +MQ(XL)
+    .card-description
+      width: 40%
+      p
+        font-size: 1.8rem
+
+.card__title
+  display: block
+  width: 70%
+  position: absolute
+  +center
+  text-align: center
+  p
+    font: normal 700 3.6rem/1.2 var(--_font-default)
+    // font-size: 4rem
+    letter-spacing: -0.1rem
+    color: var(--t-bright)
+    span
+      color: var(--t-medium)
+    &.small
+      font-size: 3.4rem
+    &.permanent
+      color: var(--nl-white)
+  +MQ(M)
+    width: 50%
+    max-width: 320px
+  +MQ(XL)
+    max-width: 400px
+    p
+      font-size: 5rem
+      &.small
+        font-size: 4.4rem
+
+.card__descr
+  // position: absolute
+  // left: 0
+  // +center(y)
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  padding: 3rem
+  opacity: 0
+  // background-color: pink
+  +MQ(L)
+    height: auto
+    flex-direction: row
+    align-items: center
+    padding: 0 6rem
+  +MQ(XXXL)
+    padding: 0 10rem
+
+.card__tags
+  display: flex
+  flex-direction: column
+  align-items: center
+  +MQ(L)
+    align-items: flex-start
+    &.desktop-right
+      align-items: flex-end
+
+// .char
+//   position: relative
+//   overflow: hidden
+//   display: inline-block
+//   span
+//     transform: translateX(100%)
+//     display: inline-block
+//     will-change: transform
+
+.char
+  transform: translateX(100%)
+  display: inline-block
+  will-change: transform
+
+.line
+  transform: translateY(100%)
+  display: inline-block
+  will-change: transform

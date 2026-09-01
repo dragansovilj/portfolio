@@ -1,0 +1,204 @@
+.mxd-hero-10
+  position: relative
+  width: 100%
+  height: auto
+  +MQ(XL)
+    height: calc( 100vh - 6.3rem )
+  +MQ(XXXL)
+    height: calc( 100vh - 7rem )
+
+.mxd-hero-10__wrap
+  position: relative
+  padding-bottom: 5.2rem
+  +MQ(M)
+    padding-bottom: 5.2rem
+  +MQ(XL)
+    height: 100%
+    padding-bottom: 0
+
+// main groups
+.mxd-hero-10__top
+  padding: 0
+  +MQ(M)
+    padding: 0 3rem
+  +MQ(XXXL)
+    padding: 0 7rem
+
+.mxd-hero-10__center
+  position: relative
+  display: flex
+  flex-direction: column
+  padding: 0
+  padding: 5.7rem 0 5.5rem 0
+  +MQ(M)
+    padding: 5.7rem 3rem 5.5rem 3rem
+  +MQ(XL)
+    flex-direction: row
+    justify-content: space-between
+    padding: 4.5rem 3rem 0 3rem
+  +MQ(XXXL)
+    padding: 6rem 7rem 0 7rem
+
+.mxd-hero-10__divider
+  +position(absolute, 0 null null 3rem)
+  width: calc( 100% - 6rem )
+  height: 1px
+  background-color: var(--st-medium)
+  &.divider-bottom
+    top: auto
+    bottom: 0
+  +MQ(M)
+    left: 6rem
+    width: calc( 100% - 12rem )
+  +MQ(XL)
+    &.divider-bottom
+      display: none
+  +MQ(XXXL)
+    left: 10rem
+    width: calc( 100% - 20rem )
+
+.mxd-hero-10__bottom
+  padding-top: 5.2rem
+  +MQ(XL)
+    +position(absolute, null null 0 0)
+    width: 100%
+    padding-top: 0
+    padding-bottom: 3.5rem
+    // background-color: pink
+
+// top group components
+.mxd-hero-10__headline
+  container-type: inline-size
+  padding-top: 13rem
+  padding-bottom: 6rem
+  +MQ(M)
+    padding-top: 15.8rem
+    padding-bottom: 6rem
+  +MQ(L)
+    padding-top: 14.8rem
+  +MQ(XL)
+    padding-top: 2rem
+    padding-bottom: 4.5rem
+  +MQ(XXXL)
+    padding-top: 4rem
+    padding-bottom: 6rem
+
+.hero-10-headline__wrap
+  container-type: inline-size
+  display: flex
+  text-align: center
+  // background-color: pink
+  h1
+    text-transform: lowercase
+    font-size: 20.2cqw
+    line-height: 0.76
+    letter-spacing: -0.5cqw
+    a
+      span
+        white-space: nowrap
+        color: var(--t-bright)
+  +MQ(XXXL)
+    h1
+      letter-spacing: -0.5cqw
+
+.hero-10-headline__content
+
+// center group components
+.mxd-hero-10__data-wrap
+  margin-bottom: 3rem
+
+.mxd-hero-10__descr
+  margin-top: 2.1rem
+  p
+    font: normal 700 2.4rem/1.2 var(--_font-default)
+    letter-spacing: -0.1rem
+  +MQ(M)
+    max-width: 520px
+  +MQ(XXXL)
+    max-width: 640px
+    margin-top: 2.7rem
+    p
+      font-size: 3.4rem
+
+.mxd-hero-10__media
+  position: relative
+  display: flex
+  flex-direction: column
+  gap: 1.4rem
+  +MQ(XL)
+    max-width: 420px
+    .no-touch &:hover
+      .hero-10-video__tags
+        .tag
+          transform: translateY(0.4rem)
+          &:nth-of-type(2)
+            transform: translateY(0.8rem)
+          &:nth-of-type(3)
+            transform: translateY(1.2rem)
+          &:nth-of-type(4)
+            transform: translateY(1.6rem)
+          &:nth-of-type(5)
+            transform: translateY(1rem)
+          &:nth-of-type(6)
+            transform: translateY(1.2rem)
+          &:nth-of-type(7)
+            transform: translateY(1.4rem)
+          &:nth-of-type(8)
+            transform: translateY(1.6rem)
+      .hero-10-video__name
+        transform: translateY(0.4rem)
+
+.mxd-hero-10__image,
+.mxd-hero-10__video
+  display: block
+  width: 100%
+  height: auto
+  object-fit: cover
+
+.mxd-hero-10__video-btn
+  +position(absolute, 1rem 4rem null null)
+
+.mxd-hero-10__video-info
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  gap: 6rem
+
+.hero-10-video__name
+  a
+    font: normal 700 2.2rem/1.2 var(--_font-default)
+    letter-spacing: -0.04rem
+    color: var(--t-bright)
+  +MQ(XL)
+    transition: transform var(--_animspeed-medium) var(--_animbezier)
+
+.hero-10-video__tags
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  padding-top: 0.4rem
+  +MQ(XL)
+    .tag
+      transition: transform var(--_animspeed-medium) var(--_animbezier)
+
+// bottom group components
+.mxd-hero-10__dataline
+  display: flex
+  flex-direction: column
+  padding: 0
+  +MQ(M)
+    padding: 0 3rem
+  +MQ(XL)
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+  +MQ(XXXL)
+    padding: 0 7rem
+
+.mxd-hero-10__socials
+  position: relative
+  margin-bottom: 2.1rem
+  +MQ(XL)
+    margin-bottom: 0
+
+.mxd-hero-10__controls

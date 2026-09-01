@@ -1,0 +1,41 @@
+.landing-features-title
+  +MQ(XL)
+    .mxd-section-title__title
+      max-width: 730px
+    .mxd-section-title__caption
+      max-width: none
+  +MQ(XXXL)
+    .mxd-section-title__title
+      max-width: 870px
+
+.landing-features-cards
+  .mxd-niche-cards__inner
+    background-color: var(--base-bright)
+  .mxd-niche-cards__gradient
+    &.gradient-linear
+      background: linear-gradient(180deg,rgba(var(--base-bright-rgb), 1) 10%, rgba(var(--base-bright-rgb), 0.6) 50%, rgba(var(--base-bright-rgb), 0) 100%)
+  +MQ(M)
+    .mxd-niche-cards__item
+      padding-bottom: 3rem
+  +MQ(XL)
+    .mxd-niche-cards__gradient
+      &.gradient-linear
+        background: var(--base-bright-rgb)
+        background: linear-gradient(90deg,rgba(var(--base-bright-rgb), 1) 0%, rgba(var(--base-bright-rgb), 0.2) 80%, rgba(var(--base-bright-rgb), 0) 100%)
+    .mxd-niche-cards__image
+      &.absolute-desktop-aside
+        width: 180px
+        padding: 0
+        right: 2rem
+        bottom: 2rem
+  +MQ(XXL)
+    .mxd-niche-cards__image
+      &.absolute-desktop-aside
+        width: 200px
+        right: 3rem
+  +MQ(XXXL)
+    .mxd-niche-cards__image
+      &.absolute-desktop-aside
+        width: 256px
+        right: 3rem
+        bottom: 3rem

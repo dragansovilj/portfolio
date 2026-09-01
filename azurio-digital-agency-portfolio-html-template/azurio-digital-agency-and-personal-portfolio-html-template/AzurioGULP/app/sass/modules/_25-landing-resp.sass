@@ -1,0 +1,118 @@
+.mxd-resp-promo,
+.mxd-resp-promo__item
+  position: relative
+
+.mxd-resp-promo
+  width: 100%
+  max-width: 1920px
+  margin: 0 auto
+  padding-top: 12.8rem
+  padding-bottom: 10.1rem
+  +MQ(M)
+    padding-top: 15.5rem
+    padding-bottom: 12.3rem
+  +MQ(XL)
+    padding-top: 18rem
+    padding-bottom: 13.6rem
+  +MQ(XXXL)
+    padding-top: 20rem
+    padding-bottom: 15rem
+
+.mxd-resp-promo__item
+  +MQ(XL)
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+.mxd-resp-promo__content
+  margin-bottom: 4.5rem
+  +MQ(M)
+    max-width: 800px
+    margin: 0 auto 5rem
+  +MQ(XL)
+    max-width: 700px
+    margin: 0
+    padding-bottom: 1.7rem
+  +MQ(XXXL)
+    padding-bottom: 3rem
+
+.mxd-resp-promo__manifest
+  margin-bottom: 4rem
+  text-align: center
+  p
+    font: normal 700 2.8rem/1.2 var(--_font-default)
+    letter-spacing: -0.1rem
+    color: var(--t-bright)
+    span
+      color: var(--t-medium)
+  +MQ(M)
+    margin-bottom: 4.5rem
+    p
+      font-size: 3.4rem
+  +MQ(XL)
+    margin-bottom: 5.2rem
+    text-align: left
+  +MQ(XXXL)
+    // margin-bottom: 6.2rem
+    p
+      font-size: 4.4rem
+
+.mxd-resp-promo__image
+  padding-left: 3rem
+  img
+    display: block
+    width: 100%
+    height: auto
+  +MQ(M)
+    padding-left: 6rem
+  +MQ(XL)
+    padding-left: 0
+
+.mxd-demo-cards__icons
+  position: relative
+  display: flex
+  justify-content: center
+  row-gap: 3rem
+  // column-gap: 1.5rem
+  flex-wrap: wrap
+  +MQ(XL)
+    justify-content: flex-start
+    gap: 0
+    flex-wrap: nowrap
+
+.demo-icons__item
+  width: 140px
+  padding: 0 3rem
+  border-right: 1px solid var(--st-medium)
+  text-align: center
+  // background-color: blue
+  // &:first-of-type
+  //   padding: 0 3rem 0 0
+  &:nth-of-type(2),
+  &:last-of-type
+    border-right: none
+  +MQ(M)
+    width: 140px
+    &:nth-of-type(2)
+      border-right: 1px solid var(--st-medium)
+    &:first-of-type
+      padding: 0 3rem 0 0
+  +MQ(XXXL)
+    width: 140px
+
+.demo-icons__icon
+  font-size: 5rem
+  line-height: 1.2
+  color: var(--t-bright)
+  +MQ(XXXL)
+    font-size: 6rem
+
+.demo-icons__caption
+  font: normal 500 1.4rem/1.6 var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: 0.05rem
+  color: var(--t-bright)
+  +MQ(M)
+    font-size: 1.4rem
+  +MQ(XXXL)
+    font-size: 1.6rem

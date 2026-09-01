@@ -1,0 +1,166 @@
+.mxd-testimonials-sticky
+  position: relative
+  width: 100%
+
+.mxd-testimonials-sticky__static
+  position: sticky
+  top: 12.7rem
+  padding-bottom: 10.3rem
+  +MQ(M)
+    top: 18.1rem
+    padding-bottom: 17rem
+  +MQ(XL)
+    top: 17.6rem
+    padding-bottom: 18rem
+  +MQ(XXXL)
+    padding-bottom: 20rem
+
+.mxd-testimonials-sticky__scroll
+  position: relative
+  width: 100%
+
+.mxd-testimonials-sticky__title
+
+.mxd-testimonials-sticky__cards
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 0
+  +MQ(XL)
+    gap: 18rem
+  +MQ(XXXL)
+    gap: 20rem
+
+.mxd-testimonials-sticky__row
+  display: flex
+  flex-direction: column
+  max-width: 1340px
+
+.mxd-testimonials-sticky__column
+  display: flex
+  flex-direction: column
+  &.margin-bottom-mobile
+    margin-bottom: 3rem
+  +MQ(XL)
+    &.margin-bottom-mobile
+      margin-bottom: 0
+    &.has-padding-top
+      padding-top: 6rem
+    &.has-padding-bottom
+      padding-bottom: 6rem
+
+.mxd-testimonials-card
+  position: relative
+  display: flex
+  flex-direction: column
+  padding: 3rem
+  margin-top: 3rem
+  // backdrop-filter: blur(8px)
+  // background-color: rgba(var(--base-bright-rgb), 0.5)
+  // border: 1px solid var(--st-muted)
+  background-color: var(--base-tint)
+  &.fullheight
+    height: 100%
+    justify-content: space-between
+  +MQ(M)
+    padding: 4rem
+    margin-top: 6rem
+  +MQ(XL)
+    margin-top: 0
+
+.mxd-testimonials-card__controls
+  display: flex
+  justify-content: space-between
+  margin-bottom: 2.3rem
+
+.mxd-testimonials-card__quote
+  position: relative
+  width: 10rem
+  svg
+    width: 100%
+    height: auto
+    fill: var(--t-muted)
+  +MQ(M)
+    width: 16rem
+
+.mxd-testimonials-card__btngroup
+
+.mxd-testimonials-card__content
+  margin-bottom: 3.7rem
+
+.mxd-testimonials-card__descr
+  font: normal 700 2.4rem/1.2 var(--_font-default)
+  letter-spacing: -0.1rem
+  color: var(--t-bright)
+  span
+    color: var(--t-medium)
+  +MQ(M)
+    font-size: 3.4rem
+
+.mxd-testimonials-card__author
+  display: flex
+  align-items: center
+  gap: 2.2rem
+
+.mxd-testimonials-card__photo
+  width: 5rem
+  height: 5rem
+  &.round
+    border-radius: 50%
+    overflow: hidden
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+  +MQ(M)
+    width: 6rem
+    height: 6rem
+
+.mxd-testimonials-card__data
+  display: flex
+  flex-direction: column
+  gap: 0.2rem
+
+.mxd-testimonials-card__name
+  font: normal 700 2rem/1.2 var(--_font-default)
+  color: var(--t-bright)
+  +MQ(M)
+    font-size: 2.4rem
+
+.mxd-testimonials-card__position
+  display: inline-block
+  font: normal 600 1.2rem/1.6 var(--_font-accent)
+  text-transform: uppercase
+  letter-spacing: 0.05rem
+  a
+    color: var(--t-bright)
+  +MQ(M)
+    font-size: 1.4rem
+
+.mxd-testimonials-image
+  display: flex
+  margin-top: 3rem
+  &.justify-start
+    justify-content: flex-start
+  &.justify-end
+    justify-content: flex-end
+  +MQ(M)
+    margin-top: 3rem
+  +MQ(XL)
+    margin-top: 0
+    &.has-padding-top
+      padding-top: 6rem
+
+.mxd-testimonials-image__wrap
+  position: relative
+  width: 20rem
+  height: 20rem
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+  +MQ(M)
+    width: 24rem
+    height: 24rem

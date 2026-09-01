@@ -1,0 +1,132 @@
+.mxd-demo-footer
+  position: relative
+  display: flex
+  flex-direction: column
+  width: 100%
+  background-color: var(--base)
+  overflow: hidden
+
+.mxd-demo-footer__item
+
+.mxd-demo-footer__logo
+  margin-bottom: 2.5rem
+  +MQ(XXXL)
+    margin-bottom: 2.3rem
+
+.mxd-demo-footer__slogan
+  margin-bottom: 2.8rem
+  max-width: 580px
+  +MQ(XXXL)
+    margin-bottom: 2.7rem
+
+.mxd-demo-footer__btn
+  display: flex
+  flex-direction: column
+  gap: 1rem
+  margin-bottom: 5.4rem
+  +MQ(S)
+    flex-direction: row
+    flex-wrap: wrap
+    gap: 1.6rem
+
+.mxd-demo-footer__nav
+  position: relative
+  width: 100%
+  +MQ(M)
+    margin-bottom: 4.9rem
+  +MQ(XXL)
+    margin-bottom: 0
+
+.mxd-demo-footer-nav__block
+  display: flex
+  flex-direction: column
+  gap: 2rem
+  margin-bottom: 5rem
+  +MQ(M)
+    &:last-of-type
+      margin-bottom: 0
+
+.mxd-demo-footer__promo
+
+.mxd-footer-promo__list
+  display: flex
+  flex-direction: column
+  gap: 1.6rem
+
+.mxd-footer-promo__item
+  display: flex
+  align-items: center
+  gap: 1.6rem
+  transition: transform var(--_animspeed-medium)
+  .no-touch &:hover
+    transform: translateX(0.4rem)
+  +MQ(M)
+    max-width: 360px
+
+.mxd-footer-promo__icon
+  width: 4.6rem
+  height: 4.6rem
+  img
+    width: 4.6rem
+    height: 4.6rem
+  +MQ(M)
+    width: 5.6rem
+    height: 5.6rem
+    img
+      width: 5.6rem
+      height: 5.6rem
+
+.mxd-demo-footer__foreground,
+.mxd-demo-footer__background
+  +position(absolute, null null 0 0)
+  width: 100%
+  height: auto
+  img
+    display: block
+    width: 100%
+    height: auto
+
+.mxd-demo-footer__foreground
+
+.footer-foreground__img1
+  +position(absolute, null null 0 0)
+  width: 48.125%
+
+.footer-background__img1
+  +position(absolute, null null 0 0)
+  width: 90%
+  +MQ(XL)
+    width: 65.1%
+
+.footer-background__img2
+  +position(absolute, null 0 0 null)
+  width: 31.25%
+
+.mxd-footer__planet01,
+.mxd-footer__planet02
+  position: absolute
+  img
+    display: block
+    width: 100%
+    height: auto
+
+.mxd-footer__planet01
+  top: -30%
+  right: 18cqw
+  width: 11.2cqw
+  max-width: 214px
+  +MQ(XL)
+    top: -33%
+  +MQ(XXXL)
+    right: 246px
+    right: clamp(10px, 14.2cqw, 280px)
+
+.mxd-footer__planet02
+  top: 22%
+  right: 40cqw
+  width: 4.85cqw
+  max-width: 93px
+  +MQ(M)
+    right: 38cqw
+  +MQ(XXXL)
+    right: clamp(10px, 38cqw, 700px)

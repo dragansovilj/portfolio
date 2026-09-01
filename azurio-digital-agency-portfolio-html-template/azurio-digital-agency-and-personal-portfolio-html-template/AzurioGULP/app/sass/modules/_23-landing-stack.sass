@@ -1,0 +1,152 @@
+.mxd-demo-stack
+  position: relative
+  display: flex
+  flex-direction: column
+  gap: 25svh
+  width: 100%
+  overflow: hidden
+  background-color: var(--base)
+  &.opposite
+    background-color: var(--base-opp)
+
+.mxd-demo-stack__card
+  position: relative
+  display: block
+  width: 100%
+  height: 100svh
+  user-select: none
+  background-color: var(--base)
+  border-top: 1px solid var(--st-medium)
+  &:last-of-type
+    border-bottom: 1px solid var(--st-medium)
+
+.demo-card__wrapper
+  position: relative
+  width: 100%
+  height: 100%
+  will-change: transform
+  overflow: hidden
+  padding-top: 9.6rem
+  +MQ(XL)
+    padding-top: 0
+
+.demo-card__image
+  position: relative
+  width: 100%
+  height: 100%
+  z-index: 0
+  img,
+  video
+    position: relative
+    width: 100%
+    height: auto
+    will-change: transform
+  .img-01
+    position: absolute
+    bottom: 0
+    right: 0
+    max-width: 610px
+  .img-02
+    position: absolute
+    bottom: 0
+    left: 0
+    max-width: 610px
+  +MQ(XL)
+    .img-01
+      position: absolute
+      bottom: 0
+      right: 0
+      max-width: 1050px
+    .img-02
+      position: absolute
+      left: 0
+      bottom: 3rem
+      // +center(y)
+      max-width: 800px
+  +MQ(XXXL)
+    .img-02
+      max-width: 960px
+
+.demo-card__content
+  display: flex
+  flex-direction: column
+  z-index: 1
+  +MQ(XL)
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding-top: 6rem
+    padding-bottom: 6rem
+  +MQ(XXXL)
+    padding-top: 10rem
+    padding-bottom: 10rem
+
+.demo-card__info
+
+.demo-card__subtitle
+  margin-bottom: 1rem
+  span
+    display: inline-block
+    font: normal 600 1.6rem/1.6 var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: 0.05rem
+    color: var(--t-bright)
+    white-space: nowrap
+  +MQ(M)
+    margin-bottom: 1.6rem
+    span
+      font-size: 1.8rem
+  +MQ(XL)
+    margin-bottom: 2.4rem
+  +MQ(XXXL)
+    margin-bottom: 1.4rem
+
+.demo-card__title
+  margin-bottom: 2.4rem
+  p
+    font: normal 600 4.4rem/1.1 var(--_font-default)
+    letter-spacing: -0.1rem
+    color: var(--t-bright)
+  .line-mask
+    padding-bottom: 9px
+    margin-bottom: -9px
+  +MQ(M)
+    margin-bottom: 3.2rem
+    p
+      font-size: 5.4rem
+  +MQ(XL)
+    margin-bottom: 4.2rem
+    p
+      font-size: 7.5rem
+      letter-spacing: -0.3rem
+  +MQ(XXXL)
+    margin-bottom: 3.7rem
+    p
+      font-size: 9.5rem
+
+.demo-card__tags
+  display: flex
+  gap: 3rem
+  width: 100%
+  max-width: 385px
+  opacity: 0
+  margin-bottom: 2.1rem
+  .tags-column
+    flex: 1 1 0
+    display: flex
+    flex-direction: column
+    .tag
+      white-space: nowrap
+  +MQ(M)
+    gap: 6rem
+    margin-bottom: 2.7rem
+  +MQ(XL)
+    margin-bottom: 0
+
+.demo-card__descr
+  margin-bottom: 2.9rem
+  +MQ(XL)
+    max-width: 520px
+    margin-bottom: 0
+  +MQ(XXXL)
+    max-width: 530px

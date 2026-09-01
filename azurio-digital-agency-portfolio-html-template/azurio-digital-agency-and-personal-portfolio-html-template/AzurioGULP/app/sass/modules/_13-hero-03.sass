@@ -1,0 +1,173 @@
+.mxd-hero-03
+  position: relative
+  display: flex
+  flex-flow: column
+  justify-content: center
+  align-items: center
+  min-height: 100vh
+  // background-color: #ff0095
+
+.mxd-hero-03__headline
+  position: relative
+  display: flex
+  flex-flow: column
+  justify-content: center
+  align-items: center
+  text-align: center
+  padding: 0 3rem
+  // z-index: 3
+  // background-color: #0029cf
+  // margin-top: -14%
+  // margin-top: -6.4rem
+  h1
+    font-size: 5rem
+  a
+    mix-blend-mode: difference
+    z-index: 2
+  +MQ(M)
+    h1
+      font-size: 7.5rem
+  +MQ(XL)
+    max-width: 1300px
+    padding: 0
+    h1
+      font-size: 9.5rem
+  +MQ(XXXL)
+    h1
+      font-size: 12rem
+
+.mxd-hero-media__small
+  position: relative
+  position: absolute
+  inset: 50% 0% 0% 50%
+  width: 60%
+  aspect-ratio: 3 / 4
+  // aspect-ratio: 16 / 9
+  transform: translate(-50%, -50%)
+  z-index: 1
+  +MQ(M)
+    width: 50%
+    aspect-ratio: 16 / 9
+
+.mxd-hero-media__wrapper
+  position: absolute
+  inset: 0%
+  width: 100%
+  height: 100%
+
+.mxd-hero-media__scaling-media
+  position: absolute
+  top: 0
+  left: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100%
+  isolation: isolate
+  overflow: hidden
+  transform: translate(0)
+  will-change: transform
+
+.scaling-media__video
+  position: absolute
+  width: 100%
+  height: 100%
+  object-fit: cover
+  padding-bottom: 0
+  padding-right: 0
+
+// large media part
+.mxd-hero-media
+  position: relative
+
+.mxd-hero-media__contain
+  position: relative
+  width: 100%
+  max-width: 1920px
+  margin-left: auto
+  margin-right: auto
+  container: threshold-large / inline-size
+
+.mxd-hero-media__large
+  position: relative
+  width: 100%
+  aspect-ratio: 3 / 4
+  +MQ(L)
+    aspect-ratio: 16 / 9
+
+.mxd-hero-media__wrapper
+
+.mxd-hero-media__placeholder
+  background-color: #afafaf
+  width: 100%
+  height: 100%
+  opacity: 0
+
+.mxd-hero-03__control-left
+  +position(absolute, 9.6rem null null 0)
+  width: 100%
+  text-align: center
+  padding: 0 3rem
+  +MQ(XL)
+    position: absolute
+    top: auto
+    left: 6rem
+    +center(y)
+    width: auto
+    padding: 0
+  +MQ(XXXL)
+    left: 10rem
+
+.mxd-hero-03__control-right
+  +position(absolute, 12.6rem null null 0)
+  width: 100%
+  text-align: center
+  padding: 0 3rem
+  +MQ(XL)
+    position: absolute
+    top: auto
+    left: auto
+    right: 6rem
+    +center(y)
+    width: auto
+    padding: 0
+  +MQ(XXXL)
+    right: 10rem
+
+.mxd-hero-03__bottom
+  +position(absolute, null null 0 0)
+  width: 100%
+  padding-bottom: 5.1rem
+  +MQ(XL)
+    +position(absolute, null null 0 0)
+    width: 100%
+    padding-bottom: 3.5rem
+    // background-color: pink
+
+// bottom group components
+.mxd-hero-03__dataline
+  display: flex
+  flex-direction: column
+  gap: 2.2rem
+  padding: 0
+  text-align: center
+  +MQ(M)
+    padding: 0 3rem
+  +MQ(XL)
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    text-align: left
+  +MQ(XXXL)
+    padding: 0 7rem
+
+.mxd-hero-03__socials
+  position: relative
+  .mxd-socials-line
+    justify-content: center
+  +MQ(XL)
+    .mxd-socials-line
+      justify-content: flex-start
+
+.mxd-hero-03__controls

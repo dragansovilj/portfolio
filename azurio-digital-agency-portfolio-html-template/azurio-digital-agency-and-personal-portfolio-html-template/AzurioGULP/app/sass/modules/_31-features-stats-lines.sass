@@ -1,0 +1,71 @@
+.mxd-stats-lines
+  position: relative
+  display: flex
+  flex-direction: column
+  gap: 5.3rem
+  // overflow: hidden
+  &.manifest-title
+    padding-top: 7.4rem
+    // padding-top: 3.8rem
+  +MQ(M)
+    flex-direction: row
+    flex-wrap: wrap
+    row-gap: 5.2rem
+    column-gap: 6rem
+    &.manifest-title
+      padding-top: 9.3rem
+  +MQ(XL)
+    row-gap: 9.3rem
+    &.manifest-title
+      padding-top: 9rem
+
+.mxd-stats-lines__item
+  position: relative
+  overflow: hidden
+  +MQ(M)
+    flex-basis: calc(50% - 3rem)
+
+.mxd-stats-lines__divider
+  position: absolute
+  left: 0
+  width: 100%
+  height: 1px
+  background-color: var(--t-medium)
+  z-index: 1
+  &.divider-top
+    top: 0
+  &.divider-bottom
+    bottom: 0
+
+.mxd-stats-lines__inner
+  position: relative
+  width: 100%
+  will-change: transform
+  z-index: 2
+  // transform: translateY(-60%)
+  +MQ(XL)
+    // transform: translateY(-60%)
+
+.mxd-stats-lines__number
+  padding-top: 1rem
+  p
+    display: inline-block
+    font: normal 600 8rem/1 var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: 0.05rem
+    color: var(--t-bright)
+  +MQ(XL)
+    padding-top: 3rem
+
+.mxd-stats-lines__caption
+  padding-left: 0.4rem
+  padding-top: 0.5rem
+  p
+    display: inline-block
+    font: normal 500 1.4rem/1.4 var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: 0.05rem
+    color: var(--t-medium)
+    max-width: 200px
+  +MQ(XL)
+    padding-top: 2.5rem

@@ -1,0 +1,127 @@
+.mxd-hero-06
+  position: relative
+  width: 100%
+  height: 100svh
+  min-height: 667px
+  // background-color: blue
+
+.mxd-hero-06__media
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  video[poster]
+    object-fit: cover
+
+.mxd-hero-06__cover
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  background-color: var(--nl-black-06)
+
+.mxd-hero-06__video
+  position: absolute
+  inset: 0
+  width: 100%
+  height: 100%
+  object-fit: cover
+  object-position: center
+  z-index: -1
+  background-color: #000
+
+.mxd-hero-06__wrap
+  position: relative
+  width: 100%
+  max-width: 1920px
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  margin: 0 auto
+  padding: 6.3rem 3rem 0 3rem
+  +MQ(M)
+    // display: flex
+    // flex-direction: column
+    // justify-content: space-between
+    // padding: 0 6rem
+    padding: 7rem 6rem 0 6rem
+  +MQ(XL)
+    justify-content: space-between
+  +MQ(XXXL)
+    padding: 0 10rem
+    padding: 7rem 10rem 0 10rem
+
+.mxd-hero-06__top
+  position: absolute
+  left: 0
+  +center(y)
+  mix-blend-mode: difference
+  padding: 0 3rem
+  margin-top: -6rem
+  +MQ(M)
+    padding: 0 6rem
+  +MQ(XL)
+    position: static
+    left: auto
+    top: 0
+    bottom: auto
+    transform: translateY(0)
+    display: flex
+    justify-content: space-between
+    padding: 0
+    margin-top: 0
+    padding-top: 8.1rem
+
+.mxd-hero-06__tags
+  display: flex
+  gap: 6rem
+  font-weight: 400
+  color: var(--nl-white-06)
+  margin-bottom: 0.5rem
+  span
+    font-weight: 400
+  +MQ(XL)
+    display: flex
+    flex-direction: column
+    gap: 2.3rem
+    padding-top: 3.9rem
+    margin-bottom: 0
+  +MQ(XXXL)
+    padding-top: 3.9rem
+
+.mxd-hero-06__headline
+  position: relative
+  text-align: left
+  // mix-blend-mode: difference
+  h1
+    font-size: 5rem
+    color: var(--nl-white)
+    // mix-blend-mode: difference
+  +MQ(M)
+    h1
+      font-size: 8.5rem
+  +MQ(XL)
+    text-align: right
+    h1
+      font-size: 12rem
+
+.mxd-hero-06__bottom
+  padding-bottom: 5rem
+  +MQ(XL)
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    padding-bottom: 3.5rem
+
+.mxd-hero-06__caption
+  max-width: 340px
+  margin-bottom: 2.3rem
+  p
+    line-height: 1.2
+  +MQ(XL)
+    max-width: 560px
+    margin-bottom: 0
+    p
+      font-size: 3rem
+
+
+

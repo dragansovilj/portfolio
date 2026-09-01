@@ -1,0 +1,101 @@
+.mxd-accordion
+  position: relative
+  // +MQ(XL)
+  //   @media (hover) and (prefers-reduced-motion: no-preference)
+  //     & > .mxd-accordion__item
+  //       transition: opacity .3s ease
+  //     &:hover > .mxd-accordion__item:not(:hover)
+  //       opacity: .2
+
+.mxd-accordion__item
+  position: relative
+  cursor: pointer
+  margin-top: -1px
+  &:first-of-type
+    margin-top: 0
+
+.mxd-accordion__divider
+  position: relative
+  width: 100%
+  height: 1px
+  background-color: var(--st-medium)
+
+.mxd-accordion__content
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 0 0 3rem 0
+  overflow: hidden
+  display: none
+  +MQ(M)
+    padding: 0 0 5.4rem 0
+
+.mxd-accordion__title
+  position: relative
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 2.8rem 0 3rem 0
+  transition: padding var(--_animspeed-medium) var(--_animbezier)
+  p
+    font: normal 700 2rem/1.2 var(--_font-default)
+    letter-spacing: -0.04rem
+    color: var(--t-bright)
+    a
+      color: var(--t-bright)
+    &.opposite
+      color: var(--t-opp-bright)
+      a
+        color: var(--t-opp-bright)
+  +MQ(M)
+    padding: 5rem 0 5.4rem 0
+    p
+      font-size: 2.4rem
+
+.accordion-opened
+  padding: 2.8rem 0 2.2rem 0
+  +MQ(M)
+    padding: 5rem 0 4.5rem 0
+
+.mxd-accordion__arrow
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 2.4rem
+  height: 2.4rem
+  // font-size: 1.8rem
+  // line-height: 1.2
+  // color: var(--t-bright)
+  // transform: rotate(0deg)
+  // will-change: transform
+  // transition: transform var(--_animspeed-medium) var(--_animbezier)
+  // background-color: red
+  svg
+    display: inline-flex
+    width: 1.8rem
+    height: 1.8rem
+    fill: var(--t-bright)
+  i
+    display: block
+    width: 1.8rem
+    height: 1.8rem
+  +MQ(XL)
+    // font-size: 2.4rem
+
+.mxd-accordion__close
+  position: absolute
+  +center
+  opacity: 0
+
+.mxd-accordion__plus
+  position: relative
+  opacity: 1
+
+.accordion-rotate
+  .mxd-accordion__close
+    opacity: 1
+  .mxd-accordion__plus
+    opacity: 0
+  // transform: rotate(135deg)

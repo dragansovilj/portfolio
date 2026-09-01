@@ -1,0 +1,161 @@
+.mxd-header
+  position: absolute
+  top: 0
+  left: 3rem
+  display: flex
+  justify-content: space-between
+  width: 100%
+  width: calc( 100% - 11.5rem )
+  padding-top: 3rem
+  // background-color: red
+  z-index: 1
+  transform: scaleY(1)
+  opacity: 1
+  transition: all var(--_animspeed-medium) var(--_animbezier)
+  &.is-hidden
+    transform: scaleY(1.3)
+    opacity: 0
+  +MQ(M)
+    left: 6rem
+    width: calc( 100% - 17.5rem )
+  +MQ(XXXL)
+    left: 10rem
+    width: calc( 100% - 25.5rem )
+
+.mxd-header-permanent
+  .mxd-logo,
+  .mxd-logo__text,
+  .mxd-header__link,
+  .mxd-color-switcher
+    color: var(--nl-white)
+
+.mxd-header__logo
+  position: relative
+
+.mxd-logo
+  display: flex
+  align-items: center
+  gap: 1.2rem
+  color: var(--t-bright)
+
+.mxd-logo__image
+  display: inline-flex
+  width: auto
+  height: 3.6rem
+  fill: currentColor
+  +MQ(M)
+    height: 4rem
+
+.mxd-logo__text
+  display: flex
+  flex-direction: column
+  gap: 0.4rem
+  padding-top: 0.3rem
+  font: normal 700 1.8rem/0.8 var(--_font-accent)
+  text-transform: uppercase
+  color: var(--t-bright)
+  span
+    display: inline-flex
+  +MQ(M)
+    gap: 0.5rem
+    padding-top: 0.3rem
+    font-size: 2rem
+    font-weight: 600
+
+.mxd-header__controls
+  position: relative
+  display: flex
+  flex-direction: row
+  gap: 0.5rem
+  // background-color: blue
+  padding-right: 1.4rem
+  color: var(--t-bright)
+  +MQ(M)
+    padding-right: 3.5rem
+    gap: 3.5rem
+
+.mxd-header__link
+  // background-color: green
+  width: 3.6rem
+  height: 3.6rem
+  color: var(--t-bright)
+  span,
+  svg,
+  i
+    display: inline-flex
+    position: relative
+  i
+    font-size: 2rem
+    overflow: hidden
+  svg
+    width: 1.9rem
+    height: 1.9rem
+    fill: currentColor
+  .btn-caption
+    display: none
+  +MQ(M)
+    width: auto
+    height: 4rem
+    line-height: 4rem
+    svg
+      width: 1.6rem
+      height: 1.6rem
+    .btn-caption
+      display: inline-flex
+      font: normal 700 1.8rem var(--_font-accent)
+      text-transform: uppercase
+      letter-spacing: -0.05rem
+      white-space: nowrap
+
+.mxd-color-switcher
+  // background-color: pink
+  gap: 0
+  width: 3.6rem
+  height: 3.6rem
+  color: var(--t-bright)
+  &.permanent
+    color: var(--nl-white)
+  span,
+  svg,
+  i
+    display: inline-flex
+    position: relative
+  i
+    font-size: 2rem
+    overflow: hidden
+  svg
+    width: 2.1rem
+    height: 2.1rem
+    fill: currentColor
+    // margin-bottom: 0.3rem
+  .switcher-text
+    display: none
+  +MQ(M)
+    width: auto
+    height: 4rem
+    line-height: 4rem
+    svg
+      width: 1.9rem
+      height: 1.9rem
+    .switcher-icon
+      transition: transform var(--_animspeed-medium) var(--_animbezier)
+      &.night
+        svg
+          width: 1.7rem
+          height: 1.7rem
+    .switcher-text
+      display: inline-flex
+      font: normal 700 1.8rem var(--_font-accent)
+      text-transform: uppercase
+      letter-spacing: -0.05rem
+      white-space: nowrap
+      transition: color var(--_animspeed-medium)
+      &::after
+        content: "/"
+        margin: 0 1rem
+    .no-touch &:hover
+      color: var(--t-medium)
+      &.permanent
+        color: rgba(var(--nl-white-rgb), 0.7)
+    //   .switcher-icon
+    //     transform: scale(1.2)

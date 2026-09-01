@@ -1,0 +1,133 @@
+.mxd-team-list
+  +MQ(XL)
+    @media (hover) and (prefers-reduced-motion: no-preference)
+      & > .mxd-team-list__item
+        .mxd-team-list__inner
+          transition: opacity var(--_animspeed-medium), scale var(--_animspeed-medium) var(--_animbezier)
+      &:hover > .mxd-team-list__item:not(:hover)
+        .mxd-team-list__inner
+          opacity: .3
+          scale: 0.984
+
+.mxd-team-list__item
+  position: relative
+  margin-bottom: 5.5rem
+  &:last-of-type
+    margin-bottom: 0
+  +MQ(M)
+    height: 10rem
+  +MQ(XL)
+    height: 14rem
+    margin-bottom: 0
+    .no-touch &:hover
+      .mxd-team-list__name
+        transform: translateX(0)
+      .mxd-team-list__photo
+        display: block
+        transform: scale(1)
+
+.mxd-team-list__inner
+
+.mxd-team-list__position
+  display: flex
+  flex-direction: column
+  p
+    font: normal 600 1.2rem/1.6 var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: 0.05rem
+    color: var(--t-medium)
+    a
+      color: var(--t-bright)
+  +MQ(M)
+    height: 10rem
+    justify-content: center
+  +MQ(L)
+    p
+      font-size: 1.4rem
+  +MQ(XL)
+    height: 100%
+    height: 14rem
+    justify-content: center
+
+.mxd-team-list__data
+  display: flex
+  flex-direction: column
+  +MQ(M)
+    flex-direction: row-reverse
+    align-items: center
+    justify-content: center
+    gap: 2.2rem
+    height: 10rem
+  +MQ(XL) 
+    height: 14rem
+
+.mxd-team-list__photo
+  width: 14rem
+  height: 14rem
+  border-radius: 100%
+  overflow: hidden
+  margin-bottom: 1.5rem
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+  +MQ(M)
+    width: 10rem
+    height: 10rem
+    margin-bottom: 0
+  +MQ(XL)
+    width: 14rem
+    height: 14rem
+    transform: scale(0)
+    transition: opacity var(--_animspeed-medium), transform var(--_animspeed-medium) var(--_animbezier)
+
+.mxd-team-list__name
+  margin-bottom: 1.5rem
+  p
+    font: normal 700 2.6rem/1.2 var(--_font-default)
+    letter-spacing: -0.04rem
+    color: var(--t-bright)
+  +MQ(M)
+    margin-bottom: 0
+  +MQ(L)
+    p
+      font-size: 3.4rem
+      letter-spacing: -0.1rem
+  +MQ(XL)
+    transform: translateX(8.1rem)
+    transition: opacity var(--_animspeed-medium), transform var(--_animspeed-medium) var(--_animbezier)
+    p
+      font-size: 5.4rem
+
+.mxd-team-list__socials
+  display: flex
+  flex-direction: column
+  ul
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    li
+      display: inline-flex
+      a
+        font: normal 600 1.2rem/1.6 var(--_font-accent)
+        text-transform: uppercase
+        letter-spacing: 0.05rem
+        color: var(--t-bright)
+  +MQ(M)
+    height: 100%
+    justify-content: center
+    ul
+      align-items: flex-end
+  +MQ(L)
+    ul
+      li
+        a
+          font-size: 1.4rem
+  +MQ(XL)
+    ul
+      li
+        a
+          color: var(--t-medium)
+          .no-touch &:hover
+            color: var(--t-bright)

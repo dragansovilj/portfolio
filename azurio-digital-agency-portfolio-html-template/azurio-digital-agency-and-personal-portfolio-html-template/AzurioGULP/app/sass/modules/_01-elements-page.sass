@@ -1,0 +1,1092 @@
+// background colors
+.bg-color-base
+  background-color: var(--base)
+.bg-color-opposite
+  background-color: var(--base-opp)
+.bg-color-accent
+  background-color: var(--accent)
+
+.mxd-app
+  position: relative
+  width: 100%
+
+.mxd-page-content
+  position: relative
+  width: 100%
+  &.inner-page-content
+    padding-top: 6.3rem
+  +MQ(M)
+    &.inner-page-content
+      padding-top: 7rem
+
+.mxd-section
+  position: relative
+  width: 100%
+  &.padding-top-default
+    padding-top: 14rem
+  &.padding-top-title
+    padding-top: 12.3rem
+  &.padding-top-title-mobile
+    padding-top: 12.3rem
+  &.padding-top-number
+    padding-top: 13.5rem
+  &.padding-top-number-mobile
+    padding-top: 13.5rem
+  &.padding-top-manifest-m
+    padding-top: 12.9rem
+  &.padding-top-subtitle
+    padding-top: 13.4rem
+  &.padding-top-subtitle-mobile
+    padding-top: 13.4rem
+  &.padding-bottom-default
+    padding-bottom: 14rem
+  &.padding-bottom-t-medium
+    padding-bottom: 13.4rem
+  &.padding-bottom-preview
+    padding-bottom: 13.1rem
+  &.padding-bottom-projects
+    padding-bottom: 6rem
+  &.padding-bottom-tag-m
+    padding-bottom: 13.2rem
+  &.padding-bottom-tag-m-title
+    padding-bottom: 12.8rem
+  &.padding-bottom-tag-m-subtitle
+    padding-bottom: 12.7rem
+  &.padding-bottom-tags-mobile
+    padding-bottom: 13.4rem
+  &.padding-bottom-grid-l-to-title
+    padding-bottom: 10.7rem
+  +MQ(M)
+    &.padding-top-default
+      padding-top: 17rem
+    &.padding-top-title
+      padding-top: 14.9rem
+    &.padding-top-title-mobile
+      padding-top: 14.9rem
+    &.padding-top-number
+      padding-top: 16.4rem
+    &.padding-top-number-mobile
+      padding-top: 16.4rem
+    &.padding-top-manifest-m
+      padding-top: 15.2rem
+    &.padding-top-subtitle
+      padding-top: 16.4rem
+    &.padding-top-subtitle-mobile
+      padding-top: 16.4rem
+    &.padding-bottom-default
+      padding-bottom: 17rem
+    &.padding-bottom-t-medium
+      padding-bottom: 16.4rem
+    &.padding-bottom-preview
+      padding-bottom: 16.3rem
+    &.padding-bottom-projects
+      padding-bottom: 8.9rem
+    &.padding-bottom-tag-m
+      padding-bottom: 16.2rem
+    &.padding-bottom-tag-m-title
+      padding-bottom: 18.6rem
+    &.padding-bottom-tag-m-subtitle
+      padding-bottom: 15.6rem
+    &.padding-bottom-tags-mobile
+      padding-bottom: 17rem
+    &.padding-bottom-grid-l-to-title
+      padding-bottom: 10.5rem
+  +MQ(XL)
+    &.padding-top-default
+      padding-top: 18rem
+    &.padding-top-title
+      padding-top: 16.5rem
+    &.padding-top-title-mobile
+      padding-top: 18rem
+    &.padding-top-number
+      padding-top: 16.5rem
+    &.padding-top-number-mobile
+      padding-top: 18rem
+    &.padding-top-subtitle
+      padding-top: 17.4rem
+    &.padding-top-subtitle-mobile
+      padding-top: 16.5rem
+    &.padding-top-manifest-m
+      padding-top: 15.9rem
+    &.padding-bottom-default
+      padding-bottom: 18rem
+    &.padding-bottom-t-medium
+      padding-bottom: 17.4rem
+    &.padding-bottom-preview
+      padding-bottom: 17.1rem
+    &.padding-bottom-projects
+      padding-bottom: 8rem
+    &.padding-bottom-tag-m
+      padding-bottom: 17.3rem
+    &.padding-bottom-tag-m-desktop
+      padding-bottom: 17.2rem
+    &.padding-bottom-tag-m-title
+      padding-bottom: 16.8rem
+    &.padding-bottom-tag-m-subtitle
+      padding-bottom: 15.8rem
+    &.padding-bottom-tags-mobile
+      padding-bottom: 18rem
+    &.padding-bottom-grid-l-to-title
+      padding-bottom: 10.5rem
+    &.padding-marquee-tags
+      padding-bottom: 16.9rem
+  +MQ(XXXL)
+    &.padding-top-default
+      padding-top: 20rem
+    &.padding-top-title
+      padding-top: 18rem
+    &.padding-top-title-mobile
+      padding-top: 20rem
+    &.padding-top-number
+      padding-top: 18.1rem
+    &.padding-top-number-mobile
+      padding-top: 20rem
+    &.padding-top-subtitle
+      padding-top: 19.4rem
+    &.padding-top-subtitle-mobile
+      padding-top: 18rem
+    &.padding-top-manifest-m
+      padding-top: 17.2rem
+    &.padding-bottom-default
+      padding-bottom: 20rem
+    &.padding-bottom-t-medium
+      padding-bottom: 19.4rem
+    &.padding-bottom-preview
+      padding-bottom: 19.2rem
+    &.padding-bottom-projects
+      padding-bottom: 10rem
+    &.padding-bottom-tag-m
+      padding-bottom: 19.3rem
+    &.padding-bottom-tag-m-desktop
+      padding-bottom: 19.2rem
+    &.padding-bottom-tag-m-subtitle
+      padding-bottom: 17.4rem
+    &.padding-bottom-tags-mobile
+      padding-bottom: 20rem
+    &.padding-bottom-grid-l-to-title
+      padding-bottom: 12rem
+
+.mxd-section-fullscreen
+  width: 100%
+  height: 100vh
+  padding-top: 6.3rem
+  overflow: hidden
+  +MQ(M)
+    padding-top: 7rem
+
+.mxd-background
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  max-height: 100vh
+
+.mxd-background__video
+  position: relative
+  width: 100%
+  height: 100%
+  video
+    display: block
+    +position(absolute, 0 null null 0)
+    width: 100%
+    height: 100%
+    background-color: transparent
+    background-position: center center
+    background-size: contain
+    object-fit: cover
+
+.mxd-background__cover
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  &.opposite
+    background: linear-gradient(to bottom, rgba(var(--base-opp-rgb),0.6) 0%,rgba(var(--base-opp-rgb),1) 100%)
+  &.accent
+    background: linear-gradient(to bottom, rgba(0,43,186,0.6) 0%,rgba(0,43,186,1) 100%)
+  &.base
+
+.mxd-container
+  position: relative
+  width: 100%
+  max-width: 1920px
+  padding: 0 3rem
+  margin: 0 auto
+  &.fullwidth-container
+    max-width: none
+    padding: 0
+  &.fullscreen-container
+    height: 100%
+  &.no-padding-container
+    padding: 0
+    overflow: hidden
+  &.grid-s-container
+    padding: 0 1.5rem
+  &.grid-l-container
+    padding: 0
+  &.no-padding-right-container
+    padding: 0
+  +MQ(M)
+    padding: 0 6rem
+    &.grid-s-container
+      padding: 0 4.5rem
+    &.grid-l-container
+      padding: 0 3rem
+    &.no-padding-right-container
+      padding: 0 3rem
+  +MQ(XL)
+    &.no-padding-right-container
+      padding: 0 0 0 3rem
+  +MQ(XXXL)
+    padding: 0 10rem
+    &.grid-s-container
+      padding: 0 8.5rem
+    &.grid-l-container
+      padding: 0 7rem
+    &.no-padding-right-container
+      padding: 0 0 0 7rem
+
+.mxd-grid-item
+  padding: 0 3rem
+  &.padding-left-desktop
+    padding: 0
+  +MQ(XL)
+    &.padding-left-desktop
+      padding: 0 0 0 4rem
+
+.mxd-grid-item-s
+  padding: 0 1.5rem
+
+.mxd-grid-padding
+  padding: 0 3rem
+
+// titles
+.mxd-section-title
+  position: relative
+  &.pre-grid
+    margin-bottom: 7.3rem
+  &.pre-grid-desktop
+    margin-bottom: 0
+  &.pre-grid-xl-mobile
+    margin-bottom: 7.2rem
+  &.pre-subtitle-s
+    margin-bottom: 6.6rem
+    &.controls-bottom-mobile
+      margin-bottom: 6.6rem
+  +MQ(M)
+    &.pre-grid
+      margin-bottom: 9rem
+    &.pre-grid-xl-mobile
+      margin-bottom: 9rem
+    &.pre-subtitle-s
+      margin-bottom: 8.4rem
+      &.controls-bottom-mobile
+        margin-bottom: 8.6rem
+  +MQ(XL)
+    &.pre-grid
+      margin-bottom: 8.6rem
+    &.pre-grid-desktop
+      margin-bottom: 8.6rem
+    &.pre-grid-xl-mobile
+      margin-bottom: 0
+    &.pre-subtitle-s
+      margin-bottom: 8rem
+      &.controls-bottom-mobile
+        margin-bottom: 8rem
+  +MQ(XXXL)
+    &.pre-grid
+      margin-bottom: 8.4rem
+    &.pre-subtitle-s
+      margin-bottom: 7.7rem
+      &.controls-bottom-mobile
+        margin-bottom: 8rem
+
+.mxd-section-title__title
+  &.centered
+    text-align: center
+  &.reverse-desktop
+    display: flex
+    flex-direction: column
+  &.pre-caption
+    margin-bottom: 2.8rem
+  &.pre-caption-extra
+    margin-bottom: 2.8rem
+  &.pre-controls-mobile
+    margin-bottom: 3.2rem
+  &.pre-grid-split-xl
+    margin-bottom: 7.2rem
+  +MQ(M)
+    &.pre-caption
+      margin-bottom: 3.1rem
+    &.pre-caption-extra
+      margin-bottom: 2.7rem
+    &.pre-grid-split-xl
+      margin-bottom: 9.1rem
+  +MQ(XL)
+    &.justify-between-desktop
+      height: 100%
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: flex-start
+    &.reverse-desktop
+      flex-direction: column-reverse
+    &.pre-caption,
+    &.pre-caption-extra,
+    &.pre-controls-mobile,
+    &.pre-grid-split-xl
+      margin-bottom: 0
+
+.mxd-section-title__subtitle
+  margin-bottom: 1.6rem
+  +MQ(M)
+    margin-bottom: 1.9rem
+  +MQ(XL)
+    margin-bottom: 2.9rem
+
+.mxd-section-title__manifest
+  &.title-manifest-s
+    padding-top: 2.2rem
+  &.no-padding-mobile
+    padding-top: 0
+  +MQ(M)
+    &.title-manifest-s
+      padding-top: 3.2rem
+    &.no-padding-mobile
+      padding-top: 0
+  +MQ(XL)
+    &.title-manifest-s
+      padding-top: 0.4rem
+  +MQ(XXXL)
+    &.title-manifest-s
+      padding-top: 0.8rem
+
+.mxd-section-title__data
+  position: relative
+  display: flex
+  flex-direction: column
+  &.top-controls
+    flex-direction: column-reverse
+  +MQ(XL)
+    height: auto
+    min-height: 100%
+    justify-content: space-between
+    padding-bottom: 0.6rem
+    &.top-controls
+      flex-direction: column
+      padding-top: 1rem
+    &.top-caption
+      padding-top: 1rem
+    &.top-number
+      padding-top: 0.8rem
+    &.no-padding-bottom
+      padding-bottom: 0
+  +MQ(XXXL)
+    padding-bottom: 0.9rem
+    &.top-controls
+      padding-top: 1.5rem
+    &.top-number
+      padding-top: 1rem
+    &.no-padding-bottom
+      padding-bottom: 0
+
+.mxd-section-title__controls
+  display: flex
+  &.justify-start
+    justify-content: flex-start
+  &.justify-end
+    justify-content: flex-start
+  &.pre-title
+    margin-bottom: 2rem
+  +MQ(M)
+    &.pre-title
+      margin-bottom: 2rem
+  +MQ(XL)
+    &.justify-start
+      justify-content: flex-start
+    &.justify-end
+      justify-content: flex-end
+    &.pre-title
+      margin-bottom: 0
+
+.mxd-section-title__caption
+  max-width: 530px
+  &.fullwidth
+    max-width: none
+  &.pre-controls
+    margin-bottom: 3.2rem
+  +MQ(M)
+    &.pre-controls
+      margin-bottom: 3.6rem
+  +MQ(XL)
+    max-width: 300px
+    &.no-max-width
+      max-width: none
+    &.pre-controls
+      margin-bottom: 0
+  +MQ(XXL)
+    max-width: 460px
+    &.no-max-width
+      max-width: none
+
+
+.mxd-section-title__number
+  margin-bottom: 2.1rem
+  &.pre-manifest
+    margin-bottom: 2.5rem
+  +MQ(M)
+    margin-bottom: 2.1rem
+    &.pre-manifest
+      margin-bottom: 3rem
+  +MQ(XL)
+    margin-bottom: 0
+
+.mxd-section-title__image
+  position: relative
+  width: 100%
+  display: flex
+  &.centered
+    justify-content: center
+
+.mxd-section-title__image-link
+  display: flex
+  margin-top: 2.4rem
+  svg,
+  img
+    width: 120px
+    height: auto
+  +MQ(M)
+    margin-top: 1.9rem
+    svg,
+    img
+      width: 144px
+  +MQ(XL)
+    margin-top: 2.9rem
+
+// section title paragraph
+.mxd-section-title__paragraph
+  margin-bottom: 6.3rem
+  +MQ(M)
+    margin-bottom: 8.3rem
+  +MQ(XL)
+    padding-top: 1.8rem
+    p
+      max-width: 580px
+  +MQ(XXXL)
+    margin-bottom: 7.9rem
+
+.mxd-aside-descr
+  padding-top: 2.7rem
+  +MQ(M)
+    padding-top: 3rem
+  +MQ(XL)
+    padding-top: 0
+
+// subtitles
+.mxd-section-subtitle
+  position: relative
+  &.padding-default
+    padding: 4.5rem 0 4.1rem 0
+    &.pre-grid-mobile
+      padding-bottom: 5.3rem
+  &.padding-info-top
+    padding: 2.4rem 0 4.1rem 0
+  +MQ(M)
+    &.padding-default
+      padding: 8.7rem 0 8.3rem 0
+      &.pre-grid-mobile
+        padding: 8.8rem 0 9.5rem 0
+    &.padding-info-top
+      padding: 5.1rem 0 8.2rem 0
+  +MQ(XL)
+    &.padding-default
+      padding: 9.4rem 0
+      &.pre-grid-mobile
+        padding: 9.4rem 0
+    &.padding-info-top
+      padding: 8.4rem 0 9.4rem 0
+
+// titles info
+.mxd-section-info
+  position: relative
+  +MQ(XL)
+    padding-top: 7.2rem
+  +MQ(XXXL)
+    padding-top: 6.5rem
+
+.mxd-section-info__tags
+  display: flex
+  flex-direction: column
+  padding-top: 1.1rem
+  +MQ(XL)
+    padding-top: 0.8rem
+
+.mxd-section-info__descr
+  margin-bottom: 2.1rem
+  +MQ(M)
+    margin-bottom: 3.4rem
+  +MQ(XL)
+    margin-bottom: 0
+
+.mxd-section-manifest
+  position: relative
+  &.pre-list
+    padding-bottom: 7.4rem
+    margin-bottom: 0
+  &.pre-points
+    margin-bottom: 7.3rem
+  &.pre-grid-xl
+    margin-bottom: 13.4rem
+  +MQ(M)
+    &.pre-list
+      padding-bottom: 16rem
+      margin-bottom: 0
+    &.pre-points
+      margin-bottom: 9rem
+    &.pre-grid-xl
+      margin-bottom: 16rem
+  +MQ(XL)
+    &.pre-list
+      padding-bottom: 17rem
+      margin-bottom: 0
+    &.pre-points
+      margin-bottom: 8.4rem
+    &.pre-grid-xl
+      margin-bottom: 16.9rem
+  +MQ(XXL)
+    &.pre-points
+      margin-bottom: 8.9rem
+  +MQ(XXXL)
+    &.pre-list
+      padding-bottom: 18.4rem
+    &.pre-points
+      margin-bottom: 8.5rem
+    &.pre-grid-xl
+      margin-bottom: 18.5rem
+
+.mxd-section-manifest__wrap
+  position: relative
+  display: flex
+  flex-direction: column
+  &.wrap-text-s
+    gap: 2.6rem
+  &.wrap-text-m
+    gap: 2.6rem
+  +MQ(M)
+    &.wrap-text-s
+      gap: 2.2rem
+    &.wrap-text-m
+      gap: 2.4rem
+  +MQ(XL)
+    &.wrap-text-s
+      gap: 3rem
+    &.wrap-text-m
+      gap: 2.7rem
+  +MQ(XXXL)
+    &.wrap-text-s
+      gap: 3.3rem
+    &.wrap-text-m
+      gap: 2.9rem
+
+.mxd-section-manifest__controls
+
+.mxd-section-manifest__text
+  +MQ(XL)
+    &.manifest-text-s
+      max-width: 1100px
+    &.manifest-text-m
+      max-width: 1400px
+
+// socials list
+.mxd-socials-list
+  ul
+  display: flex
+  flex-direction: column
+  // gap: 1rem
+  li
+    display: inline-flex
+    a
+      display: inline-flex
+      align-items: center
+      gap: 1.2rem
+      font: normal 700 2.4rem/1.2 var(--_font-default)
+      letter-spacing: -0.05rem
+      color: var(--t-bright)
+      transition: color var(--_animspeed-fast) ease-in-out
+      span,
+      svg,
+      i
+        display: inline-flex
+        position: relative
+      i
+        font-size: 1.8rem
+        overflow: hidden
+      svg
+        width: 1.5rem
+        height: 1.5rem
+        fill: var(--t-bright)
+  +MQ(XL)
+    padding-top: 1.5rem
+    ul
+      li
+        a
+          .no-touch &:hover
+            color: var(--t-medium)
+    @media (hover) and (prefers-reduced-motion: no-preference)
+      & > .socials-list__item
+        transition: opacity var(--_animspeed-medium) var(--_animbezier)
+      &:hover > .socials-list__item:not(:hover)
+        opacity: .3
+        .socials-list__info,
+        .socials-list__arrow
+          scale: 0.964
+          transform-origin: center
+          transition: opacity var(--_animspeed-medium), scale var(--_animspeed-medium) var(--_animbezier)
+  +MQ(XXXL)
+    padding-top: 1.9rem
+
+// contact data list
+.mxd-section-title__datalist
+
+.datalist__item
+  margin-bottom: 2.9rem
+  &:last-of-type
+    margin-bottom: 0
+  ul
+    display: flex
+    flex-direction: column
+    margin-bottom: 1.6rem
+    &:last-of-type
+      margin-bottom: 0
+    li
+      a
+        display: inline-flex
+        color: var(--t-medium)
+        .no-touch &:hover
+          color: var(--t-bright)
+  +MQ(M)
+    margin-bottom: 0
+    ul
+      margin-bottom: 2.1rem
+      &:last-of-type
+        margin-bottom: 0
+  +MQ(XXXL)
+    ul
+      margin-bottom: 2.2rem
+      &:last-of-type
+        margin-bottom: 0
+
+.datalist__title
+  margin-bottom: 1.5rem
+  +MQ(M)
+    margin-bottom: 2rem
+  +MQ(XXXL)
+    margin-bottom: 2.1rem
+
+// slide animation one line
+.anim-uni-slide-down,
+.anim-uni-slide-up
+  display: inline-flex
+  overflow: hidden
+  span
+    display: inline-flex
+
+// blur container setup
+.blur-container
+  position: fixed
+  bottom: 0
+  left: calc(50.00000000000002% - 100% / 2)
+  flex: none
+  width: 100%
+  height: 240px
+  pointer-events: none
+  z-index: 10
+  display: none
+  +MQ(XL)
+    height: 300px
+
+.blur-layer
+  position: absolute
+  inset: 0
+  border-radius: 0
+  pointer-events: none
+
+.blur-1
+  z-index: 1
+  backdrop-filter: blur(0.078125px)
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 37.5%)
+
+.blur-2
+  z-index: 2
+  backdrop-filter: blur(0.15625px)
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 0) 50%)
+
+.blur-3
+  z-index: 3
+  backdrop-filter: blur(0.3125px)
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 62.5%)
+
+.blur-4
+  z-index: 4
+  backdrop-filter: blur(0.625px)
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 0) 75%)
+
+.blur-5
+  z-index: 5
+  backdrop-filter: blur(1.25px)
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 87.5%)
+
+.blur-6
+  z-index: 6
+  backdrop-filter: blur(2.5px)
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 0) 100%)
+
+.blur-7
+  z-index: 7
+  backdrop-filter: blur(5px)
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 1) 100%)
+
+.blur-8
+  z-index: 8
+  backdrop-filter: blur(10px)
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%)
+
+.mxd-block
+  position: relative
+  width: 100%
+
+.mxd-block-fullscreen
+  width: 100%
+  height: 100%
+  &.centered-content
+    display: flex
+    align-items: center
+    justify-content: center
+
+.pinned-section
+  display: block
+  position: relative
+
+.pinned-section__inner
+  position: relative
+  opacity: 1
+
+.pinned-section__trigger
+  position: relative
+  width: 100%
+  height: 1px
+  background-color: transparent
+
+.mxd-img-anim
+  position: relative
+  overflow: hidden
+  img
+    display: block
+    width: 100%
+    height: auto
+    object-fit: cover
+  .mxd-img-anim__absolute
+    height: 100%
+
+.mxd-img-anim__main
+  position: relative
+  opacity: 1
+
+.mxd-img-anim__absolute
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  &.centered-y
+    left: auto
+    +center(y)
+
+.mxd-object-link
+  position: relative
+
+.mxd-object-link__wrap
+  display: flex
+  justify-content: space-between
+
+.mxd-object-link__item
+  display: flex
+  align-items: flex-start
+  justify-content: flex-end
+  padding: 0 3rem
+  align-items: flex-end
+  &.justify-start
+    justify-content: flex-start
+  &.justify-end
+    justify-content: flex-end
+
+.mxd-object-link__object
+  position: relative
+  display: flex
+  margin-bottom: 2.1rem
+  svg,
+  img
+    width: 16rem
+    height: 16rem
+  svg
+    fill: var(--t-muted-extra)
+  img
+    object-fit: contain
+  +MQ(M)
+    margin-bottom: 0
+    svg,
+    img
+      width: 26rem
+      height: 26rem
+  +MQ(XXXL)
+    svg,
+    img
+      width: 32rem
+      height: 32rem
+
+.mxd-object-link__content
+  display: flex
+  flex-direction: column
+  gap: 2rem
+  justify-content: flex-start
+  align-items: flex-start
+  width: 100%
+  +MQ(M)
+    width: 100%
+    gap: 1.4rem
+
+.mxd-object-link__btnholder
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  width: 100%
+  +MQ(M)
+    justify-content: flex-start
+
+.mxd-object-link__media
+  position: relative
+  display: flex
+  width: 100%
+  height: 26rem
+  img
+    width: 100%
+  +MQ(XXXL)
+    height: 32rem
+
+// fullwidth text
+.fullwidth-text
+  position: relative
+  width: 100%
+  &.bottom-text
+    bottom: -0.4rem
+  &.bottom-text-small
+    bottom: -0.2rem
+  +MQ(M)
+    &.bottom-text
+      bottom: -0.8rem
+    &.bottom-text-small
+      bottom: -0.3rem
+  +MQ(XL)
+    &.bottom-text
+      bottom: -1rem
+    &.bottom-text-small
+      bottom: -0.4rem
+
+.headline-email-text
+  margin-top: 13.2rem
+  +MQ(M)
+    margin-top: 16rem
+  +MQ(M)
+    margin-top: 17rem
+  +MQ(XXXL)
+    margin-top: 19rem
+
+.fullwidth-text__wrap
+  container-type: inline-size
+  padding-top: 0.7rem
+
+.fullwidth-text__content
+  display: flex
+  font-size: 28cqw
+  line-height: 0.746
+  span
+    font-style: normal
+    font-weight: 500
+    line-height: 0.746
+    font-family: var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: normal
+    color: var(--t-bright)
+    white-space: nowrap
+  .char
+    transform: translateX(0)
+  &.small
+    font-size: 10.46cqw
+  &.base
+    span
+      color: var(--base)
+  &.accent
+    span
+      color: var(--accent)
+  &.opposite
+    span
+      color: var(--base-opp)
+  &.permanent
+    span
+      color: var(--nl-white)
+  +MQ(L)
+    font-size: 28cqw
+    &.small
+      font-size: 10.46cqw
+
+// parallax dividers
+.mxd-divider
+  position: relative
+  overflow: hidden
+  height: 600px
+  +MQ(M)
+    height: 760px
+  +MQ(XL)
+    height: 760px
+    &.divider-hero-01
+      padding-top: 14rem
+  +MQ(XXXL)
+    height: 930px
+    
+.mxd-divider__content
+  position: absolute
+  left: 0
+  +center(y)
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 2.1rem
+  text-align: center
+  overflow: hidden
+  padding: 0 3rem
+  +MQ(M)
+    gap: 2.2rem
+    padding: 0 6rem
+  +MQ(XL)
+    gap: 2.3rem
+  +MQ(XXXL)
+    gap: 2.5rem
+    padding: 0 10rem
+
+.mxd-divider__btngroup
+  overflow: hidden
+
+.mxd-divider__caption
+  +MQ(M)
+    max-width: 560px
+  +MQ(XL)
+    max-width: 640px
+  +MQ(XXXL)
+    max-width: 800px
+
+.mxd-divider__cover
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  &.cover-04
+    background-color: var(--nl-black-04)
+  &.cover-06
+    background-color: var(--nl-black-06)
+
+.mxd-divider__image
+  position: relative
+  width: 100%
+  height: 600px
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  overflow: hidden
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+  +MQ(M)
+    height: 760px
+  +MQ(XL)
+    height: 760px
+  +MQ(XXXL)
+    height: 930px
+
+.mxd-divider__video
+  position: relative
+  width: 100%
+  height: 600px
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  overflow: hidden
+  video
+    display: block
+    +position(absolute, 0 null null 0)
+    width: 100%
+    height: 100%
+    background-color: transparent
+    background-position: center center
+    background-size: contain
+    object-fit: cover
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+  +MQ(M)
+    height: 760px
+  +MQ(XL)
+    height: 760px
+  +MQ(XXXL)
+    height: 930px
+
+.mxd-divider__trigger
+  position: absolute
+  +center
+
+// perspective list feature
+.mxd-perspective-list
+  transform-style: preserve-3d
+
+.mxd-perspective-list__item
+  perspective: 1000px
+  transform-style: preserve-3d
+  will-change: transform
+
+.mxd-perspective-list__inner
+  transform-origin: bottom center
+  backface-visibility: hidden
+  will-change: transform, opacity, filter
+
+.mxd-pulse
+  animation: mxd-pulse 1.2s infinite ease-in-out alternate
+
+@keyframes mxd-pulse
+  from 
+    transform: scale(0.94)
+  to
+    transform: scale(1.06)
+
+.mxd-pulse-small
+  animation: mxd-pulse 1.2s infinite ease-in-out alternate
+
+@keyframes mxd-pulse
+  from 
+    transform: scale(0.94)
+  to
+    transform: scale(1.02)
+
+.mxd-move
+  animation: mxd-move 1.2s infinite ease-in-out alternate
+
+.mxd-move-slow
+  animation: mxd-move 2s infinite ease-in-out alternate
+
+@keyframes mxd-move
+  from 
+    transform: translateY(-1rem)
+  to
+    transform: translateY(1rem)
+
+.mxd-rotate
+  animation: spin 5s linear infinite
+
+.mxd-rotate-slow
+  animation: spin 16s linear infinite

@@ -1,0 +1,119 @@
+.mxd-projects-grid
+  position: relative
+
+.mxd-projects-grid__gallery
+  position: relative
+  display: flex
+  align-items: flex-start
+
+.mxd-project-item
+  display: flex
+  flex-direction: column
+  gap: 2.2rem
+  padding: 0 3rem
+  margin-bottom: 7.4rem
+  .mxd-cover
+    opacity: 0.5
+    transition: opacity var(--_animspeed-medium) ease-in-out
+  +MQ(M)
+    margin-bottom: 7.4rem
+  +MQ(XL)
+    margin-bottom: 9.4rem
+    &.mxd-project-item-sticky
+      position: sticky
+      top: 0rem
+  .no-touch &:hover
+    .mxd-cover
+      opacity: 1
+    &.mxd-project-item-s
+      .mxd-cover
+        opacity: 0
+    .mxd-project-item__logowrap
+      opacity: 0
+    .mxd-project-item__videowrap
+      clip-path: inset(0% 0% 0% 0%)
+    .mxd-project-item__tags
+      .tag
+        transform: translateY(0.4rem)
+        &:nth-of-type(2)
+          transform: translateY(0.8rem)
+        &:nth-of-type(3)
+          transform: translateY(1.2rem)
+        &:nth-of-type(4)
+          transform: translateY(1.6rem)
+        &:nth-of-type(5)
+          transform: translateY(1rem)
+        &:nth-of-type(6)
+          transform: translateY(1.2rem)
+        &:nth-of-type(7)
+          transform: translateY(1.4rem)
+        &:nth-of-type(8)
+          transform: translateY(1.6rem)
+    .mxd-project-item__name
+      transform: translateY(0.4rem)
+
+.mxd-project-divider
+  display: none
+  +MQ(XL)
+    display: block
+
+.mxd-project-item__media
+  position: relative
+  overflow: hidden
+  img
+    display: block
+    width: 100%
+    height: auto
+    object-fit: cover
+
+.mxd-project-item__logowrap
+  position: absolute
+  +center
+  width: 45%
+  max-width: 200px
+  height: auto
+  max-height: 180px
+  opacity: 1
+  transition: opacity var(--_animspeed-medium) ease-in-out
+  img
+    object-fit: contain
+    max-height: 110px
+
+.mxd-project-item__videowrap
+  position: absolute
+  +center
+  margin: 0 auto
+  width: 70%
+  aspect-ratio: 1 / 0.59
+  z-index: 2
+  clip-path: inset(50% 50% 50% 50%)
+  transition: clip-path var(--_animspeed-slow) var(--_animbezier)
+  will-change: clip-path
+  video
+    display: block
+    position: absolute
+    inset: 0%
+    width: 100%
+    height: 100%
+    background-color: transparent
+    background-position: center center
+    background-size: contain
+    object-fit: cover
+
+.mxd-project-item__caption
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  gap: 6rem
+  transition: all 0.3s ease-in-out
+
+.mxd-project-item__name
+  transition: transform var(--_animspeed-medium) var(--_animbezier)
+
+.mxd-project-item__tags
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  padding-top: 0.4rem
+  .tag
+    transition: transform var(--_animspeed-medium) var(--_animbezier)

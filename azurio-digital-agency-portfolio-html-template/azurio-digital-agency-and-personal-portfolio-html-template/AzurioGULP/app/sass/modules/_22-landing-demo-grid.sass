@@ -1,0 +1,100 @@
+.mxd-demo-grid
+  position: relative
+
+.mxd-demo-grid__gallery
+  position: relative
+  display: flex
+  align-items: flex-start
+
+.mxd-demo-grid__item
+  display: flex
+  flex-direction: column
+  gap: 2.2rem
+  margin-bottom: 7.4rem
+  +MQ(XL)
+    margin-bottom: 9.4rem
+    .no-touch &:hover
+      .mxd-demo-grid__image
+        border: 1px solid var(--st-bright)
+      .mxd-demo-grid__screen
+        transform: scale(1.01)
+      .mxd-demo-grid__tags
+        .tag
+          transform: translateY(0.4rem)
+          &:nth-of-type(2)
+            transform: translateY(0.8rem)
+          &:nth-of-type(3)
+            transform: translateY(1.2rem)
+          &:nth-of-type(4)
+            transform: translateY(1.6rem)
+          &:nth-of-type(5)
+            transform: translateY(1rem)
+          &:nth-of-type(6)
+            transform: translateY(1.2rem)
+          &:nth-of-type(7)
+            transform: translateY(1.4rem)
+          &:nth-of-type(8)
+            transform: translateY(1.6rem)
+      .mxd-demo-grid__name
+        transform: translateY(0.4rem)
+
+.mxd-demo-grid__image
+  position: relative
+  border: 1px solid var(--st-medium)
+  overflow: hidden
+  transition: border var(--_animspeed-medium) var(--_animbezier)
+  img
+    display: block
+    width: 100%
+    height: auto
+    opacity: 0
+
+.mxd-demo-grid__screen
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  // background-color: red
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  transform: scale(1)
+  transition: transform var(--_animspeed-medium) var(--_animbezier)
+  &.screen-01
+    background-image: var(--bg-demo-screen-01)
+  &.screen-02
+    background-image: var(--bg-demo-screen-02)
+  &.screen-03
+    background-image: var(--bg-demo-screen-03)
+  &.screen-04
+    background-image: var(--bg-demo-screen-04)
+  &.screen-05
+    background-image: var(--bg-demo-screen-05)
+  &.screen-06
+    background-image: var(--bg-demo-screen-06)
+  &.screen-07
+    background-image: var(--bg-demo-screen-07)
+  &.screen-08
+    background-image: var(--bg-demo-screen-08)
+  &.screen-09
+    background-image: var(--bg-demo-screen-09)
+  &.screen-10
+    background-image: var(--bg-demo-screen-10)
+
+.mxd-demo-grid__caption
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  gap: 6rem
+  transition: all 0.3s ease-in-out
+
+.mxd-demo-grid__name
+  transition: transform var(--_animspeed-medium) var(--_animbezier)
+
+.mxd-demo-grid__tags
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  padding-top: 0.4rem
+  .tag
+    white-space: nowrap
+    transition: transform var(--_animspeed-medium) var(--_animbezier)

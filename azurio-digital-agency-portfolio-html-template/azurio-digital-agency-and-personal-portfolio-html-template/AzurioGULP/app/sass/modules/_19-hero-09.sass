@@ -1,0 +1,161 @@
+.mxd-hero-09
+  position: relative
+  width: 100%
+  height: auto
+  min-height: 667px
+  padding-top: 6.6rem
+  overflow: hidden
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+  +MQ(M)
+    padding-top: 7rem
+  +MQ(XL)
+    padding-top: 0
+    height: 100vh
+
+.mxd-hero-09__background
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  video
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.mxd-hero-09__cover
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  background-color: rgba(var(--nl-black-rgb), 0.4)
+  +MQ(XL)
+    background-color: rgba(var(--nl-black-rgb), 0.2)
+
+.mxd-hero-09__wrap
+  position: relative
+  display: flex
+  flex-direction: column
+  width: 100%
+  height: 100%
+  max-width: 1920px
+  margin: 0 auto
+  padding: 0
+  +MQ(M)
+    padding: 0 3rem
+  +MQ(XL)
+    justify-content: flex-end
+  +MQ(XXXL)
+    padding: 0 7rem
+
+.mxd-hero-09__top
+  position: relative
+  padding-bottom: 6rem
+  mix-blend-mode: difference
+  +MQ(XL)
+    position: absolute
+    left: 0
+    +center(y)
+    width: 100%
+    padding: 0 3rem
+  +MQ(XXXL)
+    padding: 0 7rem
+
+.mxd-hero-09__headline
+  padding-top: 14rem
+  text-align: center
+  // mix-blend-mode: difference
+  h1
+    font-size: 14cqw
+    font-size: clamp(1.6rem, 13cqw, 27rem)
+    line-height: 0.746
+    font-style: normal
+    font-weight: 500
+    font-family: var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: -0.2cqw
+    color: var(--nl-white)
+    white-space: nowrap
+    // mix-blend-mode: difference
+  .char
+    transform: translateX(0)
+  +MQ(M)
+    padding-top: 20rem
+    h1
+      font-size: clamp(1.6rem, 13cqw, 27rem)
+  +MQ(XL)
+    margin-top: -2rem
+    padding-top: 0
+    h1
+      font-size: clamp(1.6rem, 14cqw, 27rem)
+
+.mxd-hero-09__divider
+  +position(absolute, null null 0 3rem)
+  width: calc( 100% - 6rem )
+  height: 1px
+  background-color: var(--nl-white)
+  +MQ(XL)
+    display: none
+
+.mxd-hero-09__center
+  display: flex
+  flex-direction: column
+  padding-top: 5.7rem
+  padding-bottom: 2.8rem
+  +MQ(XL)
+    flex-direction: row
+    align-items: flex-end
+    justify-content: space-between
+    padding-bottom: 0
+    margin-bottom: 3.6rem
+
+.mxd-hero-09__data
+  max-width: 480px
+  margin-bottom: 3rem
+  +MQ(XL)
+    margin-bottom: 0
+  +MQ(XXXL)
+    max-width: 540px
+
+.mxd-hero-09__descr
+  margin-top: 2.1rem
+  // margin-bottom: 3.2rem
+  p
+    font-size: 2.4rem
+    line-height: 1.2
+  +MQ(XL)
+    margin-bottom: -0.6rem
+
+.mxd-hero-09__media
+  position: relative
+  display: flex
+  flex-direction: column
+  gap: 1.4rem
+  +MQ(XL)
+    max-width: 280px
+  +MQ(XXL)
+    max-width: 320px
+  +MQ(XXXL)
+    max-width: 380px
+
+.mxd-hero-09__image,
+.mxd-hero-09__video
+  display: block
+  width: 100%
+  height: auto
+  object-fit: cover
+
+.mxd-hero-09__media-btn
+  +position(absolute, 1rem 4rem null null)
+
+.mxd-hero-09__bottom
+  padding-bottom: 5.2rem
+  +MQ(M)
+    // padding-bottom: 19.1rem
+  +MQ(XL)
+    display: flex
+    justify-content: flex-end
+    align-items: flex-end
+    padding-bottom: 3.5rem
+
+.mxd-hero-09__controls

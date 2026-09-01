@@ -1,0 +1,113 @@
+.mxd-next-prj
+  position: relative
+
+.mxd-next-prj__data
+  position: relative
+  display: flex
+  flex-direction: column
+  padding: 0 3rem
+  +MQ(M)
+    padding: 0 6rem
+  +MQ(XL)
+    display: flex
+    flex-direction: row
+    align-items: center
+    margin-bottom: 5rem
+  +MQ(XXXL)
+    padding: 0 10rem
+
+.mxd-next-prj__info
+  display: flex
+  flex-direction: column
+  +MQ(XL)
+    width: 70%
+
+.mxd-next-prj__caption
+  margin-bottom: 2.2rem
+  p
+    font: normal 600 5rem/1.2 var(--_font-default)
+    letter-spacing: -0.18rem
+    color: var(--t-bright)
+  +MQ(M)
+    margin-bottom: 2.3rem
+    p
+      font-size: 5.4rem
+      letter-spacing: -0.18rem
+      // font-size: 7.5rem
+      // letter-spacing: -0.3rem
+  +MQ(XL)
+    margin-bottom: 2rem
+    p
+      font-size: 7.5rem
+      letter-spacing: -0.3rem
+  +MQ(XXXL)
+    p
+      font-size: 9.5rem
+
+.mxd-next-prj__name
+  margin-bottom: 4rem
+  p,
+  a
+    font: normal 700 2.8rem/1.2 var(--_font-default)
+    letter-spacing: -0.1rem
+    color: var(--t-bright)
+    span
+      color: var(--t-medium)
+  +MQ(M)
+    margin-bottom: 4.2rem
+    p,
+    a
+      font-size: 3.4rem
+  +MQ(XL)
+    margin-bottom: 0
+  +MQ(XXXL)
+    p,
+    a
+      font-size: 4.4rem
+
+.mxd-next-prj__arrow
+  position: relative
+  display: flex
+  justify-content: space-between
+  width: 100%
+  height: 15rem
+  margin-bottom: 4.5rem
+  svg
+    display: block
+    width: 15rem
+    height: 15rem
+    fill: var(--t-muted-extra)
+  .arrow-container-1,
+  .arrow-container-2
+    width: 15rem
+    height: 15rem
+  .arrow-container-1
+    // background-color: red
+  .arrow-container-2
+    // background-color: blue
+  +MQ(M)
+    margin-bottom: 5rem
+  +MQ(XL)
+    width: 30%
+    margin-bottom: 0
+
+.mxd-next-prj__media
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 600px
+  +MQ(M)
+    height: 760px
+  +MQ(XL)
+    height: 100vh
+
+.mxd-next-prj__image
+  position: relative
+  width: 100%
+  height: 100%
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover

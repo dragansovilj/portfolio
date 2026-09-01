@@ -1,0 +1,189 @@
+.mxd-hero-section
+  padding-top: 6.3rem
+  // background-color: blue
+  &.no-padding
+    padding-top: 0
+  &.no-padding-desktop
+    padding-top: 6.6rem
+  +MQ(M)
+    padding-top: 7rem
+    &.no-padding-desktop
+      padding-top: 7rem
+  +MQ(XL)
+    &.no-padding-desktop
+      padding-top: 0
+
+.mxd-hero-fullheight
+  height: 100vh
+  height: calc(var(--vh) * 100)
+  +MQ(XL)
+    height: 100vh
+
+.mxd-hero-fullheight-desktop
+  height: auto
+  +MQ(XL)
+    height: 100vh
+
+.mxd-hero-special
+  height: auto
+  +MQ(XL)
+    height: calc( 100vh - 6rem )
+  +MQ(XXXL)
+    height: calc( 100vh - 10rem )
+
+.mxd-hero-01
+  position: relative
+  width: 100%
+  height: auto
+  // min-height: 667px
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  padding-top: 6.6rem
+  overflow: hidden
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+  +MQ(M)
+    height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    padding-top: 7rem
+  +MQ(XL)
+    height: 100vh
+    min-height: 667px
+    padding-top: 0
+
+.mxd-hero-01__cover
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  background-color: var(--nl-black-04)
+
+.mxd-hero-01__wrap
+  position: relative
+  width: 100%
+  max-width: 1920px
+  margin: 0 auto
+  padding: 0 3rem
+  +MQ(M)
+    padding: 0 6rem
+  +MQ(XXXL)
+    padding: 0 10rem
+
+.mxd-hero-01__top
+  position: relative
+  display: flex
+  flex-direction: column
+  padding-top: 13.6rem
+  margin-bottom: 5.3rem
+  z-index: 2
+  +MQ(M)
+    flex-direction: row
+    justify-content: space-between
+    gap: 6rem
+    margin-bottom: 0
+  +MQ(M)
+    padding-bottom: 5.3rem
+
+.mxd-hero-01__data-wrap
+  display: flex
+  flex-direction: column
+  margin-bottom: 5.3rem
+  ul
+    display: flex
+    flex-direction: column
+    gap: 0.4rem
+    li
+      display: flex
+      flex-direction: column
+      a
+        color: var(--nl-white)
+        .no-touch &:hover
+          color: var(--nl-white-06) !important
+  +MQ(M)
+    justify-content: space-between
+    margin-bottom: 0
+
+.mxd-hero-01__data-tags
+  display: flex
+  gap: 3rem
+  width: 100%
+  max-width: 385px
+  margin-bottom: 2.5rem
+  .tags-column
+    flex: 1 1 0
+    display: flex
+    flex-direction: column
+    gap: 0.4rem
+  +MQ(M)
+    gap: 6rem
+    margin-bottom: 0
+
+.mxd-hero-01__data-contact
+  ul
+    display: flex
+    flex-direction: column
+    gap: 0.4rem
+    li
+      display: flex
+      flex-direction: column
+      a
+        color: var(--nl-white)
+        .no-touch &:hover
+          color: var(--nl-white-06) !important
+
+.mxd-hero-01__video-wrap
+  position: relative
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  max-width: 38.5rem
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+  video
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+    will-change: transform
+  +MQ(M)
+    flex-basis: 34.5rem
+    flex-grow: 0
+    flex-shrink: 0
+    height: 24.6rem
+  +MQ(XXXL)
+    flex-basis: 38.5rem
+    height: 27.5rem
+
+.mxd-hero-01__video
+  display: block
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.mxd-hero-01__video-btn
+  +position(absolute, null 0 0 null)
+  padding: 1rem
+
+.mxd-hero-01__bottom
+  position: relative
+  z-index: 1
+  mix-blend-mode: difference
+  padding-bottom: 6.2rem
+  +MQ(M)
+    padding-bottom: 0
+
+.mxd-hero-01__caption
+  margin-bottom: -0.3rem
+  +MQ(M)
+    margin-bottom: -0.5rem
+  +MQ(XL)
+    margin-bottom: -0.6rem
+  +MQ(XXL)
+    margin-bottom: -0.8rem
+  +MQ(XXXL)
+    margin-bottom: -1rem

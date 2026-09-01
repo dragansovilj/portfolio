@@ -1,0 +1,81 @@
+.mxd-gravity-section
+  position: relative
+  width: 100%
+  background-color: var(--base-opp)
+  overflow: hidden
+  &.accent
+    background-color: var(--accent)
+  
+.object-container
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+
+.object
+  position: absolute
+  width: max-content
+  font-size: 1.4rem
+  font-family: var(--_font-accent)
+  font-weight: 500
+  text-transform: uppercase
+  // background-color: #fff
+  background-color: var(--base)
+  padding: 1.6rem 2rem
+  border-radius: 0.4rem
+  cursor: grab
+  user-select: none
+  pointer-events: auto
+  z-index: 2
+  p
+    font-family: var(--_font-accent)
+    font-weight: 500
+    text-transform: uppercase
+    // color: var(--nl-black)
+    color: var(--t-bright)
+    font-size: 1.3rem
+    line-height: 0.8
+  &:active
+    cursor: grabbing
+  &.object-permanent
+    background-color: var(--nl-white)
+    p
+      color: var(--nl-black)
+  &.object-type
+    background-color: transparent
+    padding: 0
+    p
+      color: var(--nl-white)
+      font-family: var(--_font-accent)
+      font-weight: 400
+      font-size: 4rem
+  &.object-image
+    background-color: transparent
+    padding: 0
+    width: 7rem
+    img
+      display: block
+      width: 100%
+      height: 100%
+      object-fit: contain
+      pointer-events: none
+      user-drag: none
+      -webkit-user-drag: none
+      -moz-user-select: none
+      -webkit-user-select: none
+      user-select: none
+  +MQ(M)
+    padding: 2rem 2.4rem
+    font-size: 1.8rem
+    p
+      font-size: 1.8rem
+    &.object-image
+      width: 12rem
+    &.object-type
+      p
+        font-size: 5rem
+  +MQ(XXXL)
+    &.object-image
+      width: 14rem
+    &.object-type
+      p
+        font-size: 7rem

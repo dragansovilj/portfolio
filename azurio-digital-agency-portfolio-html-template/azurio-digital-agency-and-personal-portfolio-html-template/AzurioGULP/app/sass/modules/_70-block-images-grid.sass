@@ -1,0 +1,41 @@
+.mxd-images-grid
+  position: relative
+
+.mxd-images-grid__gallery
+  margin-bottom: 3rem
+  &:last-of-type
+    margin-bottom: 0
+  +MQ(XL)
+    margin-bottom: 6rem
+    &:last-of-type
+      margin-bottom: 0
+
+.mxd-images-grid__item
+  position: relative
+  height: 360px
+  margin-bottom: 3rem
+  &:last-of-type
+    margin-bottom: 0
+  +MQ(M)
+    height: 420px
+  +MQ(XL)
+    height: 460px
+    margin-bottom: 0
+    &.wide
+      height: 600px
+  +MQ(XXXL)
+    height: 600px
+    &.wide
+      height: 760px
+
+.mxd-images-grid__inner
+  position: relative
+  height: 100%
+  overflow: hidden
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+    &.transparent
+      object-fit: contain

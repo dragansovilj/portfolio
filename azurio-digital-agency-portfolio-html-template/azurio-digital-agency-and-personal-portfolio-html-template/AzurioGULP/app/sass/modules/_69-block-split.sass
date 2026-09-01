@@ -1,0 +1,113 @@
+.mxd-block-split
+
+.mxd-block-split__item
+  margin-bottom: 7.4rem
+  &:last-of-type
+    margin-bottom: 0
+  &.manifest-item
+    margin-bottom: 6.8rem
+    &:last-of-type
+      margin-bottom: 0
+  +MQ(XL)
+    margin-bottom: 0
+    &.manifest-item
+      margin-bottom: 0
+
+.mxd-block-split__inner
+
+.mxd-block-split__subtitle
+  &.pre-manifest
+    margin-bottom: 1.8rem
+  &.pre-grid
+    margin-bottom: 3rem
+  p
+    display: block
+    overflow: hidden
+    color: var(--t-medium)
+    font: normal 600 1.4rem/1.6 var(--_font-accent)
+    text-transform: uppercase
+    letter-spacing: -0.05rem
+    span
+      display: inline-flex
+  +MQ(XL)
+    &.pre-manifest
+      margin-bottom: 3.6rem
+    &.pre-grid
+      margin-bottom: 5.5rem
+
+.mxd-block-split__manifest
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 2.8rem
+  +MQ(XL)
+    gap: 5rem
+    max-width: 760px
+    &.fullwidth
+      max-width: none
+
+.mxd-block-split__info
+
+.split-info__item
+  position: relative
+  width: 100%
+  display: flex
+  align-items: center
+  gap: 2.2rem
+  margin-top: -0.1rem
+  padding: 2.9rem 0.2rem 3.1rem 0.2rem
+  +MQ(XL)
+    padding: 5.2rem 0.2rem 5.5rem 0.2rem
+
+.split-info__divider,
+.split-data__divider
+  position: absolute
+  left: 0
+  width: 100%
+  height: 1px
+  background-color: var(--t-medium)
+  &.divider-top
+    top: 0
+  &.divider-bottom
+    bottom: 0
+
+.split-info__details
+  p
+    font: normal 700 2rem/1.2 var(--_font-default)
+    letter-spacing: -0.04rem
+    color: var(--t-bright)
+    span,
+    a
+      font-weight: 500
+      color: var(--t-medium)
+    a
+      transition: color var(--_animspeed-medium)
+      .no-touch &:hover
+        color: var(--t-bright)
+  +MQ(XL)
+    p
+      font-size: 2.4rem
+
+.split-data__item
+  position: relative
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 1.1rem
+  margin-top: -0.1rem
+  padding: 2.5rem 0.2rem 3.2rem 0.2rem
+  +MQ(XL)
+    gap: 1.9rem
+    padding: 4.7rem 0.2rem 5.5rem 0.2rem
+
+.split-data__name
+  p
+    font: normal 700 2.8rem/1.2 var(--_font-default)
+    letter-spacing: -0.1rem
+    color: var(--t-bright)
+  +MQ(XL)
+    p
+      font-size: 3.4rem
+
+.split-data__descr
