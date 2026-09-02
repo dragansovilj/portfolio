@@ -2906,6 +2906,7 @@ if(document.querySelector(".animate-card-4")) {
 // --------------------------------------------- //
 const images = document.querySelectorAll(".parallax-img");
 const imagesSmall = document.querySelectorAll(".parallax-img-small");
+const imagesMinimal = document.querySelectorAll(".parallax-img-minimal");
 const video = document.querySelectorAll(".parallax-video");
 new Ukiyo(images,{
   scale: 1.4,
@@ -2914,6 +2915,11 @@ new Ukiyo(images,{
 });
 new Ukiyo(imagesSmall,{
   scale: 1.2,
+  speed: 1.5,
+  externalRAF: false
+});
+new Ukiyo(imagesMinimal,{
+  scale: 1.15,
   speed: 1.5,
   externalRAF: false
 });
