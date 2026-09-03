@@ -309,7 +309,7 @@ function pageAppearance() {
   const fadeInItems = document.querySelectorAll('.loading-fade');
 
   loadingChars.forEach((el) => {
-    SplitText.create(el, {
+    el._mxdSplit = SplitText.create(el, {
       type: "chars, words",
       charsClass: "char",
       mask: "chars",
@@ -329,7 +329,7 @@ function pageAppearance() {
   });
 
   loadingSplits.forEach((el) => {
-    SplitText.create(el, {
+    el._mxdSplit = SplitText.create(el, {
       type: "words, lines",
       linesClass: "line",
       autoSplit: true,
@@ -377,6 +377,7 @@ function mxdTypeAnimations() {
   const splitTypes = document.querySelectorAll(".reveal-type");
   splitTypes.forEach((char,i) => {
     const text = new SplitType(char, { types: 'words, chars' });
+    char._mxdSplit = text;
     gsap.from(text.chars, {
       scrollTrigger: {
         trigger: char,
@@ -392,7 +393,7 @@ function mxdTypeAnimations() {
   });
   // split lines text
   document.querySelectorAll(".mxd-split-lines").forEach((revealLines) => {
-    SplitText.create(revealLines, {
+    revealLines._mxdSplit = SplitText.create(revealLines, {
       type: "words, lines",
       linesClass: "line",
       autoSplit: true,
@@ -3254,6 +3255,12 @@ function mxdLanguageSwitcher() {
     document.querySelectorAll("[data-en]").forEach((el) => {
       const text = lang === "sr" ? el.dataset.sr : el.dataset.en;
       if (!text) return;
+      // stop any SplitText/SplitType instance from auto-resplitting
+      // back to its original cached text once we change the content
+      if (el._mxdSplit) {
+        try { el._mxdSplit.revert(); } catch (e) {}
+        el._mxdSplit = null;
+      }
       el.innerHTML = text;
       if (el.dataset.original !== undefined) {
         el.dataset.original = text;
