@@ -145,6 +145,33 @@
     </style>
     <!-- Custom Styles - Sticky Header Nav End -->
 
+    <!-- Custom Styles - Rounded Corners Test Start -->
+    <style>
+      .mxd-project-item__media,
+      .mxd-blog-item__media,
+      .mxd-object-link__media {
+        border-radius: 20px;
+      }
+    </style>
+    <!-- Custom Styles - Rounded Corners Test End -->
+
+    <!-- Custom Styles - Mobile Project Tags Fix Start -->
+    <style>
+      @media only screen and (max-width: 767px) {
+        .mxd-project-item__caption {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+        .mxd-project-item__tags {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: flex-start;
+        }
+      }
+    </style>
+    <!-- Custom Styles - Mobile Project Tags Fix End -->
+
     <!-- Custom Browser Color Start -->
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#EEEAE8">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f0f0f">
@@ -540,22 +567,7 @@
         <div class="pinned-section__inner">
           <div class="mxd-hero-06">
             <div class="mxd-hero-06__media">
-              <video
-                id="mxd-hero-06__video"
-                class="mxd-hero-06__video"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="auto"
-                poster="https://dummyimage.com/1280x720/5d5d5d/838383"
-                data-poster-landscape="https://dummyimage.com/1280x720/5d5d5d/838383"
-                data-poster-portrait="https://dummyimage.com/720x1280/5d5d5d/838383"
-                data-landscape-mp4="video/1280x720.mp4"
-                data-landscape-webm="video/1280x720.webm"
-                data-portrait-mp4="video/720x1280.mp4"
-                data-portrait-webm="video/720x1280.webm"
-              ></video>
+              <img class="mxd-hero-06__video" src="img/hero/imagexx.png" alt="Sovilj Design">
               <div class="mxd-hero-06__cover"></div>
             </div>
             <div class="mxd-hero-06__wrap">
@@ -579,6 +591,19 @@
                       <li class="loading-item"><span class="tag tag-s-mobile tag-permanent-medium mxd-scramble">Branding</span></li>
                       <li class="loading-item"><span class="tag tag-s-mobile tag-permanent-medium mxd-scramble">Motion</span></li>
                     </ul>
+                  </div>
+                </div>
+                <div class="mxd-hero-01__video-wrap loading-fade">
+                  <img src="img/works/swift-pay/thumbnail.jpg" alt="Swift Pay Fintech App">
+                  <div class="mxd-hero-01__video-btn">
+                    <a class="btn btn-default-icon-small btn-default-permanent slide-right" href="project-swift-pay-fintech-app.html">
+                      <span class="btn-caption mxd-scramble">New Case</span>
+                      <i class="btn-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 18 18">
+                          <path d="M10.8,0v3.6h-3.6V0h3.6ZM14.4,10.8h3.6v-3.6h-3.6v-3.6h-3.6v3.6H0v3.6h10.8v3.6h3.6v-3.6ZM10.8,14.4h-3.6v3.6h3.6v-3.6Z"/>
+                        </svg>
+                      </i>
+                    </a>
                   </div>
                 </div>
                 <div class="mxd-hero-06__headline">
