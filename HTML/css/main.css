@@ -6307,7 +6307,7 @@ form textarea:required:valid {
   line-height: 0.746;
   font-family: "Sudo", var(--_font-accent);
   text-transform: uppercase;
-  letter-spacing: normal;
+  letter-spacing: 1.65cqw;
   color: var(--t-bright);
   white-space: nowrap;
 }
