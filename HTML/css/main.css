@@ -4921,7 +4921,7 @@ form textarea:required:valid {
           flex-direction: column;
   gap: 0.4rem;
   padding-top: 0.3rem;
-  font: normal 700 1.8rem/0.8 var(--_font-accent);
+  font: normal 700 1.8rem/0.8 "Sudo Outlined", var(--_font-accent);
   text-transform: uppercase;
   color: var(--t-bright);
 }
@@ -5364,7 +5364,7 @@ form textarea:required:valid {
           flex-direction: column;
   gap: 0.4rem;
   padding-top: 0.3rem;
-  font: normal 700 1.8rem/0.8 var(--_font-accent);
+  font: normal 700 1.8rem/0.8 "Sudo Outlined", var(--_font-accent);
   text-transform: uppercase;
   color: var(--t-bright);
 }
