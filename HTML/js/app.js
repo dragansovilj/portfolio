@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mxdPerspectiveList();
   mxdViewportHeight();
   mxdColorSwitcher();
+  mxdLanguageSwitcher();
   // desktop only
   if (deviceType() === "desktop") {
     mxdCursor();
@@ -3233,6 +3234,49 @@ function mxdColorSwitcher() {
 }
 // --------------------------------------------- //
 // Color Switch End
+// --------------------------------------------- //
+
+// --------------------------------------------- //
+// Language Switcher Start
+// --------------------------------------------- //
+function mxdLanguageSwitcher() {
+  const items = document.querySelectorAll(".mxd-lang-switcher__item");
+  if (!items.length) return;
+
+  function safeGet(key) {
+    try { return localStorage.getItem(key); } catch (e) { return null; }
+  }
+  function safeSet(key, value) {
+    try { localStorage.setItem(key, value); } catch (e) {}
+  }
+
+  function applyLanguage(lang) {
+    document.querySelectorAll("[data-en]").forEach((el) => {
+      const text = lang === "sr" ? el.dataset.sr : el.dataset.en;
+      if (!text) return;
+      el.innerHTML = text;
+      if (el.dataset.original !== undefined) {
+        el.dataset.original = text;
+      }
+    });
+    items.forEach((item) => {
+      item.classList.toggle("active", item.dataset.lang === lang);
+    });
+    document.documentElement.lang = lang;
+    safeSet("mxdLang", lang);
+  }
+
+  items.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      applyLanguage(item.dataset.lang);
+    });
+  });
+
+  applyLanguage(safeGet("mxdLang") || "en");
+}
+// --------------------------------------------- //
+// Language Switcher End
 // --------------------------------------------- //
 
 // --------------------------------------------- //
