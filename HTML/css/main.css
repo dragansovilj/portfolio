@@ -4921,9 +4921,11 @@ form textarea:required:valid {
           flex-direction: column;
   gap: 0.4rem;
   padding-top: 0.3rem;
-  font: normal 700 1.8rem/0.8 "Sudo Outlined", var(--_font-accent);
+  font: normal 700 1.8rem/0.8 "Sudo", var(--_font-accent);
   text-transform: uppercase;
   color: var(--t-bright);
+  -webkit-text-stroke: 1px currentColor;
+  -webkit-text-fill-color: transparent;
 }
 .mxd-logo__text span {
   display: -webkit-inline-box;
@@ -5364,9 +5366,11 @@ form textarea:required:valid {
           flex-direction: column;
   gap: 0.4rem;
   padding-top: 0.3rem;
-  font: normal 700 1.8rem/0.8 "Sudo Outlined", var(--_font-accent);
+  font: normal 700 1.8rem/0.8 "Sudo", var(--_font-accent);
   text-transform: uppercase;
   color: var(--t-bright);
+  -webkit-text-stroke: 1px currentColor;
+  -webkit-text-fill-color: transparent;
 }
 .menu-logo__text span {
   display: -webkit-inline-box;
