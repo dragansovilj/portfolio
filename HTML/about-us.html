@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
   <head>
     <meta charset="UTF-8">
 
     <!-- Page Title -->
-    <title>Azurio - Digital Agency & Personal Portfolio HTML Template - About Us Page</title>
+    <title>Sovilj Design - About Us</title>
 
     <!-- Meta Tags -->
-    <meta name="description" content="Stand out and express your uniqueness with Azurio - a vibrant and minimal HTML template for creatives, studios and freelancers. Impress your website visitors with a clean, stylish layout and stunning visuals.">
+    <meta name="description" content="Learn more about Sovilj Design - a creative design studio specializing in innovative design and cutting-edge development.">
     <meta name="keywords" content="mix_design, resume, portfolio, personal page, cv, template, one page, responsive, html5, css3, creative, clean">
     <meta name="author" content="mix_design">
 
@@ -26,10 +26,10 @@
     <!-- Facebook Metadata Start -->
     <meta property="og:image:height" content="1200">
     <meta property="og:image:width" content="1200">
-    <meta property="og:title" content="Azurio - Digital Agency & Personal Portfolio HTML Template">
-    <meta property="og:description" content="Stand out and express your uniqueness with Azurio - a vibrant and minimal HTML template for creatives, studios and freelancers. Impress your website visitors with a clean, stylish layout and stunning visuals.">
-    <meta property="og:url" content="https://mixdesign.club/themeforest/azurio">
-    <meta property="og:image" content="https://mixdesign.club/themeforest/azurio/img/og-image.jpg">
+    <meta property="og:title" content="Sovilj Design - About Us">
+    <meta property="og:description" content="Learn more about Sovilj Design - a creative design studio specializing in innovative design and cutting-edge development.">
+    <meta property="og:url" content="https://soviljdesign.com/about-us">
+    <meta property="og:image" content="https://dummyimage.com/1200x1200/5d5d5d/838383">
     <!-- Facebook Metadata End -->
 
     <!-- Template Styles Start -->
@@ -37,6 +37,124 @@
     <link rel="stylesheet" type="text/css" href="css/plugins.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- Template Styles End -->
+
+    <!-- Custom Styles - Sticky Header Nav Start -->
+    <style>
+      .mxd-header {
+        position: fixed !important;
+        align-items: center;
+      }
+      .mxd-header.is-hidden {
+        opacity: 1 !important;
+        -webkit-transform: scaleY(1) !important;
+        -moz-transform: scaleY(1) !important;
+        -ms-transform: scaleY(1) !important;
+        transform: scaleY(1) !important;
+      }
+      .mxd-header__nav {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+           -moz-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
+      .mxd-header__nav ul {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+           -moz-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        gap: 6rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .mxd-header__logo,
+      .mxd-header__nav {
+        mix-blend-mode: difference;
+      }
+      .mxd-header__nav a {
+        display: -webkit-inline-box;
+        display: -moz-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+           -moz-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        gap: 0.8rem;
+        font: normal 700 1.8rem var(--_font-accent);
+        text-transform: uppercase;
+        letter-spacing: -0.05rem;
+        color: var(--nl-white);
+      }
+      .mxd-header__nav a svg {
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+        fill: currentColor;
+        -webkit-transition: color var(--_animspeed-medium);
+        -moz-transition: color var(--_animspeed-medium);
+        transition: color var(--_animspeed-medium);
+      }
+      .mxd-header__nav a {
+        -webkit-transition: color var(--_animspeed-medium);
+        -moz-transition: color var(--_animspeed-medium);
+        transition: color var(--_animspeed-medium);
+      }
+      .no-touch .mxd-header__nav a:hover {
+        color: rgba(var(--nl-white-rgb), 0.7);
+      }
+      .mxd-lang-switcher {
+        display: -webkit-inline-box;
+        display: -moz-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+           -moz-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        gap: 0.6rem;
+        font: normal 700 1.8rem var(--_font-accent);
+        text-transform: uppercase;
+        letter-spacing: -0.05rem;
+        color: var(--nl-white);
+      }
+      .mxd-lang-switcher__item {
+        color: inherit;
+        opacity: 0.5;
+        -webkit-transition: opacity var(--_animspeed-medium);
+        -moz-transition: opacity var(--_animspeed-medium);
+        transition: opacity var(--_animspeed-medium);
+      }
+      .mxd-lang-switcher__item.active {
+        opacity: 1;
+      }
+      .no-touch .mxd-lang-switcher__item:hover {
+        opacity: 1;
+      }
+      .mxd-lang-switcher__divider {
+        opacity: 0.5;
+      }
+      .mxd-header__logo .mxd-logo {
+        height: 3.6rem;
+      }
+      @media only screen and (max-width: 1199px) {
+        .mxd-header__nav {
+          display: none;
+        }
+        .mxd-header__controls {
+          display: none;
+        }
+      }
+    </style>
+    <!-- Custom Styles - Sticky Header Nav End -->
 
     <!-- Custom Browser Color Start -->
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#EEEAE8">
@@ -127,7 +245,7 @@
             <div class="mxd-menu__inner">
               <div class="mxd-menu__shadow shadow-top"></div>
               <div class="mxd-menu__caption">
-                <p>🦄 Innovative design<br>and cutting-edge development</p>
+                <p>ðŸ¦„ Innovative design<br>and cutting-edge development</p>
               </div>
               <!-- left side -->
               <div class="mxd-menu__left">
@@ -359,7 +477,7 @@
                 </div>
                 <div class="menu-data__right">
                   <p class="menu-data__text">Copyright Azurio</p>
-                  <p class="menu-data__text">©2026</p>
+                  <p class="menu-data__text">Â©2026</p>
                 </div>
               </div>
             </div>
@@ -377,31 +495,41 @@
     <!-- Header Start -->
     <header id="header" class="mxd-header">
       <!-- header logo -->
-      <div class="mxd-header__logo">
-        <a class="mxd-logo" href="index-branding-studio.html">
+      <div class="mxd-header__logo loading-fade">
+        <a class="mxd-logo" href="index-design-studio.html">
           <!-- logo icon -->
-          <svg class="mxd-logo__image" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 42.4 36">
-            <path d="M25.8,13.8h2.8v5.5h-2.8v-5.5ZM13.8,16.6v2.8h2.8v-5.5h-2.8v2.8ZM32.2,0v2.8h-2.8V0h2.8ZM26.7,5.5h2.8v-2.8h-2.8v2.8ZM21.2,5.5h-5.5v2.8h11.1v-2.8h-5.5ZM12.8,2.8v2.8h2.8v-2.8h-2.8ZM10.1,0v2.8h2.8V0h-2.8ZM7.3,5.5v5.5h2.8V2.8h-2.8v2.8ZM4.5,13.8v2.8H0v2.8h2.8v2.8H0v2.8h2.8v11.1h2.8v-8.3h5.5v-2.8h-5.5v-8.3h1.9v-5.5h-2.9v2.8ZM35,5.5v-2.8h-2.8v8.3h2.8v-5.5ZM42.4,19.4v-2.8h-4.7v-5.5h-2.8v5.5h1.9v8.3h-5.5v2.8h5.5v8.3h2.8v-11.1h2.8v-2.8h-2.8v-2.8h2.8Z"/>
-          </svg>
+          <img class="mxd-logo__image" src="img/logo/logo2.png" alt="Sovilj Design" style="display: none;">
           <!-- logo text -->
           <div class="mxd-logo__text">
-            <span class="mxd-scramble">Azurio</span>
-            <span class="mxd-scramble">Template</span>
+            <span class="mxd-logo-loop" data-alt="Design">Sovilj</span>
           </div>
         </a>
       </div>
+      <!-- header nav -->
+      <nav class="mxd-header__nav loading-fade">
+        <ul>
+          <li><a class="mxd-scramble" href="index-design-studio.html">Home</a></li>
+          <li><a class="mxd-scramble" href="about-us.html">About</a></li>
+          <li><a class="mxd-scramble" href="works-grid-sticky.html">Portfolio</a></li>
+          <li>
+            <a class="slide-right-up" href="contact.html">
+              <span class="mxd-scramble">Contact</span>
+              <i>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 18 18">
+                  <path d="M18,0v14.4h-3.6v-7.2h-3.6v-3.6H3.6V0h14.4ZM7.2,10.8h3.6v-3.6h-3.6s0,3.6,0,3.6ZM3.6,14.4h3.6v-3.6h-3.6v3.6ZM0,18h3.6v-3.6H0v3.6Z"/>
+                </svg>
+              </i>
+            </a>
+          </li>
+        </ul>
+      </nav>
       <!-- header controls -->
-      <div class="mxd-header__controls">
-        <a class="btn mxd-header__link slide-right-up" href="contact.html" aria-label="Say Hello">
-          <span class="btn-caption mxd-scramble">Say Hello</span>
-          <i>
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 18 18">
-              <path d="M18,0v14.4h-3.6v-7.2h-3.6v-3.6H3.6V0h14.4ZM7.2,10.8h3.6v-3.6h-3.6s0,3.6,0,3.6ZM3.6,14.4h3.6v-3.6h-3.6v3.6ZM0,18h3.6v-3.6H0v3.6Z"/>
-            </svg>
-          </i>
-          <!-- Phosphor icon -->
-          <!-- <i class="ph-bold ph-arrow-up-right"></i> -->
-        </a>
+      <div class="mxd-header__controls loading-fade">
+        <div class="mxd-lang-switcher">
+          <a href="#0" class="mxd-lang-switcher__item active mxd-scramble" data-lang="en">ENG</a>
+          <span class="mxd-lang-switcher__divider">/</span>
+          <a href="#0" class="mxd-lang-switcher__item mxd-scramble" data-lang="sr">SRB</a>
+        </div>
         <button id="color-switcher" class="btn mxd-color-switcher" type="button" role="switch" aria-label="light/dark mode" aria-checked="true"></button>
       </div>
     </header>
@@ -1789,7 +1917,7 @@
                       <div class="col-12 col-xl-6 mxd-grid-item">
                         <div class="mxd-footer__data-item anim-uni-fade-in justify-end">
                           <p class="footer-data">
-                            <span>©2026</span>
+                            <span>Â©2026</span>
                           </p>
                         </div>
                       </div>
