@@ -182,6 +182,51 @@
     </style>
     <!-- Custom Styles - Mobile Project Tags Fix End -->
 
+    <!-- Custom Styles - Hero Left Align & Float Start -->
+    <style>
+      @media only screen and (min-width: 1200px) {
+        .mxd-hero-06__top {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          bottom: auto;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          display: block;
+          padding: 0 6rem;
+          margin-top: -6rem;
+        }
+        .mxd-hero-06__headline {
+          text-align: left;
+        }
+        .mxd-hero-06__bottom {
+          margin-top: auto;
+        }
+      }
+      @media only screen and (min-width: 1600px) {
+        .mxd-hero-06__top {
+          padding: 0 10rem;
+        }
+      }
+      .mxd-hero-06__media {
+        overflow: hidden;
+      }
+      @keyframes mxd-hero-float {
+        0%, 100% {
+          transform: scale(1.06) translateY(0);
+        }
+        50% {
+          transform: scale(1.06) translateY(-18px);
+        }
+      }
+      .mxd-hero-06__video {
+        animation: mxd-hero-float 6s ease-in-out infinite;
+      }
+    </style>
+    <!-- Custom Styles - Hero Left Align & Float End -->
+
     <!-- Custom Browser Color Start -->
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#EEEAE8">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f0f0f">
