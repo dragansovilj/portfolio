@@ -622,21 +622,41 @@
         <div class="pinned-section__inner">
           <div class="mxd-hero-06">
             <div class="mxd-hero-06__media">
-              <model-viewer id="mxd-hero-model" class="mxd-hero-06__video" src="models/logo.glb" alt="Sovilj Design 3D Logo" auto-rotate rotation-per-second="8deg" shadow-intensity="0" style="background-color: transparent;"></model-viewer>
+              <model-viewer id="mxd-hero-model" class="mxd-hero-06__video" src="models/logo.glb" alt="Sovilj Design 3D Logo" camera-orbit="15deg 75deg auto" shadow-intensity="0" style="background-color: transparent;"></model-viewer>
               <script>
                 (function () {
                   var mv = document.getElementById("mxd-hero-model");
                   if (!mv) return;
-                  function kickstart() {
+                  function setup() {
+                    try {
+                      var mat = mv.model.materials[0];
+                      mat.pbrMetallicRoughness.setBaseColorFactor([0.95, 0.95, 0.95, 1]);
+                    } catch (e) {}
+
+                    // kickstart the first render
                     mv.setAttribute("camera-controls", "");
                     setTimeout(function () {
                       mv.removeAttribute("camera-controls");
                     }, 300);
+
+                    // gentle limited sway instead of full rotation, so the flat shape
+                    // never turns edge-on to the camera
+                    var baseTheta = 15;
+                    var amplitude = 35;
+                    var speed = 0.0006;
+                    var start = performance.now();
+                    function animate(now) {
+                      var t = (now - start) * speed;
+                      var theta = baseTheta + Math.sin(t) * amplitude;
+                      mv.cameraOrbit = theta.toFixed(2) + "deg 75deg auto";
+                      requestAnimationFrame(animate);
+                    }
+                    requestAnimationFrame(animate);
                   }
                   if (mv.loaded) {
-                    kickstart();
+                    setup();
                   } else {
-                    mv.addEventListener("load", kickstart, { once: true });
+                    mv.addEventListener("load", setup, { once: true });
                   }
                 })();
               </script>
