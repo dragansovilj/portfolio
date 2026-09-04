@@ -115,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mxdViewportHeight();
   mxdColorSwitcher();
   mxdLanguageSwitcher();
+  mxdLogoLoop();
   // desktop only
   if (deviceType() === "desktop") {
     mxdCursor();
@@ -1603,6 +1604,48 @@ function mxdTextScramble(selector = ".mxd-scramble") {
 // --------------------------------------------- //
 // Animation - Text Scramble Effect Start
 // --------------------------------------------- //
+
+function mxdLogoLoop(selector = ".mxd-logo-loop", holdTime = 2000) {
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const speed = 40;
+  const step = 1 / 4;
+
+  document.querySelectorAll(selector).forEach((el) => {
+    const words = [el.textContent.trim(), el.dataset.alt || "Design"];
+    let wordIndex = 0;
+    let intervalId = null;
+    let timeoutId = null;
+
+    function scrambleTo(target) {
+      let iterations = 0;
+      intervalId = setInterval(() => {
+        el.innerText = target
+          .split("")
+          .map((letter, index) => {
+            if (index < iterations) return target[index];
+            return alphabet[Math.floor(Math.random() * alphabet.length)];
+          })
+          .join("");
+
+        if (iterations >= target.length) {
+          clearInterval(intervalId);
+          intervalId = null;
+          el.innerText = target;
+          timeoutId = setTimeout(loop, holdTime);
+        }
+
+        iterations += step;
+      }, speed);
+    }
+
+    function loop() {
+      wordIndex = (wordIndex + 1) % words.length;
+      scrambleTo(words[wordIndex]);
+    }
+
+    timeoutId = setTimeout(loop, holdTime);
+  });
+}
 
 // --------------------------------------------- //
 // Animation - Preview Hover Slideshow Start
