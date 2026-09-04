@@ -38,6 +38,10 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- Template Styles End -->
 
+    <!-- 3D Model Viewer Start -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+    <!-- 3D Model Viewer End -->
+
     <!-- Custom Styles - Sticky Header Nav Start -->
     <style>
       .mxd-header {
@@ -618,7 +622,7 @@
         <div class="pinned-section__inner">
           <div class="mxd-hero-06">
             <div class="mxd-hero-06__media">
-              <img class="mxd-hero-06__video" src="img/hero/3dlogolab2.png" alt="Sovilj Design">
+              <model-viewer class="mxd-hero-06__video" src="models/logo.glb" alt="Sovilj Design 3D Logo" auto-rotate rotation-per-second="8deg" shadow-intensity="0" style="background-color: transparent;"></model-viewer>
               <div class="mxd-hero-06__cover"></div>
             </div>
             <div class="mxd-hero-06__wrap">
