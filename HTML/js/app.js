@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mxdColorSwitcher();
   mxdLanguageSwitcher();
   mxdLogoLoop();
+  mxdGradientNoise();
   // desktop only
   if (deviceType() === "desktop") {
     mxdCursor();
@@ -1616,6 +1617,18 @@ function mxdLogoLoop(selector = ".mxd-logo-loop", holdTime = 2000) {
     let intervalId = null;
     let timeoutId = null;
 
+    // lock the box to the widest word (plus a buffer for wide scramble
+    // characters) so surrounding header items don't shift during the animation
+    let maxWidth = 0;
+    words.forEach((w) => {
+      el.textContent = w;
+      maxWidth = Math.max(maxWidth, el.offsetWidth);
+    });
+    el.style.display = "inline-block";
+    el.style.width = Math.ceil(maxWidth * 1.2) + "px";
+    el.style.overflow = "hidden";
+    el.textContent = words[0];
+
     function scrambleTo(target) {
       let iterations = 0;
       intervalId = setInterval(() => {
@@ -1646,6 +1659,96 @@ function mxdLogoLoop(selector = ".mxd-logo-loop", holdTime = 2000) {
     timeoutId = setTimeout(loop, holdTime);
   });
 }
+
+// --------------------------------------------- //
+// Animation - Gradient Noise Background Start
+// --------------------------------------------- //
+function mxdGradientNoise(selector = "[data-gradient-noise]") {
+  const colors = [
+    { color: "rgba(245,87,2,1)", stop: "10.5%" },
+    { color: "rgba(245,120,2,1)", stop: "16%" },
+    { color: "rgba(245,140,2,1)", stop: "17.5%" },
+    { color: "rgba(245,170,100,1)", stop: "25%" },
+    { color: "rgba(238,174,202,1)", stop: "40%" },
+    { color: "rgba(202,179,214,1)", stop: "65%" },
+    { color: "rgba(148,201,233,1)", stop: "100%" },
+  ];
+  const gradientSize = "125% 125%";
+  const gradientPosition = "50% 101%"; // bottom-middle
+  const patternSize = 90;
+  const patternAlpha = 50;
+  const patternRefreshInterval = 2;
+  const noiseIntensity = 1;
+
+  document.querySelectorAll(selector).forEach((container) => {
+    const canvas = container.querySelector("canvas");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    container.style.background = `radial-gradient(${gradientSize} at ${gradientPosition},${colors
+      .map(({ color, stop }) => `${color} ${stop}`)
+      .join(",")})`;
+
+    const patternCanvas = document.createElement("canvas");
+    patternCanvas.width = patternSize;
+    patternCanvas.height = patternSize;
+    const patternCtx = patternCanvas.getContext("2d");
+    const patternData = patternCtx.createImageData(patternSize, patternSize);
+    const patternPixelDataLength = patternSize * patternSize * 4;
+
+    let cssWidth = 0;
+    let cssHeight = 0;
+
+    function resize() {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = container.getBoundingClientRect();
+      cssWidth = rect.width;
+      cssHeight = rect.height;
+      canvas.width = cssWidth * dpr;
+      canvas.height = cssHeight * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function updatePattern() {
+      for (let i = 0; i < patternPixelDataLength; i += 4) {
+        const value = Math.random() * 255 * noiseIntensity;
+        patternData.data[i] = value;
+        patternData.data[i + 1] = value;
+        patternData.data[i + 2] = value;
+        patternData.data[i + 3] = patternAlpha;
+      }
+      patternCtx.putImageData(patternData, 0, 0);
+    }
+
+    function drawGrain() {
+      if (cssWidth === 0 || cssHeight === 0) return;
+      ctx.clearRect(0, 0, cssWidth, cssHeight);
+      const fillPattern = ctx.createPattern(patternCanvas, "repeat");
+      if (fillPattern) {
+        ctx.fillStyle = fillPattern;
+        ctx.fillRect(0, 0, cssWidth, cssHeight);
+      }
+    }
+
+    let frame = 0;
+    function loop() {
+      if (cssWidth > 0 && cssHeight > 0 && frame % patternRefreshInterval === 0) {
+        updatePattern();
+        drawGrain();
+      }
+      frame++;
+      requestAnimationFrame(loop);
+    }
+
+    window.addEventListener("resize", resize);
+    resize();
+    loop();
+  });
+}
+// --------------------------------------------- //
+// Animation - Gradient Noise Background End
+// --------------------------------------------- //
 
 // --------------------------------------------- //
 // Animation - Preview Hover Slideshow Start
