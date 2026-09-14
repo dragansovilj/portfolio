@@ -76,7 +76,8 @@
         padding: 0;
       }
       .mxd-header__logo,
-      .mxd-header__nav {
+      .mxd-header__nav,
+      .mxd-header__controls {
         mix-blend-mode: difference;
       }
       .mxd-header__nav a {
@@ -92,7 +93,7 @@
         font: normal 700 1.8rem var(--_font-accent);
         text-transform: uppercase;
         letter-spacing: -0.05rem;
-        color: var(--nl-white);
+        color: var(--t-bright);
       }
       .mxd-header__nav a svg {
         display: block;
@@ -109,7 +110,7 @@
         transition: color var(--_animspeed-medium);
       }
       .no-touch .mxd-header__nav a:hover {
-        color: rgba(var(--nl-white-rgb), 0.7);
+        color: var(--t-medium);
       }
       .mxd-lang-switcher {
         display: -webkit-inline-box;
@@ -124,7 +125,7 @@
         font: normal 700 1.8rem var(--_font-accent);
         text-transform: uppercase;
         letter-spacing: -0.05rem;
-        color: var(--nl-white);
+        color: var(--t-bright);
       }
       .mxd-lang-switcher__item {
         color: inherit;
@@ -174,14 +175,10 @@
       <div class="mxd-loader__top">
         <span>Sovilj Design</span>
       </div>
-      <div class="mxd-loader__images">
-        <img src="https://dummyimage.com/300x300/5d5d5d/838383" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/303030/5d5d5d" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/787878/303030" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/5d5d5d/838383" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/303030/5d5d5d" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/787878/303030" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/303030/838383" alt="Sovilj Design Loader Image">
+            <div class="mxd-loader__images">
+        <img src="img/demo/screens/loader-1.png" alt="Sovilj Design Loader Image">
+        <img src="img/demo/screens/loader-2.png" alt="Sovilj Design Loader Image">
+        <img src="img/demo/screens/loader-3.png" alt="Sovilj Design Loader Image">
       </div>
       <div class="mxd-loader__bottom">
         <div class="mxd-loader__count">
@@ -214,7 +211,7 @@
 
           <!-- Menu Logo Start -->
           <div class="mxd-menu__logo">
-            <a href="index-design-studio.html" class="menu-logo">
+            <a href="index.html" class="menu-logo">
               <!-- logo icon -->
               <svg class="menu-logo__image" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 42.4 36">
                 <path d="M25.8,13.8h2.8v5.5h-2.8v-5.5ZM13.8,16.6v2.8h2.8v-5.5h-2.8v2.8ZM32.2,0v2.8h-2.8V0h2.8ZM26.7,5.5h2.8v-2.8h-2.8v2.8ZM21.2,5.5h-5.5v2.8h11.1v-2.8h-5.5ZM12.8,2.8v2.8h2.8v-2.8h-2.8ZM10.1,0v2.8h2.8V0h-2.8ZM7.3,5.5v5.5h2.8V2.8h-2.8v2.8ZM4.5,13.8v2.8H0v2.8h2.8v2.8H0v2.8h2.8v11.1h2.8v-8.3h5.5v-2.8h-5.5v-8.3h1.9v-5.5h-2.9v2.8ZM35,5.5v-2.8h-2.8v8.3h2.8v-5.5ZM42.4,19.4v-2.8h-4.7v-5.5h-2.8v5.5h1.9v8.3h-5.5v2.8h5.5v8.3h2.8v-11.1h2.8v-2.8h-2.8v-2.8h2.8Z"/>
@@ -489,7 +486,7 @@
     <header id="header" class="mxd-header">
       <!-- header logo -->
       <div class="mxd-header__logo loading-fade">
-        <a class="mxd-logo" href="index-design-studio.html">
+        <a class="mxd-logo" href="index.html">
           <!-- logo icon -->
           <img class="mxd-logo__image" src="img/logo/logo2.png" alt="Sovilj Design" style="display: none;">
           <!-- logo text -->
@@ -501,7 +498,7 @@
       <!-- header nav -->
       <nav class="mxd-header__nav loading-fade">
         <ul>
-          <li><a class="mxd-scramble" href="index-design-studio.html">Home</a></li>
+          <li><a class="mxd-scramble" href="index.html">Home</a></li>
           <li><a class="mxd-scramble" href="about-us.html">About</a></li>
           <li><a class="mxd-scramble" href="works-grid-sticky.html">Portfolio</a></li>
           <li>
@@ -577,7 +574,7 @@
             <div class="mxd-block">
               <!-- projects list -->
               <div class="mxd-projects-list no-margin-bottom">
-                <a class="mxd-projects-list__item active-cursor-image active-cursor-permanent" data-cursor-image="https://dummyimage.com/500x500/5d5d5d/838383" data-cursor-text="View Work" href="project-eds-energy-monitoring-platform.html">
+                <a class="mxd-projects-list__item active-cursor-image active-cursor-permanent" data-cursor-image="img/works/eds-energy/cover2.png" data-cursor-text="View Work" href="project-eds-energy-monitoring-platform.html">
                   <div class="mxd-projects-list__divider top"></div>
                   <div class="container-fluid px-0 mxd-projects-list__inner">
                     <div class="row gx-0">
@@ -619,7 +616,7 @@
                       </div>
                       <div class="col-12 col-xl-6 mxd-grid-padding">
                         <div class="mxd-projects-list__title">
-                          <h3>Swift Pay <span>fintech<br>app</span></h3>
+                          <h3>Swift Pay</h3>
                         </div>
                       </div>
                       <div class="col-6 col-md-6 col-xl-2 mxd-grid-padding">
@@ -639,7 +636,7 @@
                   </div>
                   <div class="mxd-projects-list__divider bottom"></div>
                 </a>
-                <a class="mxd-projects-list__item active-cursor-image active-cursor-permanent" data-cursor-image="https://dummyimage.com/500x500/5d5d5d/838383" data-cursor-text="View Work" href="project-meta-real-estate-app.html">
+                <a class="mxd-projects-list__item active-cursor-image active-cursor-permanent" data-cursor-image="img/works/meta-real-estate/thumbnail.png" data-cursor-text="View Work" href="project-meta-real-estate-app.html">
                   <div class="mxd-projects-list__divider top"></div>
                   <div class="container-fluid px-0 mxd-projects-list__inner">
                     <div class="row gx-0">
@@ -650,7 +647,7 @@
                       </div>
                       <div class="col-12 col-xl-6 mxd-grid-padding">
                         <div class="mxd-projects-list__title">
-                          <h3>Meta <span>real estate<br>app</span></h3>
+                          <h3>Meta <span>real estate</span></h3>
                         </div>
                       </div>
                       <div class="col-6 col-md-6 col-xl-2 mxd-grid-padding">
@@ -670,7 +667,7 @@
                   </div>
                   <div class="mxd-projects-list__divider bottom"></div>
                 </a>
-                <a class="mxd-projects-list__item active-cursor-image active-cursor-permanent" data-cursor-image="https://dummyimage.com/500x500/303030/838383" data-cursor-text="View Work" href="project-podrum-berlin.html">
+                <a class="mxd-projects-list__item active-cursor-image active-cursor-permanent" data-cursor-image="img/works/podrum-berlin/flase lete 1233131.jpg" data-cursor-text="View Work" href="project-podrum-berlin.html">
                   <div class="mxd-projects-list__divider top"></div>
                   <div class="container-fluid px-0 mxd-projects-list__inner">
                     <div class="row gx-0">
@@ -701,7 +698,7 @@
                   </div>
                   <div class="mxd-projects-list__divider bottom"></div>
                 </a>
-                <a class="mxd-projects-list__item active-cursor-image active-cursor-permanent" data-cursor-image="https://dummyimage.com/500x500/5d5d5d/838383" data-cursor-text="View Work" href="project-beats-per-hour.html">
+                <a class="mxd-projects-list__item active-cursor-image active-cursor-permanent" data-cursor-image="img/works/beats-per-hour/Bphlogo2.jpg" data-cursor-text="View Work" href="project-beats-per-hour.html">
                   <div class="mxd-projects-list__divider top"></div>
                   <div class="container-fluid px-0 mxd-projects-list__inner">
                     <div class="row gx-0">
@@ -732,7 +729,7 @@
                   </div>
                   <div class="mxd-projects-list__divider bottom"></div>
                 </a>
-                <a class="mxd-projects-list__item active-cursor-image active-cursor-permanent" data-cursor-image="https://dummyimage.com/500x500/303030/838383" data-cursor-text="View Work" href="project-women-entrepreneurship.html">
+                <a class="mxd-projects-list__item active-cursor-image active-cursor-permanent" data-cursor-image="img/works/women-entrepreneurship/ZNGV-iphone-2.jpg" data-cursor-text="View Work" href="project-women-entrepreneurship.html">
                   <div class="mxd-projects-list__divider top"></div>
                   <div class="container-fluid px-0 mxd-projects-list__inner">
                     <div class="row gx-0">
@@ -773,181 +770,81 @@
       </div>
       <!-- Section - Projects List End -->
 
-      <!-- Section - CTA with Marquee Start -->
-      <div class="mxd-section blur-section bg-color-opposite">
+      <!-- Section - CTA with Matter.js Tags Start -->
+      <div class="mxd-section">
         <div class="mxd-container fullwidth-container">
 
-          <!-- Block - CTA with Marquee Objects Start -->
+          <!-- Block - CTA with Matter.js Objects Start -->
           <div class="mxd-block">
-            <div class="mxd-promo transparent">
-              <div class="mxd-promo__wrap auto-height">
-                <!-- content -->
+            <div class="mxd-promo mxd-gravity-section accent">
+              <div class="mxd-gradient-noise-bg" data-gradient-noise>
+                <canvas class="mxd-gradient-noise-bg__canvas"></canvas>
+              </div>
+              <div class="mxd-promo__wrap">
+                <div class="mxd-promo__objects object-container">
+                  <div class="object object-permanent">
+                    <p>Web design</p>
+                  </div>
+                  <div class="object object-permanent">
+                    <p>Brand strategy</p>
+                  </div>
+                  <div class="object object-permanent">
+                    <p>3D Models</p>
+                  </div>
+                  <div class="object object-permanent">
+                    <p>Interactions</p>
+                  </div>
+                  <div class="object object-permanent">
+                    <p>IU/UX</p>
+                  </div>
+                  <div class="object object-permanent">
+                    <p>Guidelines</p>
+                  </div>
+                  <div class="object object-permanent">
+                    <p>App design</p>
+                  </div>
+                  <div class="object object-permanent">
+                    <p>Packaging</p>
+                  </div>
+                  <div class="object object-permanent">
+                    <p>Development</p>
+                  </div>
+                  <div class="object object-permanent">
+                    <p>Print Design</p>
+                  </div>
+                  <div class="object object-permanent">
+                    <p>Branding</p>
+                  </div>
+                  <div class="object object-permanent">
+                    <p>Applications</p>
+                  </div>
+                  <div class="object object-permanent">
+                    <p>Visual identity</p>
+                  </div>
+                  <div class="object object-permanent">
+                    <p>Logo design</p>
+                  </div>
+                </div>
                 <div class="mxd-promo__content">
                   <div class="mxd-promo__btngroup anim-uni-in-up">
-                    <a class="btn btn-line btn-line-opposite" href="contact.html">
-                      <span class="btn-caption mxd-scramble">Write a line</span>
+                    <a class="btn btn-line btn-line-permanent" href="contact.html">
+                      <span class="btn-caption mxd-scramble" data-en="Write a line" data-sr="Pošalji poruku">Write a line</span>
                     </a>
                   </div>
                   <div class="mxd-promo__caption">
-                    <a class="active-cursor-accent" data-cursor-text="Contact Us" href="contact.html">
-                      <h2 class="opposite mxd-split-lines">Let's talk about your project</h2>
+                    <a class="active-cursor-permanent" data-cursor-text="Contact Us" href="contact.html">
+                      <h2 class="permanent reveal-type" data-en="Let's talk about your project" data-sr="Razgovarajmo o tvom projektu">Let's talk about your project</h2>
                     </a>
                   </div>
-                </div>
-                <!-- marquee -->
-                <div class="mxd-promo__marquee">
-                  
-                  <!-- Marquee Divider Start -->
-                  <div class="marquee marquee-left--gsap">
-                    <div class="marquee__toleft marquee__images">
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">Photography</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/1200x1200/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">3D Models</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/1200x685/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">Development</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/1200x1200/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">Illustrations</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/740x1200/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">Fashion</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/800x1200/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">Digital Art</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/1200x1200/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">Packaging</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/1200x900/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">Motion</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/740x1200/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">Illustrations</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/800x1200/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">Video Production</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/1200x900/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">Photography</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/1200x1200/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">3D Models</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/1200x685/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">Development</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/1200x1200/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">Illustrations</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/740x1200/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                      <!-- single item -->
-                      <div class="marquee__item item-imageblock">
-                        <div class="marquee__tags">
-                          <span class="tag tag-s tag-medium-opposite mxd-scramble">Fashion</span>
-                        </div>
-                        <div class="marquee__image">
-                          <img src="https://dummyimage.com/800x1200/5d5d5d/838383" alt="Sovilj Design Image Example">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Marquee Divider End -->
-                  
                 </div>
               </div>
             </div>
           </div>
-          <!-- Block - CTA with Marquee Objects End -->
+          <!-- Block - CTA with Matter.js Objects End -->
 
         </div>
       </div>
-      <!-- Section - CTA with Marquee End -->
+      <!-- Section - CTA with Matter.js Tags End -->
 
     </main>
     <!-- Page Content End -->
@@ -973,7 +870,7 @@
                           </div>
                           <div class="mxd-footer-nav02__list">
                             <ul>
-                              <li><a class="anim-uni-slide-down" href="index-design-studio.html"><span>Home</span></a></li>
+                              <li><a class="anim-uni-slide-down" href="index.html"><span>Home</span></a></li>
                               <li><a class="anim-uni-slide-down" href="about-us.html"><span>About</span></a></li>
                               <li><a class="anim-uni-slide-down" href="works-grid-sticky.html"><span>Portfolio</span></a></li>
                               <li><a class="anim-uni-slide-down" href="contact.html"><span>Contact</span></a></li>
@@ -1143,6 +1040,7 @@
             <div class="fw-mark__wrap">
               <div class="fw-mark__content">
                 <span class="anim-uni-chars">Sovilj</span>
+                <img class="fw-mark__decor" src="img/logo/footerdes.png" alt="" aria-hidden="true">
               </div>
             </div>
           </div>

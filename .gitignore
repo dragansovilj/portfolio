@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+*.log
+
+# Disabled WebGPU hero experiment (dev source + node_modules, not used in production)
+HTML/hero-vgpu/

@@ -1,6 +1,6 @@
 /*! ------------------------------------------------
- * Project Name: Azurio - Digital Agency & Personal Portfolio HTML Template
- * Project Description: Stand out and express your uniqueness with Azurio - a vibrant and minimal HTML template for creatives, studios and freelancers. Impress your website visitors with a clean, stylish layout and stunning visuals.
+ * Project Name: Sovilj - Digital Agency & Personal Portfolio HTML Template
+ * Project Description: Stand out and express your uniqueness with Sovilj - a vibrant and minimal HTML template for creatives, studios and freelancers. Impress your website visitors with a clean, stylish layout and stunning visuals.
  * Tags: mix_design, resume, portfolio, personal page, cv, template, one page, responsive, html5, css3, creative, clean, agency, studio 
  * Version: 1.0.0
  * Build Date: March 2026
@@ -112,8 +112,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: block;
-}
-/* ------------------------------------------------*/
+}/* ------------------------------------------------*/
 /* Fonts End */
 /* ------------------------------------------------*/
 /* ------------------------------------------------*/
@@ -4869,6 +4868,49 @@ form textarea:required:valid {
   }
 }
 
+.mxd-header.mxd-header--glass {
+  top: 1.5rem;
+  left: 50%;
+  width: 1700px;
+  max-width: -moz-calc(100% - 3rem);
+  max-width: calc(100% - 3rem);
+  -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-box-pack: justify;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 0;
+  padding: 1rem 1.8rem;
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.15) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.15) 100%);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.078);
+  border-radius: 20px;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.149), inset 0 -1px rgba(255, 255, 255, 0.039), 0 30px 80px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 1px rgba(255, 255, 255, 0.149), inset 0 -1px rgba(255, 255, 255, 0.039), 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+.mxd-header.mxd-header--glass,
+.mxd-header.mxd-header--glass * {
+  color: #000;
+}
+.mxd-header.mxd-header--glass .mxd-color-switcher {
+  color: #000;
+}
+.mxd-header-permanent.mxd-header--glass .mxd-logo,
+.mxd-header-permanent.mxd-header--glass .mxd-logo__text,
+.mxd-header-permanent.mxd-header--glass .mxd-header__link,
+.mxd-header-permanent.mxd-header--glass .mxd-color-switcher {
+  color: #000;
+}
+
 .mxd-header-permanent .mxd-logo,
 .mxd-header-permanent .mxd-logo__text,
 .mxd-header-permanent .mxd-header__link,
@@ -6292,8 +6334,25 @@ form textarea:required:valid {
 }
 
 .fw-mark__wrap {
+  position: relative;
   container-type: inline-size;
   padding-top: 0.7rem;
+}
+
+.fw-mark__decor {
+  position: absolute;
+  right: 3cqw;
+  top: 50%;
+  width: 67.5cqw;
+  height: auto;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+}
+@media only screen and (max-width: 767px) {
+  .fw-mark__decor {
+    display: none;
+  }
 }
 
 .fw-mark__content {
@@ -6957,6 +7016,91 @@ form textarea:required:valid {
   }
 }
 
+.inner-headline__title {
+  position: relative;
+}
+.inner-headline__title h1 {
+  position: relative;
+  z-index: 1;
+}
+
+.headline-decor {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(308px, 42vw, 672px);
+  height: auto;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: headline-decor-intro 0.9s ease-out 0.3s both, headline-decor-float 9s ease-in-out 1.2s infinite;
+     -moz-animation: headline-decor-intro 0.9s ease-out 0.3s both, headline-decor-float 9s ease-in-out 1.2s infinite;
+          animation: headline-decor-intro 0.9s ease-out 0.3s both, headline-decor-float 9s ease-in-out 1.2s infinite;
+}
+@-webkit-keyframes headline-decor-intro {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(0.8);
+            transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    opacity: 0.85;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes headline-decor-intro {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(0.8);
+       -moz-transform: translate(-50%, -50%) scale(0.8);
+            transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    opacity: 0.85;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+       -moz-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+@-webkit-keyframes headline-decor-float {
+  0%, 100% { -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  25% { -webkit-transform: translate(-56%, -58%) rotate(9deg) scale(1.06); }
+  50% { -webkit-transform: translate(-44%, -50%) rotate(-7deg) scale(0.96); }
+  75% { -webkit-transform: translate(-50%, -42%) rotate(11deg) scale(1.04); }
+}
+@keyframes headline-decor-float {
+  0%, 100% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1);
+       -moz-transform: translate(-50%, -50%) rotate(0deg) scale(1);
+            transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  25% {
+    -webkit-transform: translate(-56%, -58%) rotate(9deg) scale(1.06);
+       -moz-transform: translate(-56%, -58%) rotate(9deg) scale(1.06);
+            transform: translate(-56%, -58%) rotate(9deg) scale(1.06);
+  }
+  50% {
+    -webkit-transform: translate(-44%, -50%) rotate(-7deg) scale(0.96);
+       -moz-transform: translate(-44%, -50%) rotate(-7deg) scale(0.96);
+            transform: translate(-44%, -50%) rotate(-7deg) scale(0.96);
+  }
+  75% {
+    -webkit-transform: translate(-50%, -42%) rotate(11deg) scale(1.04);
+       -moz-transform: translate(-50%, -42%) rotate(11deg) scale(1.04);
+            transform: translate(-50%, -42%) rotate(11deg) scale(1.04);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .headline-decor {
+    display: none;
+  }
+}
+
 .inner-headline__title.centered {
   text-align: center;
 }
@@ -7244,8 +7388,8 @@ form textarea:required:valid {
   }
   .headline-banner-01.landscape,
   .headline-banner-02.landscape {
-    width: 28rem;
-    height: 21rem;
+    width: 36.4rem;
+    height: 27.3rem;
   }
   .headline-banner-01.portrait,
   .headline-banner-02.portrait {
@@ -7296,8 +7440,8 @@ form textarea:required:valid {
 @media only screen and (min-width: 1600px) {
   .headline-banner-01.landscape,
   .headline-banner-02.landscape {
-    width: 32rem;
-    height: 24rem;
+    width: 41.6rem;
+    height: 31.2rem;
   }
   .headline-banner-01.portrait,
   .headline-banner-02.portrait {
@@ -9127,6 +9271,7 @@ form textarea:required:valid {
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: #000;
 }
 .mxd-hero-06__media video[poster] {
   -o-object-fit: cover;
@@ -9139,7 +9284,29 @@ form textarea:required:valid {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--nl-black-06);
+  background-color: transparent;
+}
+
+.mxd-hero-06__rock {
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mxd-hero-06__rock--right {
+  right: 0;
+  width: clamp(220px, 30vw, 520px);
+}
+.mxd-hero-06__rock--left {
+  left: 0;
+  width: 50vw;
+  -webkit-transform: scaleX(-1);
+     -moz-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 
 .mxd-hero-06__video {
@@ -9153,6 +9320,7 @@ form textarea:required:valid {
      object-position: center;
   z-index: -1;
   background-color: #000;
+  transform: scale(0.715);
 }
 
 .mxd-hero-06__wrap {
@@ -9282,6 +9450,10 @@ form textarea:required:valid {
 .mxd-hero-06__headline h1 {
   font-size: 5rem;
   color: var(--nl-white);
+  -webkit-transform: translateY(100px);
+     -moz-transform: translateY(100px);
+      -ms-transform: translateY(100px);
+          transform: translateY(100px);
 }
 @media only screen and (min-width: 768px) {
   .mxd-hero-06__headline h1 {
@@ -13556,13 +13728,35 @@ form textarea:required:valid {
 .mxd-project-item__media {
   position: relative;
   overflow: hidden;
+  aspect-ratio: 1/1;
+  will-change: transform;
 }
 .mxd-project-item__media img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.mxd-project-item__media-blur {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: blur(16px);
+          filter: blur(16px);
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 55%, #000 100%);
+          mask-image: radial-gradient(ellipse at center, transparent 55%, #000 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.mxd-project-item__media:hover .mxd-project-item__media-blur {
+  opacity: 1;
 }
 
 .mxd-project-item__logowrap {
@@ -13641,6 +13835,22 @@ form textarea:required:valid {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+.test-frame-preview {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2.2rem;
+  background-color: rgba(93, 93, 93, 0.2);
+  padding: 10px;
+  border-radius: 30px;
 }
 
 .mxd-project-item__name {
@@ -20936,3 +21146,95 @@ form textarea:required:valid {
 /* ------------------------------------------------*/
 /* Block - Images Grid End */
 /* ------------------------------------------------*/
+/* ------------------------------------------------*/
+/* Block - Pixelated Image Reveal Start */
+/* ------------------------------------------------*/
+.mxd-pixel-reveal {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 800 / 450;
+}
+.mxd-pixel-reveal__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.mxd-pixel-reveal__img--default {
+  position: relative;
+}
+.mxd-pixel-reveal__img--active {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.05s linear;
+}
+.mxd-pixel-reveal.is-revealed .mxd-pixel-reveal__img--active {
+  opacity: 1;
+}
+.mxd-pixel-reveal__grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  pointer-events: none;
+}
+.mxd-pixel-reveal__pixel {
+  background-color: var(--nl-black);
+  opacity: 0;
+  transition: opacity 0s linear;
+}
+.mxd-pixel-reveal__pixel.is-visible {
+  opacity: 1;
+}
+/* ------------------------------------------------*/
+/* Block - Pixelated Image Reveal End */
+/* ------------------------------------------------*/
+
+/* Pixelated Reveal - Text Variant */
+.mxd-pixel-reveal__text {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font: normal 400 4.6rem/1.2 "Sudo", var(--_font-default);
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  color: var(--nl-black);
+  background-color: transparent;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.mxd-pixel-reveal__text--default {
+  position: absolute;
+  inset: 0;
+  opacity: 1;
+  transition: opacity 0.05s linear;
+}
+.mxd-pixel-reveal__text--active {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.05s linear;
+}
+.mxd-pixel-reveal.is-revealed .mxd-pixel-reveal__text--default {
+  opacity: 0;
+}
+.mxd-pixel-reveal.is-revealed .mxd-pixel-reveal__text--active {
+  opacity: 1;
+}

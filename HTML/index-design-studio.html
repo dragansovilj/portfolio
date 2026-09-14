@@ -28,8 +28,8 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:title" content="Sovilj - Digital Agency & Personal Portfolio HTML Template">
     <meta property="og:description" content="Stand out and express your uniqueness with Sovilj - a vibrant and minimal HTML template for creatives, studios and freelancers. Impress your website visitors with a clean, stylish layout and stunning visuals.">
-    <meta property="og:url" content="https://mixdesign.club/themeforest/azurio">
-    <meta property="og:image" content="https://mixdesign.club/themeforest/azurio/img/og-image.jpg">
+    <meta property="og:url" content="https://mixdesign.club/themeforest/sovilj">
+    <meta property="og:image" content="https://mixdesign.club/themeforest/sovilj/img/og-image.jpg">
     <!-- Facebook Metadata End -->
 
     <!-- Template Styles Start -->
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- Template Styles End -->
 
-    <!-- 3D Model Viewer Start -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
-    <!-- 3D Model Viewer End -->
+    <!-- Hero WebGPU (vgpu triangle-led-front) Start -->
+    <!-- <script type="module" src="hero-vgpu-dist/hero-vgpu.js"></script> -->
+    <!-- Hero WebGPU (vgpu triangle-led-front) End -->
 
     <!-- Custom Styles - Sticky Header Nav Start -->
     <style>
@@ -217,6 +217,30 @@
       }
       .mxd-hero-06__media {
         overflow: hidden;
+        z-index: 0;
+      }
+      .mxd-hero-glass-logo {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+      }
+      /* WebGPU canvases can end up on their own compositor layer that
+         ignores normal DOM z-order — force the text/content wrap onto an
+         explicitly higher layer so it always paints above the canvas. */
+      .mxd-hero-06__wrap {
+        position: relative;
+        z-index: 2;
+        isolation: isolate;
+      }
+      .mxd-hero-glass-logo__canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      /* dev-only debug panel from the pulled vgpu example — not for production */
+      .mxd-hero-glass-logo .lil-gui.root {
+        display: none;
       }
       @keyframes mxd-hero-float {
         0%, 100% {
@@ -249,14 +273,10 @@
       <div class="mxd-loader__top">
         <span>Sovilj Design</span>
       </div>
-      <div class="mxd-loader__images">
-        <img src="https://dummyimage.com/300x300/5d5d5d/838383" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/303030/5d5d5d" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/787878/303030" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/5d5d5d/838383" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/303030/5d5d5d" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/787878/303030" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/303030/838383" alt="Sovilj Design Loader Image">
+            <div class="mxd-loader__images">
+        <img src="img/demo/screens/loader-1.png" alt="Sovilj Design Loader Image">
+        <img src="img/demo/screens/loader-2.png" alt="Sovilj Design Loader Image">
+        <img src="img/demo/screens/loader-3.png" alt="Sovilj Design Loader Image">
       </div>
       <div class="mxd-loader__bottom">
         <div class="mxd-loader__count">
@@ -289,7 +309,7 @@
 
           <!-- Menu Logo Start -->
           <div class="mxd-menu__logo">
-            <a href="index-design-studio.html" class="menu-logo">
+            <a href="index.html" class="menu-logo">
               <!-- logo icon -->
               <img class="menu-logo__image" src="img/logo/logo2.png" alt="Sovilj Design">
               <!-- logo text -->
@@ -562,7 +582,7 @@
     <header id="header" class="mxd-header mxd-header-permanent">
       <!-- header logo -->
       <div class="mxd-header__logo loading-fade">
-        <a class="mxd-logo" href="index-design-studio.html">
+        <a class="mxd-logo" href="index.html">
           <!-- logo icon -->
           <img class="mxd-logo__image" src="img/logo/logo2.png" alt="Sovilj Design" style="display: none;">
           <!-- logo text -->
@@ -574,7 +594,7 @@
       <!-- header nav -->
       <nav class="mxd-header__nav loading-fade">
         <ul>
-          <li><a class="mxd-scramble" data-en="Home" data-sr="PoÄetna" href="index-design-studio.html">Home</a></li>
+          <li><a class="mxd-scramble" data-en="Home" data-sr="PoÄetna" href="index.html">Home</a></li>
           <li><a class="mxd-scramble" data-en="About" data-sr="O nama" href="about-us.html">About</a></li>
           <li><a class="mxd-scramble" data-en="Portfolio" data-sr="Portfolio" href="works-grid-sticky.html">Portfolio</a></li>
           <li>
@@ -622,44 +642,8 @@
         <div class="pinned-section__inner">
           <div class="mxd-hero-06">
             <div class="mxd-hero-06__media">
-              <model-viewer id="mxd-hero-model" class="mxd-hero-06__video" src="models/logo.glb" alt="Sovilj Design 3D Logo" camera-orbit="15deg 75deg auto" shadow-intensity="0" environment-image="img/hero/limpopo_golf_course_1k.hdr" exposure="1" style="background-color: transparent;"></model-viewer>
-              <script>
-                (function () {
-                  var mv = document.getElementById("mxd-hero-model");
-                  if (!mv) return;
-                  function setup() {
-                    try {
-                      var mat = mv.model.materials[0];
-                      mat.pbrMetallicRoughness.setBaseColorFactor([0.95, 0.95, 0.95, 1]);
-                    } catch (e) {}
-
-                    // kickstart the first render
-                    mv.setAttribute("camera-controls", "");
-                    setTimeout(function () {
-                      mv.removeAttribute("camera-controls");
-                    }, 300);
-
-                    // gentle limited sway instead of full rotation, so the flat shape
-                    // never turns edge-on to the camera
-                    var baseTheta = 15;
-                    var amplitude = 35;
-                    var speed = 0.0006;
-                    var start = performance.now();
-                    function animate(now) {
-                      var t = (now - start) * speed;
-                      var theta = baseTheta + Math.sin(t) * amplitude;
-                      mv.cameraOrbit = theta.toFixed(2) + "deg 75deg auto";
-                      requestAnimationFrame(animate);
-                    }
-                    requestAnimationFrame(animate);
-                  }
-                  if (mv.loaded) {
-                    setup();
-                  } else {
-                    mv.addEventListener("load", setup, { once: true });
-                  }
-                })();
-              </script>
+              <video class="mxd-hero-06__video" poster="img/hero/3dlogolab2.png" src="img/logo/herovideo-loop.mp4" autoplay muted loop playsinline></video>
+              <!-- <div class="mxd-hero-glass-logo" data-hero-vgpu></div> -->
               <div class="mxd-hero-06__cover"></div>
             </div>
             <div class="mxd-hero-06__wrap">
@@ -780,7 +764,7 @@
                     </a>
                     <div class="mxd-project-item__caption">
                       <div class="mxd-project-item__name">
-                        <a class="project-name-s" href="project-swift-pay-fintech-app.html">Swift Pay Fintech App</a>
+                        <a class="project-name-s" href="project-swift-pay-fintech-app.html">Swift Pay</a>
                       </div>
                       <div class="mxd-project-item__tags">
                         <span class="tag tag-s tag-medium mxd-scramble">UI/UX</span>
@@ -800,7 +784,7 @@
                     </a>
                     <div class="mxd-project-item__caption">
                       <div class="mxd-project-item__name">
-                        <a class="project-name-s" href="project-meta-real-estate-app.html">Meta Real Estate App</a>
+                        <a class="project-name-s" href="project-meta-real-estate-app.html">Meta Real Estate</a>
                       </div>
                       <div class="mxd-project-item__tags">
                         <span class="tag tag-s tag-medium mxd-scramble">UI/UX</span>
@@ -831,14 +815,13 @@
                     </div>
                   </div>
                   <div class="col-12 col-md-6 col-xl-4 mxd-project-item animate-card-3">
-                    <a class="mxd-project-item__media mxd-img-anim active-cursor-permanent" data-cursor-text="View Work" href="project-beats-per-hour.html">
-                      <img class="mxd-img-anim__absolute" src="https://dummyimage.com/850x1280/303030/838383" alt="Project Preview Image">
-                      <img class="mxd-img-anim__absolute" src="https://dummyimage.com/850x1280/5d5d5d/838383" alt="Project Preview Image">
-
-                      <img class="mxd-img-anim__absolute" src="https://dummyimage.com/850x1280/303030/838383" alt="Project Preview Image">
-                      <img class="mxd-img-anim__absolute" src="https://dummyimage.com/850x1280/5d5d5d/838383" alt="Project Preview Image">
-                      <img class="mxd-img-anim__absolute" src="https://dummyimage.com/850x1280/303030/838383" alt="Project Preview Image">
-                      <img class="mxd-img-anim__main" src="https://dummyimage.com/850x1280/5d5d5d/838383" alt="Project Preview Image">
+                    <a class="mxd-project-item__media mxd-img-anim active-cursor-permanent" data-cursor-text="View Work" href="project-beats-per-hour.html" style="aspect-ratio: 850 / 1280;">
+                      <img class="mxd-img-anim__absolute" src="img/works/beats-per-hour/Bphlogo2.jpg" alt="Beats Per Hour Preview Image">
+                      <img class="mxd-img-anim__absolute" src="img/works/beats-per-hour/Bphlogo2.jpg" alt="Beats Per Hour Preview Image">
+                      <img class="mxd-img-anim__absolute" src="img/works/beats-per-hour/Bphlogo2.jpg" alt="Beats Per Hour Preview Image">
+                      <img class="mxd-img-anim__absolute" src="img/works/beats-per-hour/Bphlogo2.jpg" alt="Beats Per Hour Preview Image">
+                      <img class="mxd-img-anim__absolute" src="img/works/beats-per-hour/Bphlogo2.jpg" alt="Beats Per Hour Preview Image">
+                      <img class="mxd-img-anim__main" src="img/works/beats-per-hour/Bphlogo2.jpg" alt="Beats Per Hour Preview Image" style="height: 100%;">
                     </a>
                     <div class="mxd-project-item__caption">
                       <div class="mxd-project-item__name">
@@ -853,13 +836,13 @@
                   </div>
                   <div class="col-12 col-md-6 col-xl-4 mxd-project-item animate-card-3">
                     <a class="mxd-project-item__media mxd-img-anim active-cursor-permanent" data-cursor-text="View Work" href="project-women-entrepreneurship.html">
-                      <img class="mxd-img-anim__absolute" src="https://dummyimage.com/1200x1200/303030/838383" alt="Project Preview Image">
-                      <img class="mxd-img-anim__absolute" src="https://dummyimage.com/1200x1200/5d5d5d/838383" alt="Project Preview Image">
-                      <img class="mxd-img-anim__absolute" src="https://dummyimage.com/1200x1200/303030/838383" alt="Project Preview Image">
-                      <img class="mxd-img-anim__absolute" src="https://dummyimage.com/1200x1200/5d5d5d/838383" alt="Project Preview Image">
-                      <img class="mxd-img-anim__absolute" src="https://dummyimage.com/1200x1200/303030/838383" alt="Project Preview Image">
-                      <img class="mxd-img-anim__absolute" src="https://dummyimage.com/1200x1200/5d5d5d/838383" alt="Project Preview Image">
-                      <img class="mxd-img-anim__main" src="https://dummyimage.com/1200x1200/303030/838383" alt="Project Preview Image">
+                      <img class="mxd-img-anim__absolute" src="img/works/women-entrepreneurship/ZNGV-iphone-2.jpg" alt="Women Entrepreneurship Preview Image">
+                      <img class="mxd-img-anim__absolute" src="img/works/women-entrepreneurship/ZNGV-iphone-2.jpg" alt="Women Entrepreneurship Preview Image">
+                      <img class="mxd-img-anim__absolute" src="img/works/women-entrepreneurship/ZNGV-iphone-2.jpg" alt="Women Entrepreneurship Preview Image">
+                      <img class="mxd-img-anim__absolute" src="img/works/women-entrepreneurship/ZNGV-iphone-2.jpg" alt="Women Entrepreneurship Preview Image">
+                      <img class="mxd-img-anim__absolute" src="img/works/women-entrepreneurship/ZNGV-iphone-2.jpg" alt="Women Entrepreneurship Preview Image">
+                      <img class="mxd-img-anim__absolute" src="img/works/women-entrepreneurship/ZNGV-iphone-2.jpg" alt="Women Entrepreneurship Preview Image">
+                      <img class="mxd-img-anim__main" src="img/works/women-entrepreneurship/ZNGV-iphone-2.jpg" alt="Women Entrepreneurship Preview Image">
                     </a>
                     <div class="mxd-project-item__caption">
                       <div class="mxd-project-item__name">
@@ -1565,7 +1548,7 @@
                           </div>
                           <div class="mxd-footer-nav02__list">
                             <ul>
-                              <li><a class="anim-uni-slide-down" href="index-design-studio.html"><span data-en="Home" data-sr="PoÄetna">Home</span></a></li>
+                              <li><a class="anim-uni-slide-down" href="index.html"><span data-en="Home" data-sr="PoÄetna">Home</span></a></li>
                               <li><a class="anim-uni-slide-down" href="about-us.html"><span data-en="About" data-sr="O nama">About</span></a></li>
                               <li><a class="anim-uni-slide-down" href="works-grid-sticky.html"><span data-en="Portfolio" data-sr="Portfolio">Portfolio</span></a></li>
                               <li><a class="anim-uni-slide-down" href="contact.html"><span data-en="Contact" data-sr="Kontakt">Contact</span></a></li>
@@ -1735,6 +1718,7 @@
             <div class="fw-mark__wrap">
               <div class="fw-mark__content">
                 <span class="anim-uni-chars">Sovilj</span>
+                <img class="fw-mark__decor" src="img/logo/footerdes.png" alt="" aria-hidden="true">
               </div>
             </div>
           </div>

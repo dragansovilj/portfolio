@@ -76,7 +76,8 @@
         padding: 0;
       }
       .mxd-header__logo,
-      .mxd-header__nav {
+      .mxd-header__nav,
+      .mxd-header__controls {
         mix-blend-mode: difference;
       }
       .mxd-header__nav a {
@@ -92,7 +93,7 @@
         font: normal 700 1.8rem var(--_font-accent);
         text-transform: uppercase;
         letter-spacing: -0.05rem;
-        color: var(--nl-white);
+        color: var(--t-bright);
       }
       .mxd-header__nav a svg {
         display: block;
@@ -109,7 +110,7 @@
         transition: color var(--_animspeed-medium);
       }
       .no-touch .mxd-header__nav a:hover {
-        color: rgba(var(--nl-white-rgb), 0.7);
+        color: var(--t-medium);
       }
       .mxd-lang-switcher {
         display: -webkit-inline-box;
@@ -124,7 +125,7 @@
         font: normal 700 1.8rem var(--_font-accent);
         text-transform: uppercase;
         letter-spacing: -0.05rem;
-        color: var(--nl-white);
+        color: var(--t-bright);
       }
       .mxd-lang-switcher__item {
         color: inherit;
@@ -174,14 +175,10 @@
       <div class="mxd-loader__top">
         <span>Sovilj Design</span>
       </div>
-      <div class="mxd-loader__images">
-        <img src="https://dummyimage.com/300x300/5d5d5d/838383" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/303030/5d5d5d" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/787878/303030" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/5d5d5d/838383" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/303030/5d5d5d" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/787878/303030" alt="Sovilj Design Loader Image">
-        <img src="https://dummyimage.com/300x300/303030/838383" alt="Sovilj Design Loader Image">
+            <div class="mxd-loader__images">
+        <img src="img/demo/screens/loader-1.png" alt="Sovilj Design Loader Image">
+        <img src="img/demo/screens/loader-2.png" alt="Sovilj Design Loader Image">
+        <img src="img/demo/screens/loader-3.png" alt="Sovilj Design Loader Image">
       </div>
       <div class="mxd-loader__bottom">
         <div class="mxd-loader__count">
@@ -214,7 +211,7 @@
 
           <!-- Menu Logo Start -->
           <div class="mxd-menu__logo">
-            <a href="index-design-studio.html" class="menu-logo">
+            <a href="index.html" class="menu-logo">
               <!-- logo icon -->
               <svg class="menu-logo__image" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 42.4 36">
                 <path d="M25.8,13.8h2.8v5.5h-2.8v-5.5ZM13.8,16.6v2.8h2.8v-5.5h-2.8v2.8ZM32.2,0v2.8h-2.8V0h2.8ZM26.7,5.5h2.8v-2.8h-2.8v2.8ZM21.2,5.5h-5.5v2.8h11.1v-2.8h-5.5ZM12.8,2.8v2.8h2.8v-2.8h-2.8ZM10.1,0v2.8h2.8V0h-2.8ZM7.3,5.5v5.5h2.8V2.8h-2.8v2.8ZM4.5,13.8v2.8H0v2.8h2.8v2.8H0v2.8h2.8v11.1h2.8v-8.3h5.5v-2.8h-5.5v-8.3h1.9v-5.5h-2.9v2.8ZM35,5.5v-2.8h-2.8v8.3h2.8v-5.5ZM42.4,19.4v-2.8h-4.7v-5.5h-2.8v5.5h1.9v8.3h-5.5v2.8h5.5v8.3h2.8v-11.1h2.8v-2.8h-2.8v-2.8h2.8Z"/>
@@ -489,7 +486,7 @@
     <header id="header" class="mxd-header">
       <!-- header logo -->
       <div class="mxd-header__logo loading-fade">
-        <a class="mxd-logo" href="index-design-studio.html">
+        <a class="mxd-logo" href="index.html">
           <!-- logo icon -->
           <img class="mxd-logo__image" src="img/logo/logo2.png" alt="Sovilj Design" style="display: none;">
           <!-- logo text -->
@@ -501,7 +498,7 @@
       <!-- header nav -->
       <nav class="mxd-header__nav loading-fade">
         <ul>
-          <li><a class="mxd-scramble" href="index-design-studio.html">Home</a></li>
+          <li><a class="mxd-scramble" href="index.html">Home</a></li>
           <li><a class="mxd-scramble" href="about-us.html">About</a></li>
           <li><a class="mxd-scramble" href="works-grid-sticky.html">Portfolio</a></li>
           <li>
@@ -558,7 +555,7 @@
                     <div class="inner-headline__breadcrumbs loading-fade">
                       <div class="breadcrumbs__nav">
                         <span>
-                          <a href="index-design-studio.html">
+                          <a href="index.html">
                             <span class="mxd-scramble">Home</span>
                           </a>
                         </span>
@@ -584,10 +581,7 @@
                             <!-- split header caption -->
                             <div class="inner-headline__caption split-caption-title pre-form">
                               <div class="mxd-grid-item">
-                                <p class="t-bold t-large loading-split">Have questions? We've got the answers! 
-                                  Here, you'll find clear and concise information <span>about our services, 
-                                    process, and what to expect when working with us. If you need more details, 
-                                    feel free to reach out!</span>
+                                <p class="t-bold t-medium loading-split">Have questions? <span>We've got the answers!</span>
                                 </p>
                               </div>
                             </div>
@@ -707,7 +701,7 @@
                           </div>
                           <div class="mxd-footer-nav02__list">
                             <ul>
-                              <li><a class="anim-uni-slide-down" href="index-design-studio.html"><span>Home</span></a></li>
+                              <li><a class="anim-uni-slide-down" href="index.html"><span>Home</span></a></li>
                               <li><a class="anim-uni-slide-down" href="about-us.html"><span>About</span></a></li>
                               <li><a class="anim-uni-slide-down" href="works-grid-sticky.html"><span>Portfolio</span></a></li>
                               <li><a class="anim-uni-slide-down" href="contact.html"><span>Contact</span></a></li>
@@ -878,6 +872,7 @@
               <div class="fw-mark__content">
                 <span class="anim-uni-chars">Sovilj</span>
               </div>
+              <img class="fw-mark__decor" src="img/logo/footerdes.png" alt="" aria-hidden="true">
             </div>
           </div>
         </div>

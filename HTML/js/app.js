@@ -1,6 +1,6 @@
 /*! ------------------------------------------------
- * Project Name: Azurio - Digital Agency & Personal Portfolio HTML Template
- * Project Description: Stand out and express your uniqueness with Azurio - a vibrant and minimal HTML template for creatives, studios and freelancers. Impress your website visitors with a clean, stylish layout and stunning visuals.
+ * Project Name: Sovilj - Digital Agency & Personal Portfolio HTML Template
+ * Project Description: Stand out and express your uniqueness with Sovilj - a vibrant and minimal HTML template for creatives, studios and freelancers. Impress your website visitors with a clean, stylish layout and stunning visuals.
  * Tags: mix_design, resume, portfolio, personal page, cv, template, one page, responsive, html5, css3, creative, clean, agency, studio
  * Version: 1.0.0
  * Build Date: March 2026
@@ -124,7 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
     mxdCursorTrailTr();
     mxdTextScramble();
     mxdHoverSlideshow();
+    mxdPixelReveal();
     mxdHeroBannersHover();
+    mxdProjectTilt();
+    mxdProjectEdgeBlur();
   } else {
     document.getElementById("mxd-cursor").style.display = "none";
   }
@@ -455,7 +458,7 @@ function mxdTypeAnimations() {
       smartWrap: true,
       aria: "none",
       onSplit: (self) => {
-        gsap.timeline({
+        const tl = gsap.timeline({
           scrollTrigger: {
             trigger: animChars,
             start: "top bottom",
@@ -472,6 +475,32 @@ function mxdTypeAnimations() {
             amount: 0.3,
           }
         });
+
+        const decor = animChars.closest(".mxd-footer__fw-mark")?.querySelector(".fw-mark__decor");
+        if (decor) {
+          tl.fromTo(decor, {
+            autoAlpha: 0,
+            yPercent: -50,
+            y: 40,
+            scale: 0.85,
+          }, {
+            autoAlpha: 1,
+            yPercent: -50,
+            y: 0,
+            scale: 1,
+            duration: 0.7,
+            ease: "back.out(1.6)",
+            onComplete: () => {
+              gsap.to(decor, {
+                y: -14,
+                duration: 2.4,
+                ease: "sine.inOut",
+                yoyo: true,
+                repeat: -1,
+              });
+            }
+          }, "-=0.35");
+        }
       },
     });
   });
@@ -1665,13 +1694,13 @@ function mxdLogoLoop(selector = ".mxd-logo-loop", holdTime = 2000) {
 // --------------------------------------------- //
 function mxdGradientNoise(selector = "[data-gradient-noise]") {
   const colors = [
-    { color: "rgba(245,87,2,1)", stop: "10.5%" },
-    { color: "rgba(245,120,2,1)", stop: "16%" },
-    { color: "rgba(245,140,2,1)", stop: "17.5%" },
-    { color: "rgba(245,170,100,1)", stop: "25%" },
-    { color: "rgba(238,174,202,1)", stop: "40%" },
-    { color: "rgba(202,179,214,1)", stop: "65%" },
-    { color: "rgba(148,201,233,1)", stop: "100%" },
+    { color: "rgba(0,43,186,1)", stop: "10.5%" },
+    { color: "rgba(10,55,190,1)", stop: "16%" },
+    { color: "rgba(20,60,170,1)", stop: "17.5%" },
+    { color: "rgba(35,65,130,1)", stop: "25%" },
+    { color: "rgba(55,60,80,1)", stop: "40%" },
+    { color: "rgba(45,45,50,1)", stop: "65%" },
+    { color: "rgba(10,10,12,1)", stop: "100%" },
   ];
   const gradientSize = "125% 125%";
   const gradientPosition = "50% 101%"; // bottom-middle
@@ -1787,6 +1816,141 @@ function mxdHoverSlideshow() {
 }
 // --------------------------------------------- //
 // Animation - Preview Hover Slideshow End
+// --------------------------------------------- //
+
+// --------------------------------------------- //
+// Animation - Pixelated Image Reveal Start
+// --------------------------------------------- //
+function mxdPixelReveal(selector = ".mxd-pixel-reveal") {
+  const gridSize = 7;
+  const stepDuration = 300; // ms
+  const pixelCount = gridSize * gridSize;
+
+  document.querySelectorAll(selector).forEach((container) => {
+    const grid = container.querySelector(".mxd-pixel-reveal__grid");
+    if (!grid) return;
+
+    const pixels = [];
+    for (let i = 0; i < pixelCount; i++) {
+      const pixel = document.createElement("div");
+      pixel.className = "mxd-pixel-reveal__pixel";
+      grid.appendChild(pixel);
+      pixels.push(pixel);
+    }
+
+    let timeouts = [];
+    let isActive = false;
+
+    function clearTimeouts() {
+      timeouts.forEach(clearTimeout);
+      timeouts = [];
+    }
+
+    function runReveal(activate) {
+      clearTimeouts();
+
+      // shuffle pixel order for random stagger
+      const order = pixels.map((_, i) => i);
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      const stagger = stepDuration / pixelCount;
+      const delays = new Array(pixelCount);
+      order.forEach((pixelIndex, pos) => {
+        delays[pixelIndex] = pos * stagger;
+      });
+
+      pixels.forEach((pixel, i) => {
+        pixel.style.transitionDelay = "0s";
+        pixel.classList.remove("is-visible");
+        // force reflow so the next class add re-triggers transition timing per pixel
+        void pixel.offsetWidth;
+        pixel.style.transitionDelay = delays[i] + "ms";
+        pixel.classList.add("is-visible");
+      });
+
+      timeouts.push(
+        setTimeout(() => {
+          container.classList.toggle("is-revealed", activate);
+        }, stepDuration)
+      );
+      timeouts.push(
+        setTimeout(() => {
+          pixels.forEach((pixel) => pixel.classList.remove("is-visible"));
+        }, stepDuration)
+      );
+    }
+
+    container.addEventListener("mouseenter", () => {
+      if (isActive) return;
+      isActive = true;
+      runReveal(true);
+    });
+    container.addEventListener("mouseleave", () => {
+      if (!isActive) return;
+      isActive = false;
+      runReveal(false);
+    });
+  });
+}
+// --------------------------------------------- //
+// Animation - Pixelated Image Reveal End
+// --------------------------------------------- //
+
+// --------------------------------------------- //
+// Animation - Project Thumbnail Tilt Start
+// --------------------------------------------- //
+function mxdProjectTilt() {
+  const items = document.querySelectorAll(".mxd-project-item__media");
+  if (!items.length) return;
+
+  items.forEach(image => {
+    image.addEventListener("mousemove", (e) => {
+      const x = (e.offsetX / image.offsetWidth - 0.5);
+      const y = (e.offsetY / image.offsetHeight - 0.5);
+      gsap.to(image, {
+        rotateY: x * 6,
+        rotateX: -y * 6,
+        duration: 0.3,
+        transformPerspective: 600,
+        ease: "power2.out",
+      });
+    });
+
+    image.addEventListener("mouseleave", () => {
+      gsap.to(image, {
+        rotateY: 0,
+        rotateX: 0,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    });
+  });
+}
+// --------------------------------------------- //
+// Animation - Project Thumbnail Tilt End
+// --------------------------------------------- //
+
+// --------------------------------------------- //
+// Animation - Project Thumbnail Edge Blur Start
+// --------------------------------------------- //
+function mxdProjectEdgeBlur() {
+  const items = document.querySelectorAll(".mxd-project-item__media");
+  if (!items.length) return;
+
+  items.forEach(item => {
+    const mainImage = item.querySelector(".mxd-img-anim__main") || item.querySelector("img");
+    if (!mainImage) return;
+
+    const blurImage = mainImage.cloneNode(true);
+    blurImage.removeAttribute("class");
+    blurImage.classList.add("mxd-project-item__media-blur");
+    item.appendChild(blurImage);
+  });
+}
+// --------------------------------------------- //
+// Animation - Project Thumbnail Edge Blur End
 // --------------------------------------------- //
 
 // --------------------------------------------- //
