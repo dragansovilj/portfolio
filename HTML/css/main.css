@@ -5285,6 +5285,12 @@ form textarea:required:valid {
   color: var(--t-opp-medium);
 }
 
+@media only screen and (max-width: 1199px) {
+  .menu-contact__item.hide-mobile-menu {
+    display: none;
+  }
+}
+
 .mxd-menu__content {
   display: -webkit-box;
   display: -moz-box;
