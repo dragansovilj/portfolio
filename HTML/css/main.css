@@ -9440,11 +9440,12 @@ form textarea:required:valid {
           transform: translateY(-50%);
   mix-blend-mode: difference;
   padding: 0 3rem;
-  margin-top: -6rem;
+  margin-top: -13rem;
 }
 @media only screen and (min-width: 768px) {
   .mxd-hero-06__top {
     padding: 0 6rem;
+    margin-top: -14rem;
   }
 }
 @media only screen and (min-width: 1200px) {
