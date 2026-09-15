@@ -738,6 +738,7 @@ function mxdMenu(lenisInstance) {
 
   // elements
   const menuOverlayContainer = document.querySelector(".mxd-menu__content");
+  const menuInner           = document.querySelector(".mxd-menu__inner");
   const hamburgerIcon       = document.querySelector(".mxd-menu__hamburger");
 
   const menuHeaderText = document.querySelectorAll(".menu-logo__text span, .mxd-menu__caption p");
@@ -790,6 +791,7 @@ function mxdMenu(lenisInstance) {
 
       lenisInstance?.stop();
       hamburgerIcon?.classList.add("active");
+      if (menuInner) menuInner.scrollTop = 0;
       menuSonar.start();
       const isMobile = window.matchMedia("(max-width: 1024px)").matches;
 
@@ -844,6 +846,7 @@ function mxdMenu(lenisInstance) {
         document.querySelectorAll(".submenu").forEach(submenu => { submenu.style.display = "none"; });
         document.querySelectorAll(".main-menu__item.open").forEach(item => { item.classList.remove("open"); });
 
+        if (menuInner) menuInner.scrollTop = 0;
         lenisInstance?.start();
       });
 
@@ -877,6 +880,7 @@ function mxdMenu(lenisInstance) {
     document.querySelectorAll(".main-menu__item.open").forEach(item => {
       item.classList.remove("open");
     });
+    if (menuInner) menuInner.scrollTop = 0;
 
     // reset common state
     isMenuOpen = false;
