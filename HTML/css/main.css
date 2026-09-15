@@ -5160,6 +5160,11 @@ form textarea:required:valid {
   pointer-events: none;
   overflow: hidden;
   z-index: 11;
+  /* menu follows the site's own theme instead of the inverted "opposite" palette */
+  --base-opp: var(--base);
+  --base-opp-rgb: var(--base-rgb);
+  --t-opp-bright: var(--t-bright);
+  --t-opp-medium: var(--t-medium);
 }
 
 .mxd-menu__backdrop {
@@ -5859,13 +5864,13 @@ form textarea:required:valid {
 
 /* "you are here" indicator on the current page's menu item */
 .main-menu__item.current .main-menu__toggle {
-  background-color: var(--nl-white);
-  color: var(--nl-black);
+  background-color: var(--t-bright);
+  color: var(--base);
   padding: 1rem 1.6rem;
 }
 .main-menu__item.current .main-menu__number,
 .main-menu__item.current .main-menu__caption {
-  color: var(--nl-black);
+  color: var(--base);
 }
 .main-menu__item.current .main-menu__arrow {
   opacity: 1;
