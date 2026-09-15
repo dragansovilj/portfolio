@@ -560,13 +560,13 @@ function mxdMenuSonar() {
   const MAX_DPR = 2;
 
   // knobs
-  const spacing     = 34;   // distance between dots, css px
+  const spacing     = 16;   // distance between dots, css px
   const dotRadius   = 1.4;  // resting dot radius, css px
   const baseOpacity = 0.22; // resting dot opacity
-  const speed       = 260;  // wavefront speed, css px/sec
-  const ringWidth   = 90;   // wavefront thickness, css px
+  const speed       = 250;  // wavefront speed, css px/sec
+  const ringWidth   = 180;  // wavefront thickness, css px
   const amplitude   = 2.2;  // dot growth at wave peak
-  const pingEvery   = 2.4;  // seconds between ambient pings
+  const pingEvery   = 6;    // seconds between ambient pings
   const maxRings    = 6;    // max simultaneous rings
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");

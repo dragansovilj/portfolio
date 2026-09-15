@@ -5857,6 +5857,30 @@ form textarea:required:valid {
   overflow: hidden;
 }
 
+/* "you are here" indicator on the current page's menu item */
+.main-menu__item.current .main-menu__toggle {
+  background-color: var(--nl-white);
+  color: var(--nl-black);
+  padding: 1rem 1.6rem;
+}
+.main-menu__item.current .main-menu__number,
+.main-menu__item.current .main-menu__caption {
+  color: var(--nl-black);
+}
+.main-menu__item.current .main-menu__arrow {
+  opacity: 1;
+  -webkit-animation: mxd-current-arrow-move 1.4s ease-in-out infinite;
+          animation: mxd-current-arrow-move 1.4s ease-in-out infinite;
+}
+@-webkit-keyframes mxd-current-arrow-move {
+  0%, 100% { -webkit-transform: translateX(0); transform: translateX(0); }
+  50% { -webkit-transform: translateX(8px); transform: translateX(8px); }
+}
+@keyframes mxd-current-arrow-move {
+  0%, 100% { -webkit-transform: translateX(0); transform: translateX(0); }
+  50% { -webkit-transform: translateX(8px); transform: translateX(8px); }
+}
+
 .submenu {
   position: relative;
   padding-top: 2.1rem;
