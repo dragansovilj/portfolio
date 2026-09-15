@@ -207,40 +207,26 @@
 
       <!-- Menu Overlay Start -->
       <div class="mxd-menu__overlay">
+        <canvas class="mxd-menu__sonar" aria-hidden="true"></canvas>
         <div class="mxd-menu__content" data-lenis-prevent>
 
           <!-- Menu Logo Start -->
-          <div class="mxd-menu__logo">
-            <a href="index-branding-studio.html" class="menu-logo">
-              <!-- logo icon -->
-              <img class="menu-logo__image" src="img/logo/logo2.png" alt="Sovilj Design">
+          <div class="mxd-menu__logo no-media">
+            <a href="index.html" class="menu-logo">
               <!-- logo text -->
               <div class="menu-logo__text">
-                <span>Sovilj</span>
-                <span>Design</span>
+                <span class="mxd-logo-loop" data-alt="Design">Sovilj</span>
               </div>
             </a>
           </div>
           <!-- Menu Logo End -->
 
-          <!-- Menu Media Start -->
-          <div class="mxd-menu__media">
-            <div class="menu-media__wrapper">
-              <!-- <img src="https://dummyimage.com/900x1280/5d5d5d/838383" alt="Image"> -->
-              <video preload="auto" autoplay muted loop playsinline poster="https://dummyimage.com/900x1280/5d5d5d/838383">
-                <source type="video/mp4" src="video/900x1280.mp4">
-                <source type="video/webm" src="video/900x1280.webm">
-              </video>
-            </div>
-          </div>
-          <!-- Menu Media End -->
-
           <!-- Main Navigation Start -->
-          <div class="mxd-menu__navigation">
+          <div class="mxd-menu__navigation no-media">
             <div class="mxd-menu__inner">
               <div class="mxd-menu__shadow shadow-top"></div>
-              <div class="mxd-menu__caption">
-                <p>ðŸ¦„ Innovative design<br>and cutting-edge development</p>
+              <div class="mxd-menu__caption no-media">
+                <p data-en="We believe<br>in beauty of simplicity" data-sr="Verujemo<br>u lepotu jednostavnosti">We believe<br>in beauty of simplicity</p>
               </div>
               <!-- left side -->
               <div class="mxd-menu__left">
@@ -413,22 +399,13 @@
                   <div class="menu-contact__item">
                     <ul class="menu-contact__list">
                       <li>
-                        <a class="tag tag-m" href="mailto:example@example.com?subject=Message%20from%20your%20site">
-                          <span class="mxd-scramble">hello@sovilj.com</span>
+                        <a class="tag tag-m" href="mailto:soviljdesign@gmail.com?subject=Message%20from%20your%20site">
+                          <span class="mxd-scramble">soviljdesign@gmail.com</span>
                         </a>
                       </li>
                       <li>
-                        <a class="tag tag-m" href="tel:+12127089400">
-                          <span class="mxd-scramble">+1 212-708-9400</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="menu-contact__item">
-                    <ul class="menu-contact__list">
-                      <li>
-                        <a class="tag tag-m" href="https://goo.gl/maps/nWXKpGaDPuyH6gxRA" target="_blank">
-                          <span>11 West 53 Street,<br>New York, NY<br>10019</span>
+                        <a class="tag tag-m" href="tel:+381621115712">
+                          <span class="mxd-scramble">062/111-5712</span>
                         </a>
                       </li>
                     </ul>
@@ -436,19 +413,22 @@
                   <div class="menu-contact__item">
                     <ul class="menu-contact__list">
                       <li>
-                        <a class="tag tag-m" href="https://dribbble.com/" target="_blank"><span class="mxd-scramble">Dribbble</span></a>
+                        <a class="tag tag-m" href="https://www.google.com/maps/search/?api=1&query=Belgrade%2C+Serbia" target="_blank">
+                          <span>Belgrade,<br>Serbia</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="menu-contact__item">
+                    <ul class="menu-contact__list">
+                      <li>
+                        <a class="tag tag-m" href="https://www.instagram.com/soviljdesign/" target="_blank"><span class="mxd-scramble">Instagram</span></a>
                       </li>
                       <li>
                         <a class="tag tag-m" href="https://www.behance.net/soviljdesign" target="_blank"><span class="mxd-scramble">Behance</span></a>
                       </li>
                       <li>
-                        <a class="tag tag-m" href="https://github.com/" target="_blank"><span class="mxd-scramble">Github</span></a>
-                      </li>
-                      <li>
-                        <a class="tag tag-m" href="https://www.figma.com/community" target="_blank"><span class="mxd-scramble">Figma Community</span></a>
-                      </li>
-                      <li>
-                        <a class="tag tag-m" href="https://codepen.io/" target="_blank"><span class="mxd-scramble">Codepen</span></a>
+                        <a class="tag tag-m" href="https://www.linkedin.com/in/dragan-sovilj-3976a21b4/" target="_blank"><span class="mxd-scramble">LinkedIn</span></a>
                       </li>
                     </ul>
                   </div>
@@ -459,13 +439,12 @@
               <div class="mxd-menu__data">
                 <div class="menu-data__left">
                   <p class="menu-data__text">
-                    Made by
                     <span class="mxd-scramble">Sovilj Design</span>
                   </p>
                 </div>
                 <div class="menu-data__right">
                   <p class="menu-data__text">Copyright Sovilj</p>
-                  <p class="menu-data__text">Â©2026</p>
+                  <p class="menu-data__text">&copy;2026</p>
                 </div>
               </div>
             </div>
@@ -866,9 +845,11 @@
                     <div class="col-12 col-xl-4 mxd-grid-item">
                       <div class="mxd-section-title__data top-number">
                         <div class="mxd-section-title__number anim-uni-in-up">
-                          <span class="title-number mxd-scramble">/02</span>
+                          <div class="mxd-article-author__avatar">
+                            <img src="img/about/dragansovilj.png" alt="Dragan Sovilj">
+                          </div>
                         </div>
-                      </div> 
+                      </div>
                     </div>
                     <div class="col-12 col-xl-8 mxd-grid-item">
                       <div class="mxd-section-title__title pre-caption-extra">
@@ -886,9 +867,8 @@
                     <div class="col-12 col-xl-4 mxd-grid-item"></div>
                     <div class="col-12 col-xl-8 mxd-grid-item">
                       <div class="mxd-section-info__descr">
-                        <p class="t-extra t-bold mxd-split-lines">Web design is evolving rapidly, and I strive 
-                          to stay ahead. <span>Emerging tools and technologies enable me to create visually 
-                          stunning and seamlessly functional websites.</span>
+                        <p class="t-extra t-bold mxd-split-lines">Owner / Founder — Dragan Sovilj.
+                          <span>Product (UI/UX) designer with experience designing dashboards, data-driven interfaces, and digital products. Skilled in translating complex systems and workflows into intuitive, structured interfaces that balance user needs with business requirements. Experienced in collaborating with product teams, developers, and stakeholders from concept to final implementation. Strong focus on usability, scalable design systems, and practical execution.</span>
                         </p>
                       </div>
                     </div>
@@ -907,7 +887,7 @@
                     <div class="col-12 col-xl-8 mxd-grid-item">
                       <div class="mxd-section-subtitle__tagline">
                         <p class="anim-uni-in-up">
-                          <span class="tag tag-m meta-tag">[01] Experience</span>
+                          <span class="tag tag-m meta-tag">[01] Team</span>
                         </p>
                       </div>
                     </div>
@@ -917,139 +897,34 @@
             </div>
             <!-- Section Subtitle v01 End -->
 
-            <!-- Block - Resume List Start -->
+            <!-- Block - Team List Start -->
             <div class="mxd-block">
-              <div class="mxd-resume">
-                <!-- resume item -->
-                <div class="mxd-resume__item">
-                  <div class="container-fluid px-0 mxd-resume__inner">
-                    <div class="row g-0">
-                      <div class="col-12 col-xl-4 mxd-grid-item">
-                        <div class="mxd-resume__title">
-                          <p>UI/UX designer</p>
+              <div class="mxd-team-list">
+                <!-- single item -->
+                <div class="mxd-team-list__item">
+                  <div class="container-fluid p-0 mxd-team-list__inner">
+                    <div class="row g-0 d-flex flex-column flex-md-row">
+                      <div class="col-12 col-md-3 mxd-grid-item order-2 order-md-1">
+                        <div class="mxd-team-list__position">
+                          <p>Co-founder & Head of Design</p>
                         </div>
                       </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__image">
-                          <img src="https://dummyimage.com/1000x450/5d5d5d/838383" alt="Sovilj Image">
+                      <div class="col-12 col-md-6 mxd-grid-item order-1 order-md-2">
+                        <div class="mxd-team-list__data">
+                          <div class="mxd-team-list__photo">
+                            <img src="img/about/dragansovilj.png" alt="Dragan Sovilj">
+                          </div>
+                          <div class="mxd-team-list__name">
+                            <p>Dragan Sovilj</p>
+                          </div>
                         </div>
                       </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__link">
-                          <p><a href="#0" target="_blank">Moon Light</a> Agency</p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-2 mxd-grid-item">
-                        <div class="mxd-resume__date">
-                          <p>2024 - now</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- resume item -->
-                <div class="mxd-resume__item">
-                  <div class="container-fluid px-0 mxd-resume__inner">
-                    <div class="row g-0">
-                      <div class="col-12 col-xl-4 mxd-grid-item">
-                        <div class="mxd-resume__title">
-                          <p class="anim-uni-in-up">Branding designer</p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__image">
-                          <img src="https://dummyimage.com/1000x450/5d5d5d/838383" alt="Sovilj Image">
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__link">
-                          <p class="anim-uni-in-up"><a href="#0" target="_blank">Moon Light</a> Agency</p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-2 mxd-grid-item">
-                        <div class="mxd-resume__date">
-                          <p class="anim-uni-in-up">2024 - now</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- resume item -->
-                <div class="mxd-resume__item">
-                  <div class="container-fluid px-0 mxd-resume__inner">
-                    <div class="row g-0">
-                      <div class="col-12 col-xl-4 mxd-grid-item">
-                        <div class="mxd-resume__title">
-                          <p class="anim-uni-in-up">Creative director</p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__image">
-                          <img src="https://dummyimage.com/1000x450/5d5d5d/838383" alt="Sovilj Image">
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__link">
-                          <p class="anim-uni-in-up"><a href="#0" target="_blank">Koob Studio</a></p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-2 mxd-grid-item">
-                        <div class="mxd-resume__date">
-                          <p class="anim-uni-in-up">2022 - 2024</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- resume item -->
-                <div class="mxd-resume__item">
-                  <div class="container-fluid px-0 mxd-resume__inner">
-                    <div class="row g-0">
-                      <div class="col-12 col-xl-4 mxd-grid-item">
-                        <div class="mxd-resume__title">
-                          <p class="anim-uni-in-up">Graphic designer</p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__image">
-                          <img src="https://dummyimage.com/1000x450/5d5d5d/838383" alt="Sovilj Image">
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__link">
-                          <p class="anim-uni-in-up"><a href="#0" target="_blank">a1 creatives</a> Agency</p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-2 mxd-grid-item">
-                        <div class="mxd-resume__date">
-                          <p class="anim-uni-in-up">2019 - 2022</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- resume item -->
-                <div class="mxd-resume__item">
-                  <div class="container-fluid px-0 mxd-resume__inner">
-                    <div class="row g-0">
-                      <div class="col-12 col-xl-4 mxd-grid-item">
-                        <div class="mxd-resume__title">
-                          <p class="anim-uni-in-up">Illustrator</p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__image">
-                          <img src="https://dummyimage.com/1000x450/5d5d5d/838383" alt="Sovilj Image">
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__link">
-                          <p class="anim-uni-in-up"><a href="#0" target="_blank">Creative mind</a> Agency</p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-2 mxd-grid-item">
-                        <div class="mxd-resume__date">
-                          <p class="anim-uni-in-up">2017 - 2019</p>
+                      <div class="col-12 col-md-3 mxd-grid-item order-3 order-md-3">
+                        <div class="mxd-team-list__socials">
+                          <ul>
+                            <li><a class="mxd-scramble" href="https://www.linkedin.com/in/dragan-sovilj-3976a21b4/" target="_blank">Linkedin</a></li>
+                            <li><a class="mxd-scramble" href="https://www.behance.net/soviljdesign" target="_blank">Behance</a></li>
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -1057,114 +932,7 @@
                 </div>
               </div>
             </div>
-            <!-- Block - Resume List End -->
-
-            <!-- Section Subtitle v01 Start -->
-            <div class="mxd-block">
-              <div class="mxd-section-subtitle padding-default">
-                <div class="container-fluid p-0">
-                  <div class="row g-0">
-                    <div class="col-12 col-xl-4 mxd-grid-item"> </div>
-                    <div class="col-12 col-xl-8 mxd-grid-item">
-                      <div class="mxd-section-subtitle__tagline">
-                        <p class="anim-uni-in-up">
-                          <span class="tag tag-m meta-tag">[02] Education</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Section Subtitle v01 End -->
-
-            <!-- Block - Resume List Start -->
-            <div class="mxd-block">
-              <div class="mxd-resume">
-                <!-- resume item -->
-                <div class="mxd-resume__item">
-                  <div class="container-fluid px-0 mxd-resume__inner">
-                    <div class="row g-0">
-                      <div class="col-12 col-xl-4 mxd-grid-item">
-                        <div class="mxd-resume__title">
-                          <p class="anim-uni-in-up">UI/UX Designer</p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__image">
-                          <img src="https://dummyimage.com/1000x450/5d5d5d/838383" alt="Sovilj Image">
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__link">
-                          <p class="anim-uni-in-up"><a href="#0" target="_blank">Coursera</a></p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-2 mxd-grid-item">
-                        <div class="mxd-resume__date">
-                          <p class="anim-uni-in-up">2022 - 2024</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- resume item -->
-                <div class="mxd-resume__item">
-                  <div class="container-fluid px-0 mxd-resume__inner">
-                    <div class="row g-0">
-                      <div class="col-12 col-xl-4 mxd-grid-item">
-                        <div class="mxd-resume__title">
-                          <p class="anim-uni-in-up">Graphic design</p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__image">
-                          <img src="https://dummyimage.com/1000x450/5d5d5d/838383" alt="Sovilj Image">
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__link">
-                          <p class="anim-uni-in-up"><a href="#0" target="_blank">California Institute of Arts</a></p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-2 mxd-grid-item">
-                        <div class="mxd-resume__date">
-                          <p class="anim-uni-in-up">2019 - 2021</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- resume item -->
-                <div class="mxd-resume__item">
-                  <div class="container-fluid px-0 mxd-resume__inner">
-                    <div class="row g-0">
-                      <div class="col-12 col-xl-4 mxd-grid-item">
-                        <div class="mxd-resume__title">
-                          <p class="anim-uni-in-up">Drawing concentration</p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__image">
-                          <img src="https://dummyimage.com/1000x450/5d5d5d/838383" alt="Sovilj Image">
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-3 mxd-grid-item">
-                        <div class="mxd-resume__link">
-                          <p class="anim-uni-in-up"><a href="#0" target="_blank">New York Academy of Art</a></p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-xl-2 mxd-grid-item">
-                        <div class="mxd-resume__date">
-                          <p class="anim-uni-in-up">2015 - 2016</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Block - Resume List End -->
+            <!-- Block - Team List End -->
 
             <!-- Section Subtitle v01 Start -->
             <div class="mxd-block">
@@ -1523,7 +1291,7 @@
                       <div class="col-12 col-xl-6 mxd-grid-item">
                         <div class="mxd-footer__data-item anim-uni-fade-in justify-end">
                           <p class="footer-data">
-                            <span>Â©2026</span>
+                            <span>&copy;2026</span>
                           </p>
                         </div>
                       </div>

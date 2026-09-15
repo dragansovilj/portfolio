@@ -5277,6 +5277,14 @@ form textarea:required:valid {
   will-change: clip-path;
 }
 
+.mxd-menu__sonar {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  color: var(--t-opp-medium);
+}
+
 .mxd-menu__content {
   display: -webkit-box;
   display: -moz-box;
@@ -5437,6 +5445,10 @@ form textarea:required:valid {
 .mxd-menu__logo .menu-logo__text {
   color: var(--t-opp-bright);
 }
+/* no media column behind it here for the difference blend to react against, so use a plain solid color instead */
+.mxd-menu__logo.no-media .menu-logo {
+  mix-blend-mode: normal;
+}
 @media only screen and (min-width: 1200px) {
   .mxd-menu__logo .menu-logo {
     color: var(--nl-white);
@@ -5446,6 +5458,17 @@ form textarea:required:valid {
   }
   .mxd-menu__logo .menu-logo__text {
     color: var(--nl-white);
+  }
+  /* no media column behind it here for the difference blend to react against, so use a plain solid color instead */
+  .mxd-menu__logo.no-media .menu-logo {
+    mix-blend-mode: normal;
+    color: var(--t-opp-bright);
+  }
+  .mxd-menu__logo.no-media .menu-logo__text {
+    color: var(--t-opp-bright);
+  }
+  .mxd-menu__logo.no-media .menu-logo svg {
+    fill: var(--t-opp-bright);
   }
 }
 
@@ -5599,6 +5622,18 @@ form textarea:required:valid {
 @media only screen and (min-width: 1600px) {
   .mxd-menu__caption {
     padding: 0 10rem;
+  }
+}
+
+/* menu has no media column here, so the caption bar needs clearance to avoid the logo */
+@media only screen and (min-width: 1200px) {
+  .mxd-menu__caption.no-media {
+    padding-left: 22rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .mxd-menu__caption.no-media {
+    padding-left: 26rem;
   }
 }
 
@@ -5969,6 +6004,10 @@ form textarea:required:valid {
     position: absolute;
     top: 0;
     left: 0;
+  }
+  /* no media column here, so this scroll-fade now spans full width and would otherwise paint over the logo */
+  .mxd-menu__navigation.no-media .mxd-menu__shadow.shadow-top {
+    z-index: 1;
   }
 }
 

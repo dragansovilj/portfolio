@@ -546,6 +546,181 @@ function mxdViewportHeight() {
 // --------------------------------------------- //
 
 // --------------------------------------------- //
+// Base - Menu Sonar Background Start
+// --------------------------------------------- //
+function mxdMenuSonar() {
+  const canvas  = document.querySelector(".mxd-menu__sonar");
+  const overlay = document.querySelector(".mxd-menu__overlay");
+  if (!canvas || !overlay) {
+    return { start() {}, stop() {} };
+  }
+
+  const ctx = canvas.getContext("2d");
+  const TAU = Math.PI * 2;
+  const MAX_DPR = 2;
+
+  // knobs
+  const spacing     = 34;   // distance between dots, css px
+  const dotRadius   = 1.4;  // resting dot radius, css px
+  const baseOpacity = 0.22; // resting dot opacity
+  const speed       = 260;  // wavefront speed, css px/sec
+  const ringWidth   = 90;   // wavefront thickness, css px
+  const amplitude   = 2.2;  // dot growth at wave peak
+  const pingEvery   = 2.4;  // seconds between ambient pings
+  const maxRings    = 6;    // max simultaneous rings
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let width = 0, height = 0, raf = 0, timer = 0, running = false;
+  let nextPing = 0;
+  let rings = [];
+  let stroke = "";
+
+  function readColor() {
+    stroke = getComputedStyle(canvas).color;
+  }
+
+  function addRing(x, y, born) {
+    rings.push({ x, y, born });
+    while (rings.length > maxRings) rings.shift();
+  }
+
+  function resize() {
+    const rect = overlay.getBoundingClientRect();
+    width  = Math.max(1, Math.round(rect.width));
+    height = Math.max(1, Math.round(rect.height));
+    const dpr = Math.min(window.devicePixelRatio || 1, MAX_DPR);
+    canvas.width  = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function draw(now) {
+    const lifetime = (Math.hypot(width, height) + ringWidth) / speed;
+    rings = rings.filter((r) => (now - r.born) / 1000 < lifetime);
+    const live = rings.map((r) => {
+      const age = (now - r.born) / 1000;
+      const radius = age * speed;
+      return { x: r.x, y: r.y, radius, reach: radius + ringWidth, fade: 1 - age / lifetime };
+    });
+
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = stroke;
+
+    const cols = Math.ceil(width / spacing) + 1;
+    const rows = Math.ceil(height / spacing) + 1;
+    const offsetX = (width - (cols - 1) * spacing) / 2;
+    const offsetY = (height - (rows - 1) * spacing) / 2;
+
+    // Pass 1: every resting dot in a single path and a single fill.
+    const hot = [];
+    ctx.globalAlpha = baseOpacity;
+    ctx.beginPath();
+    for (let i = 0; i < cols; i++) {
+      const cx = offsetX + i * spacing;
+      for (let j = 0; j < rows; j++) {
+        const cy = offsetY + j * spacing;
+        let energy = 0;
+        for (const r of live) {
+          if (Math.abs(cx - r.x) > r.reach || Math.abs(cy - r.y) > r.reach) continue;
+          const dist = Math.abs(Math.hypot(cx - r.x, cy - r.y) - r.radius);
+          if (dist >= ringWidth) continue;
+          const t = 1 - dist / ringWidth;
+          const k = t * t * (3 - 2 * t) * r.fade; // smoothstep, fading with age
+          if (k > energy) energy = k;
+        }
+        if (energy < 0.01) {
+          ctx.moveTo(cx + dotRadius, cy);
+          ctx.arc(cx, cy, dotRadius, 0, TAU);
+        } else {
+          hot.push(cx, cy, energy);
+        }
+      }
+    }
+    ctx.fill();
+
+    // Pass 2: only the dots on a wavefront get their own alpha and radius.
+    for (let k = 0; k < hot.length; k += 3) {
+      const energy = hot[k + 2];
+      ctx.globalAlpha = baseOpacity + (1 - baseOpacity) * energy;
+      ctx.beginPath();
+      ctx.arc(hot[k], hot[k + 1], dotRadius * (1 + amplitude * energy), 0, TAU);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function scheduleIdle(delay) {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(() => tick(performance.now()), Math.max(16, delay));
+  }
+
+  function tick(now) {
+    raf = 0;
+    if (!running) return;
+    if (reduceMotion.matches) {
+      rings = [];
+      draw(now);
+      return;
+    }
+    if (pingEvery > 0 && now >= nextPing) {
+      addRing(width * (0.2 + Math.random() * 0.6), height * (0.2 + Math.random() * 0.6), now);
+      nextPing = now + pingEvery * 1000;
+    }
+    draw(now);
+    if (rings.length > 0) raf = requestAnimationFrame(tick);
+    else if (pingEvery > 0) scheduleIdle(nextPing - now);
+  }
+
+  function wake() {
+    if (!raf) {
+      window.clearTimeout(timer);
+      raf = requestAnimationFrame(tick);
+    }
+  }
+
+  function onPointerDown(e) {
+    if (!running || reduceMotion.matches) return;
+    const rect = overlay.getBoundingClientRect();
+    addRing(e.clientX - rect.left, e.clientY - rect.top, performance.now());
+    wake();
+  }
+
+  const ro = new ResizeObserver(() => {
+    resize();
+    draw(performance.now());
+  });
+
+  function start() {
+    if (running) return;
+    running = true;
+    readColor();
+    resize();
+    rings = [];
+    // seed one ring already mid-expansion so the very first frame shows the idea
+    if (!reduceMotion.matches) addRing(width * 0.7, height * 0.32, performance.now() - 400);
+    nextPing = performance.now() + pingEvery * 1000;
+    ro.observe(overlay);
+    overlay.addEventListener("pointerdown", onPointerDown);
+    wake();
+  }
+
+  function stop() {
+    running = false;
+    ro.unobserve(overlay);
+    overlay.removeEventListener("pointerdown", onPointerDown);
+    cancelAnimationFrame(raf);
+    window.clearTimeout(timer);
+    raf = 0;
+    ctx.clearRect(0, 0, width, height);
+  }
+
+  return { start, stop };
+}
+// --------------------------------------------- //
+// Base - Menu Sonar Background End
+// --------------------------------------------- //
+
+// --------------------------------------------- //
 // Base - Menu & Hamburger Start
 // --------------------------------------------- //
 function mxdMenu(lenisInstance) {
@@ -559,9 +734,10 @@ function mxdMenu(lenisInstance) {
     return;
   }
 
+  const menuSonar = mxdMenuSonar();
+
   // elements
   const menuOverlayContainer = document.querySelector(".mxd-menu__content");
-  const menuMediaWrapper    = document.querySelector(".menu-media__wrapper");
   const hamburgerIcon       = document.querySelector(".mxd-menu__hamburger");
 
   const menuHeaderText = document.querySelectorAll(".menu-logo__text span, .mxd-menu__caption p");
@@ -595,8 +771,6 @@ function mxdMenu(lenisInstance) {
 
   gsap.set(menuDividers, { clipPath: "inset(0% 100% 0% 0%)" });
   gsap.set(menuArrows, { opacity: 0 });
-  gsap.set(menuMediaWrapper, { scale: 1.4 });
-  // gsap.set(menuMediaWrapper, { opacity: 0 });
 
   // state
   let isMenuOpen = false;
@@ -616,6 +790,7 @@ function mxdMenu(lenisInstance) {
 
       lenisInstance?.stop();
       hamburgerIcon?.classList.add("active");
+      menuSonar.start();
       const isMobile = window.matchMedia("(max-width: 1024px)").matches;
 
       tl.to(menuBackdrop, {
@@ -634,12 +809,6 @@ function mxdMenu(lenisInstance) {
         duration: 1,
         ease: "hop",
       }, "<")
-      .to(menuMediaWrapper, {
-        scale: 1,
-        // opacity: 1,
-        duration: 0.75,
-        ease: "power2.out",
-      }, 0.5)
 
       // text blocks
       .to(footerSplits.flatMap(s => s.lines), { y: "0%", stagger: -0.05, ease: "hop", duration: 0.75 }, 0.15)
@@ -654,6 +823,7 @@ function mxdMenu(lenisInstance) {
     } else {
 
       hamburgerIcon?.classList.remove("active");
+      menuSonar.stop();
 
       tl.to(menuOverlay, { clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)", duration: 1, ease: "hop" })
       .to(menuBackdrop, {
@@ -669,8 +839,6 @@ function mxdMenu(lenisInstance) {
 
         gsap.set(menuDividers, { clipPath: "inset(0% 100% 0% 0%)" });
         gsap.set(menuArrows, { opacity: 0 });
-        gsap.set(menuMediaWrapper, { scale: 1.4 });
-        // gsap.set(menuMediaWrapper, { opacity: 0 });
 
         // reset menu accordion state
         document.querySelectorAll(".submenu").forEach(submenu => { submenu.style.display = "none"; });
@@ -691,7 +859,6 @@ function mxdMenu(lenisInstance) {
       backdropFilter: "blur(0px)"
     });
     gsap.set(menuOverlayContainer, { yPercent: -50 });
-    gsap.set(menuMediaWrapper, { scale: 1.4 });
 
     // reset SplitText animations
     [...headerSplits, ...mainMenuSplits, ...contactSplits, ...footerSplits]
@@ -701,6 +868,7 @@ function mxdMenu(lenisInstance) {
     gsap.set(menuArrows, { opacity: 0 });
 
     hamburgerIcon?.classList.remove("active");
+    menuSonar.stop();
 
     // reset accordion state
     document.querySelectorAll(".submenu").forEach(submenu => {
