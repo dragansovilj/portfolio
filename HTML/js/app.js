@@ -3681,22 +3681,22 @@ function mxdColorSwitcher() {
     const root = document.querySelector(':root');
     if(theme === "light"){
       // Use commented line if you want to use Phosphor icon instead of custom
-      // themeBtn.innerHTML = `<span class="switcher-text mxd-scramble">Night</span>
-      //       <i class="ph-bold ph-moon-stars"></i>`;
-      themeBtn.innerHTML = `<span class="switcher-text mxd-scramble">Night</span>
-            <span class="switcher-icon night">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" version="1.1" viewBox="0 0 18 18">
-                <path d="M7.7,0h7.7v2.6h-2.6v2.6h-2.6v7.7h2.6v2.6h2.6v2.6h-7.7v-2.6h-2.6v-2.6h-2.6v-7.7h2.6v-2.6h2.6V0Z"/>
-              </svg>
-            </span>`;
-    } else {
-      // Use commented line if you want to use Phosphor icon instead of custom
       // themeBtn.innerHTML = `<span class="switcher-text mxd-scramble">Day</span>
       //       <i class="ph-bold ph-sun-horizon"></i>`;
       themeBtn.innerHTML = `<span class="switcher-text mxd-scramble">Day</span>
             <span class="switcher-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" version="1.1" viewBox="0 0 18 18">
                 <path d="M8,0h2v2h-2V0ZM2,2h2v2h-2v-2ZM14,2h2v2h-2v-2ZM6,4h6v2h2v6h-2v2h-6v-2h-2v-6h2v-2ZM0,8h2v2H0v-2ZM16,8h2v2h-2v-2ZM2,14h2v2h-2v-2ZM14,14h2v2h-2v-2ZM8,16h2v2h-2v-2Z"/>
+              </svg>
+            </span>`;
+    } else {
+      // Use commented line if you want to use Phosphor icon instead of custom
+      // themeBtn.innerHTML = `<span class="switcher-text mxd-scramble">Night</span>
+      //       <i class="ph-bold ph-moon-stars"></i>`;
+      themeBtn.innerHTML = `<span class="switcher-text mxd-scramble">Night</span>
+            <span class="switcher-icon night">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" version="1.1" viewBox="0 0 18 18">
+                <path d="M7.7,0h7.7v2.6h-2.6v2.6h-2.6v7.7h2.6v2.6h2.6v2.6h-7.7v-2.6h-2.6v-2.6h-2.6v-7.7h2.6v-2.6h2.6V0Z"/>
               </svg>
             </span>`;
     }
