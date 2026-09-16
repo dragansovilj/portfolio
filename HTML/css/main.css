@@ -14369,7 +14369,7 @@ form textarea:required:valid {
 }
 .mxd-projects-list__title h3 span,
 .mxd-projects-list__title p span {
-  color: var(--t-medium);
+  color: var(--t-bright);
 }
 .mxd-projects-list__title h3.permanent,
 .mxd-projects-list__title p.permanent {
