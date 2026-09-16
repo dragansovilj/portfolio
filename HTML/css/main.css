@@ -1514,6 +1514,14 @@ html.lenis, html.lenis body {
     margin-bottom: 0;
   }
 }
+.mxd-section-info__descr p.descr-spacer {
+  margin-top: 2.1rem;
+}
+@media only screen and (min-width: 768px) {
+  .mxd-section-info__descr p.descr-spacer {
+    margin-top: 3.4rem;
+  }
+}
 
 .mxd-section-manifest {
   position: relative;
@@ -2610,11 +2618,13 @@ h1 sup {
 h1 span {
   color: var(--t-medium);
 }
-h1 span.typed-strings, h1 span#typed {
+h1 span.typed-strings, h1 span#typed,
+h2 span.typed-strings, h2 span#typed {
   color: var(--t-bright);
   white-space: nowrap;
 }
-h1 span.typed-strings b, h1 span#typed b {
+h1 span.typed-strings b, h1 span#typed b,
+h2 span.typed-strings b, h2 span#typed b {
   white-space: nowrap;
 }
 h1.small {
