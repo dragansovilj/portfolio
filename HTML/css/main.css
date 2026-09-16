@@ -13229,35 +13229,42 @@ form textarea:required:valid {
   }
 }
 
-.mxd-process-icon-svg {
+.mxd-process-icon-grid {
   width: 3.4rem;
   height: 3.4rem;
-  display: block;
-  -webkit-mask-image: linear-gradient(135deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0.25) 60%);
-          mask-image: linear-gradient(135deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0.25) 60%);
-  -webkit-mask-size: 400% 400%;
-          mask-size: 400% 400%;
-  -webkit-mask-position: 100% 0%;
-          mask-position: 100% 0%;
-  animation: mxd-process-icon-wave 2.4s ease-in-out infinite;
-}
-.mxd-process-icon-svg path {
-  fill: currentColor;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  color: var(--t-bright);
 }
 @media only screen and (min-width: 768px) {
-  .mxd-process-icon-svg {
+  .mxd-process-icon-grid {
     width: 4rem;
     height: 4rem;
   }
 }
-@keyframes mxd-process-icon-wave {
-  0% {
-    -webkit-mask-position: 100% 0%;
-            mask-position: 100% 0%;
-  }
+.mxd-process-icon-grid .dot {
+  width: 55%;
+  height: 55%;
+  margin: auto;
+  border-radius: 50%;
+  background-color: currentColor;
+  opacity: 0.3;
+  animation: mxd-process-dot-wave 2.4s ease-in-out infinite;
+}
+@keyframes mxd-process-dot-wave {
+  0%,
   100% {
-    -webkit-mask-position: 0% 100%;
-            mask-position: 0% 100%;
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  8% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+  18% {
+    opacity: 0.3;
+    transform: scale(1);
   }
 }
 
