@@ -559,29 +559,24 @@ function mxdMenuSonar() {
   const TAU = Math.PI * 2;
   const MAX_DPR = 2;
 
-  // knobs
+  // knobs - same per-dot wave shape as the About page process icons
+  // (.mxd-process-icon-grid .dot / @keyframes mxd-process-dot-wave)
   const spacing     = 16;   // distance between dots, css px
   const dotRadius   = 1.4;  // resting dot radius, css px
-  const baseOpacity = 0.22; // resting dot opacity
-  const speed       = 250;  // wavefront speed, css px/sec
-  const ringWidth   = 180;  // wavefront thickness, css px
-  const amplitude   = 2.2;  // dot growth at wave peak
-  const pingEvery   = 6;    // seconds between ambient pings
-  const maxRings    = 6;    // max simultaneous rings
+  const baseOpacity = 0.3;  // resting dot opacity
+  const peakOpacity = 1;    // dot opacity at wave peak
+  const amplitude   = 0.25; // dot growth at wave peak (+25% radius)
+  const speed       = 250;  // wavefront travel speed, css px/sec
+  const riseFrac    = 0.08; // fraction of the cycle spent rising to peak
+  const fallEndFrac = 0.18; // fraction of the cycle back at rest
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  let width = 0, height = 0, raf = 0, timer = 0, running = false;
-  let nextPing = 0;
-  let rings = [];
+  let width = 0, height = 0, raf = 0, running = false;
+  let period = 2.4, startTime = 0;
   let stroke = "";
 
   function readColor() {
     stroke = getComputedStyle(canvas).color;
-  }
-
-  function addRing(x, y, born) {
-    rings.push({ x, y, born });
-    while (rings.length > maxRings) rings.shift();
   }
 
   function resize() {
@@ -592,16 +587,18 @@ function mxdMenuSonar() {
     canvas.width  = Math.round(width * dpr);
     canvas.height = Math.round(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    // one full wave sweeps the diagonal, then the next one is already queued
+    period = Math.hypot(width, height) / speed;
+  }
+
+  function pulse(frac) {
+    if (frac < riseFrac) return frac / riseFrac;
+    if (frac < fallEndFrac) return 1 - (frac - riseFrac) / (fallEndFrac - riseFrac);
+    return 0;
   }
 
   function draw(now) {
-    const lifetime = (Math.hypot(width, height) + ringWidth) / speed;
-    rings = rings.filter((r) => (now - r.born) / 1000 < lifetime);
-    const live = rings.map((r) => {
-      const age = (now - r.born) / 1000;
-      const radius = age * speed;
-      return { x: r.x, y: r.y, radius, reach: radius + ringWidth, fade: 1 - age / lifetime };
-    });
+    const t = (now - startTime) / 1000;
 
     ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = stroke;
@@ -619,15 +616,9 @@ function mxdMenuSonar() {
       const cx = offsetX + i * spacing;
       for (let j = 0; j < rows; j++) {
         const cy = offsetY + j * spacing;
-        let energy = 0;
-        for (const r of live) {
-          if (Math.abs(cx - r.x) > r.reach || Math.abs(cy - r.y) > r.reach) continue;
-          const dist = Math.abs(Math.hypot(cx - r.x, cy - r.y) - r.radius);
-          if (dist >= ringWidth) continue;
-          const t = 1 - dist / ringWidth;
-          const k = t * t * (3 - 2 * t) * r.fade; // smoothstep, fading with age
-          if (k > energy) energy = k;
-        }
+        const delay = Math.hypot(cx, cy) / speed;
+        const frac = (((t - delay) % period) + period) % period / period;
+        const energy = reduceMotion.matches ? 0 : pulse(frac);
         if (energy < 0.01) {
           ctx.moveTo(cx + dotRadius, cy);
           ctx.arc(cx, cy, dotRadius, 0, TAU);
@@ -638,10 +629,10 @@ function mxdMenuSonar() {
     }
     ctx.fill();
 
-    // Pass 2: only the dots on a wavefront get their own alpha and radius.
+    // Pass 2: only the dots riding the wavefront get their own alpha and radius.
     for (let k = 0; k < hot.length; k += 3) {
       const energy = hot[k + 2];
-      ctx.globalAlpha = baseOpacity + (1 - baseOpacity) * energy;
+      ctx.globalAlpha = baseOpacity + (peakOpacity - baseOpacity) * energy;
       ctx.beginPath();
       ctx.arc(hot[k], hot[k + 1], dotRadius * (1 + amplitude * energy), 0, TAU);
       ctx.fill();
@@ -649,40 +640,15 @@ function mxdMenuSonar() {
     ctx.globalAlpha = 1;
   }
 
-  function scheduleIdle(delay) {
-    window.clearTimeout(timer);
-    timer = window.setTimeout(() => tick(performance.now()), Math.max(16, delay));
-  }
-
   function tick(now) {
     raf = 0;
     if (!running) return;
-    if (reduceMotion.matches) {
-      rings = [];
-      draw(now);
-      return;
-    }
-    if (pingEvery > 0 && now >= nextPing) {
-      addRing(width * (0.2 + Math.random() * 0.6), height * (0.2 + Math.random() * 0.6), now);
-      nextPing = now + pingEvery * 1000;
-    }
     draw(now);
-    if (rings.length > 0) raf = requestAnimationFrame(tick);
-    else if (pingEvery > 0) scheduleIdle(nextPing - now);
+    if (!reduceMotion.matches) raf = requestAnimationFrame(tick);
   }
 
   function wake() {
-    if (!raf) {
-      window.clearTimeout(timer);
-      raf = requestAnimationFrame(tick);
-    }
-  }
-
-  function onPointerDown(e) {
-    if (!running || reduceMotion.matches) return;
-    const rect = overlay.getBoundingClientRect();
-    addRing(e.clientX - rect.left, e.clientY - rect.top, performance.now());
-    wake();
+    if (!raf) raf = requestAnimationFrame(tick);
   }
 
   const ro = new ResizeObserver(() => {
@@ -695,21 +661,15 @@ function mxdMenuSonar() {
     running = true;
     readColor();
     resize();
-    rings = [];
-    // seed one ring already mid-expansion so the very first frame shows the idea
-    if (!reduceMotion.matches) addRing(width * 0.7, height * 0.32, performance.now() - 400);
-    nextPing = performance.now() + pingEvery * 1000;
+    startTime = performance.now();
     ro.observe(overlay);
-    overlay.addEventListener("pointerdown", onPointerDown);
     wake();
   }
 
   function stop() {
     running = false;
     ro.unobserve(overlay);
-    overlay.removeEventListener("pointerdown", onPointerDown);
     cancelAnimationFrame(raf);
-    window.clearTimeout(timer);
     raf = 0;
     ctx.clearRect(0, 0, width, height);
   }
