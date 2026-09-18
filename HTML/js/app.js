@@ -3703,7 +3703,11 @@ function mxdLanguageSwitcher() {
         try { el._mxdSplit.revert(); } catch (e) {}
         el._mxdSplit = null;
       }
-      el.innerHTML = text;
+      if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+        el.placeholder = text;
+      } else {
+        el.innerHTML = text;
+      }
       if (el.dataset.original !== undefined) {
         el.dataset.original = text;
       }

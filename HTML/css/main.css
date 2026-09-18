@@ -12405,6 +12405,79 @@ form textarea:required:valid {
   background: linear-gradient(to right, rgba(var(--base-rgb), 0) 0%, rgba(var(--base-rgb), 1) 100%);
 }
 
+/* Clients Logo Marquee - self-contained CSS animation, safe inside
+   a constrained (non-fullwidth) container */
+.mxd-clients-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.mxd-clients-marquee__track {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  will-change: transform;
+  -webkit-animation: mxd-clients-marquee-scroll 32s linear infinite;
+          animation: mxd-clients-marquee-scroll 32s linear infinite;
+}
+.mxd-clients-marquee__logo {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  height: 3.6rem;
+}
+.mxd-clients-marquee__logo svg {
+  display: block;
+  width: auto;
+  height: 3.6rem;
+  fill: var(--t-muted);
+}
+@-webkit-keyframes mxd-clients-marquee-scroll {
+  from { -webkit-transform: translateX(0); transform: translateX(0); }
+  to { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+}
+@keyframes mxd-clients-marquee-scroll {
+  from { -webkit-transform: translateX(0); transform: translateX(0); }
+  to { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mxd-clients-marquee__track {
+    -webkit-animation: none;
+            animation: none;
+  }
+}
+.mxd-clients-marquee-shadow {
+  position: absolute;
+  top: 0;
+  width: 10rem;
+  height: 100%;
+  z-index: 2;
+}
+.mxd-clients-marquee-shadow.left {
+  left: 0;
+  background: linear-gradient(to right, rgba(var(--base-rgb), 1) 0%, rgba(var(--base-rgb), 0) 100%);
+}
+.mxd-clients-marquee-shadow.right {
+  right: 0;
+  background: linear-gradient(to right, rgba(var(--base-rgb), 0) 0%, rgba(var(--base-rgb), 1) 100%);
+}
+
 .marquee__item.item-imageblock {
   position: relative;
   display: -webkit-box;
