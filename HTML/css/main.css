@@ -6074,6 +6074,29 @@ form textarea:required:valid {
   }
 }
 
+/* tighten the mobile menu so the whole thing fits on one screen without scrolling */
+@media only screen and (max-width: 767px) {
+  .mxd-menu__inner {
+    padding-top: 7rem;
+  }
+  .mxd-menu__caption {
+    margin-bottom: 1.2rem;
+  }
+  .main-menu__item {
+    padding: 1.3rem 0 1.6rem 0;
+  }
+  .main-menu__caption {
+    font-size: 2.6rem;
+  }
+  .menu-contact {
+    gap: 1.8rem;
+    margin-top: 3rem;
+  }
+  .mxd-menu__data {
+    padding-top: 1.6rem;
+  }
+}
+
 .mxd-menu__shadow {
   display: none;
   position: absolute;
