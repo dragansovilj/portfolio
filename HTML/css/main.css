@@ -21613,7 +21613,7 @@ form textarea:required:valid {
 .mxd-header.mxd-header-permanent:not(.mxd-header--glass) .mxd-header__logo,
 .mxd-header.mxd-header-permanent:not(.mxd-header--glass) .mxd-header__nav {
   position: relative;
-  z-index: 11;
+  z-index: 2;
   mix-blend-mode: difference;
 }
 .mxd-header.mxd-header-permanent:not(.mxd-header--glass) .mxd-logo,
@@ -21640,8 +21640,4 @@ form textarea:required:valid {
     font-weight: 600;
     padding-top: 0;
   }
-}
-/* header logo hands over to the menu's own logo while the menu is open */
-body:has(.mxd-menu__hamburger.active) .mxd-header.mxd-header-permanent .mxd-header__logo {
-  visibility: hidden;
 }
