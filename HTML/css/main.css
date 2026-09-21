@@ -21580,3 +21580,16 @@ form textarea:required:valid {
     line-height: 1.5;
   }
 }
+
+/* Images grid: show full image, no cropping */
+.mxd-images-grid__item.wide.uncropped {
+  height: auto;
+}
+.mxd-images-grid__item.wide.uncropped .mxd-images-grid__inner {
+  height: auto;
+}
+.mxd-images-grid__item.wide.uncropped .mxd-images-grid__inner img {
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
