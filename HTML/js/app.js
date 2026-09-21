@@ -701,13 +701,10 @@ function mxdMenu(lenisInstance) {
   const menuInner           = document.querySelector(".mxd-menu__inner");
   const hamburgerIcon       = document.querySelector(".mxd-menu__hamburger");
 
-  // Some Android Chrome builds don't reliably pick up a percentage-based
-  // transform that was only ever declared in CSS (never touched by GSAP)
-  // once a yPercent tween later targets it - the tween silently no-ops and
-  // the element is left sitting at its CSS-authored closed position
-  // (translateY(-50%)), permanently off-screen. Seeding the value through
-  // gsap.set() here makes GSAP own and correctly track it from the start.
-  gsap.set(menuOverlayContainer, { yPercent: -50 });
+  // Closed-position offset in real pixels instead of yPercent, computed
+  // fresh every time GSAP reads it (see the three call sites below).
+  const menuClosedY = () => -window.innerHeight / 2;
+  gsap.set(menuOverlayContainer, { y: menuClosedY });
 
   const menuHeaderText = document.querySelectorAll(".menu-logo__text span, .mxd-menu__caption p");
   const mainMenuText   = document.querySelectorAll(".main-menu__link span");
@@ -775,7 +772,7 @@ function mxdMenu(lenisInstance) {
         ease: "hop",
       }, "<")
       .to(menuOverlayContainer, {
-        yPercent: 0,
+        y: 0,
         duration: 1,
         ease: "hop",
       }, "<")
@@ -802,7 +799,7 @@ function mxdMenu(lenisInstance) {
         duration: 1,
         ease: "power2.in"
       }, "<")
-      .to(menuOverlayContainer, { yPercent: -50, duration: 1, ease: "hop" }, "<")
+      .to(menuOverlayContainer, { y: menuClosedY, duration: 1, ease: "hop" }, "<")
       .call(() => {
         [...headerSplits, ...mainMenuSplits, ...contactSplits, ...footerSplits]
           .forEach(split => gsap.set(split.lines, { y: "-114%" }));
@@ -829,7 +826,7 @@ function mxdMenu(lenisInstance) {
       background: "rgba(var(--base-rgb), 0)",
       backdropFilter: "blur(0px)"
     });
-    gsap.set(menuOverlayContainer, { yPercent: -50 });
+    gsap.set(menuOverlayContainer, { y: menuClosedY });
 
     // reset SplitText animations
     [...headerSplits, ...mainMenuSplits, ...contactSplits, ...footerSplits]

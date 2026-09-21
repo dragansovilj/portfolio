@@ -5330,11 +5330,11 @@ form textarea:required:valid {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transform: translateY(-50%);
-     -moz-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  will-change: transform;
+  /* closed/open vertical position is owned entirely by GSAP (see mxdMenu()
+     in app.js) via the CSS Transforms Level 2 `translate` property - a
+     transform/translateY here used to double up with GSAP's own writes
+     and permanently stick the panel at its closed offset on some browsers */
+  will-change: translate;
   pointer-events: all;
 }
 
