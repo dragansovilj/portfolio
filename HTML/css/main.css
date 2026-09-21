@@ -404,7 +404,13 @@
 }
 
 .divider-image-12 {
-  background-image: url(https://dummyimage.com/1920x1200/5d5d5d/838383);
+  background-image: url(../img/demo/screens/loader-1.png);
+}
+@media only screen and (max-width: 767px) {
+  .mxd-divider__image.divider-image-12 {
+    background-image: url(../img/demo/screens/loader-1-about.png);
+    background-size: contain;
+  }
 }
 
 .divider-image-13 {
