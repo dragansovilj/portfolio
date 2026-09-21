@@ -696,45 +696,18 @@ function mxdMenu(lenisInstance) {
 
   const menuSonar = mxdMenuSonar();
 
-  // TEMP DIAGNOSTIC - remove after mobile menu bug is found
-  function mxdDebugMenuDump() {
-    const inner = document.querySelector('.mxd-menu__inner');
-    const home = document.querySelector('.main-menu__item.current');
-    const content = document.querySelector('.mxd-menu__content');
-    const caption = document.querySelector('.mxd-menu__caption');
-    if (!inner || !home || !content) return;
-    const ir = inner.getBoundingClientRect();
-    const hr = home.getBoundingClientRect();
-    const cr = caption ? caption.getBoundingClientRect() : null;
-    const cs = getComputedStyle(content);
-    const homeStyle = getComputedStyle(home);
-    const toggle = home.querySelector('.main-menu__toggle');
-    const toggleRect = toggle ? toggle.getBoundingClientRect() : null;
-    const toggleStyle = toggle ? getComputedStyle(toggle) : null;
-    const lines = [
-      'scrollTop=' + inner.scrollTop + ' scrollH=' + inner.scrollHeight + ' clientH=' + inner.clientHeight,
-      'innerRect.top=' + Math.round(ir.top),
-      'homeRect.top=' + Math.round(hr.top) + ' homeRect.h=' + Math.round(hr.height),
-      'homeDisplay=' + homeStyle.display + ' vis=' + homeStyle.visibility + ' opacity=' + homeStyle.opacity,
-      'toggleRect.h=' + (toggleRect ? Math.round(toggleRect.height) : 'n/a') + ' toggleDisplay=' + (toggleStyle ? toggleStyle.display : 'n/a'),
-      'captionRect.top=' + (cr ? Math.round(cr.top) : 'n/a') + ' captionRect.h=' + (cr ? Math.round(cr.height) : 'n/a'),
-      'contentTransform=' + cs.transform,
-      'winH=' + window.innerHeight + ' dpr=' + window.devicePixelRatio
-    ];
-    let badge = document.getElementById('mxd-debug-badge');
-    if (!badge) {
-      badge = document.createElement('div');
-      badge.id = 'mxd-debug-badge';
-      badge.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:999999;background:#ffee00;color:#000;font:10px/1.4 monospace;padding:6px;white-space:pre-wrap;pointer-events:none;';
-      document.body.appendChild(badge);
-    }
-    badge.textContent = lines.join('\n');
-  }
-
   // elements
   const menuOverlayContainer = document.querySelector(".mxd-menu__content");
   const menuInner           = document.querySelector(".mxd-menu__inner");
   const hamburgerIcon       = document.querySelector(".mxd-menu__hamburger");
+
+  // Some Android Chrome builds don't reliably pick up a percentage-based
+  // transform that was only ever declared in CSS (never touched by GSAP)
+  // once a yPercent tween later targets it - the tween silently no-ops and
+  // the element is left sitting at its CSS-authored closed position
+  // (translateY(-50%)), permanently off-screen. Seeding the value through
+  // gsap.set() here makes GSAP own and correctly track it from the start.
+  gsap.set(menuOverlayContainer, { yPercent: -50 });
 
   const menuHeaderText = document.querySelectorAll(".menu-logo__text span, .mxd-menu__caption p");
   const mainMenuText   = document.querySelectorAll(".main-menu__link span");
@@ -816,7 +789,6 @@ function mxdMenu(lenisInstance) {
       .to(menuArrows, { opacity: 1, stagger: -0.05, ease: "hop", duration: 0.75 }, 0.45);
 
       isMenuOpen = true;
-      setTimeout(mxdDebugMenuDump, 2200);
 
     } else {
 
