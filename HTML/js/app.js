@@ -4290,7 +4290,7 @@ function mxdHeroWordLoop() {
   const title = document.querySelector("[data-loop-words]");
   if (!title || typeof gsap === "undefined") return;
 
-  const INTERVAL = 2000;
+  const INTERVAL = 4000;
   const FIRST_DELAY = 3500;
 
   function play() {
