@@ -21596,3 +21596,15 @@ form textarea:required:valid {
   -o-object-fit: contain;
      object-fit: contain;
 }
+
+/* Project pages, day theme: header menu links are dark like the logo */
+[color-scheme=light] body:has(.mxd-next-prj__data) .mxd-header__nav a {
+  color: var(--nl-black);
+}
+.no-touch[color-scheme=light] body:has(.mxd-next-prj__data) .mxd-header__nav a:hover {
+  color: rgba(18, 18, 18, 0.7);
+}
+[color-scheme=light] body:has(.mxd-next-prj__data) .mxd-header .mxd-lang-switcher,
+[color-scheme=light] body:has(.mxd-next-prj__data) .mxd-header .mxd-lang-switcher__divider {
+  color: var(--nl-black);
+}
