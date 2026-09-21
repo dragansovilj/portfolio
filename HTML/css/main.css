@@ -5890,8 +5890,6 @@ form textarea:required:valid {
 }
 .main-menu__item.current .main-menu__arrow {
   opacity: 1;
-  -webkit-animation: mxd-current-arrow-move 1.4s ease-in-out infinite;
-          animation: mxd-current-arrow-move 1.4s ease-in-out infinite;
 }
 @-webkit-keyframes mxd-current-arrow-move {
   0%, 100% { -webkit-transform: translateX(0); transform: translateX(0); }

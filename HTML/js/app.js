@@ -3483,30 +3483,6 @@ if (!innerDemoSlider) {
 $(function() {
 
   // --------------------------------------------- //
-  // Menu Accordion Start
-  // --------------------------------------------- //
-  var Accordion = function(el, multiple) {
-    this.el = el || {};
-    this.multiple = multiple || false;
-    var links = this.el.find('.main-menu__toggle');
-    links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
-  }
-  Accordion.prototype.dropdown = function(e) {
-    var $el = e.data.el;
-        $this = $(this),
-        $next = $this.next();
-    $next.slideToggle();
-    $this.parent().toggleClass('open');
-    if (!e.data.multiple) {
-      $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
-    };
-  }
-  var accordion = new Accordion($('#main-menu'), false);
-  // --------------------------------------------- //
-  // Menu Accordion End
-  // --------------------------------------------- //
-
-  // --------------------------------------------- //
   // Accordion Start
   // --------------------------------------------- //
   $(".mxd-accordion__title").on("click", function(e) {
