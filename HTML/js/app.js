@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mxdHeroHorizontal();
   
   mxdHeroTyped();
+  mxdHeroWordLoop();
   // features
   mxdBlur();
   mxdProjectsStack();
@@ -4280,3 +4281,51 @@ function mxdHeroTyped() {
 // Hero Typed.js Plugin Settings - About Me Page End
 // --------------------------------------------- //
 
+
+// --------------------------------------------- //
+// Hero Word Loop Start
+// Replays the load-in "rise from below" on the muted words of the hero headline
+// --------------------------------------------- //
+function mxdHeroWordLoop() {
+  const title = document.querySelector("[data-loop-words]");
+  if (!title || typeof gsap === "undefined") return;
+
+  const INTERVAL = 2000;
+  const FIRST_DELAY = 3500;
+
+  function play() {
+    // spans are re-created when the language changes, so wrap them fresh each time
+    const words = [...title.querySelectorAll(":scope > span")];
+    if (!words.length) return;
+
+    const inners = words.map((word) => {
+      let inner = word.querySelector(":scope > .word-loop__inner");
+      if (!inner) {
+        inner = document.createElement("span");
+        inner.className = "word-loop__inner";
+        while (word.firstChild) inner.appendChild(word.firstChild);
+        word.appendChild(inner);
+        word.classList.add("word-loop");
+      }
+      return inner;
+    });
+
+    gsap.fromTo(inners, { yPercent: 110 }, {
+      yPercent: 0,
+      duration: 0.7,
+      ease: "power3.out",
+      stagger: 0.12,
+      overwrite: true
+    });
+  }
+
+  setTimeout(() => {
+    play();
+    setInterval(() => {
+      if (!document.hidden) play();
+    }, INTERVAL);
+  }, FIRST_DELAY);
+}
+// --------------------------------------------- //
+// Hero Word Loop End
+// --------------------------------------------- //

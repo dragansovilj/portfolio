@@ -21608,3 +21608,13 @@ form textarea:required:valid {
 [color-scheme=light] body:has(.mxd-next-prj__data) .mxd-header .mxd-lang-switcher__divider {
   color: var(--nl-black);
 }
+
+/* Hero headline: muted words rise from below on a loop (see mxdHeroWordLoop) */
+.word-loop {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.word-loop__inner {
+  display: inline-block;
+}
