@@ -21550,7 +21550,7 @@ form textarea:required:valid {
     white-space: nowrap !important;
   }
   body:has(#contact-form) .inner-headline__content.has-medium-title {
-    padding-top: 8.4rem;
+    padding-top: 7.2rem;
   }
   body:has(#contact-form) .inner-headline__title h1.medium {
     font-size: 3.6rem;
@@ -21569,11 +21569,17 @@ form textarea:required:valid {
     margin-bottom: 0.6rem;
   }
   body:has(#contact-form) form input,
+  body:has(#contact-form) form .mxd-grid-item:last-of-type {
+    margin-top: 2.4rem;
+  }
   body:has(#contact-form) form textarea {
     height: 4.6rem;
     line-height: 4.6rem;
     padding: 0.8rem 0.2rem;
     font-size: 1.7rem;
+  }
+  body:has(#contact-form) form .mxd-grid-item:last-of-type {
+    margin-top: 2.4rem;
   }
   body:has(#contact-form) form textarea {
     height: 10rem;
