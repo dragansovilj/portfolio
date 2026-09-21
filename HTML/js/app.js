@@ -1599,14 +1599,16 @@ function mxdCursorTrailTr() {
 
       setSize() {
         const img = this.DOM.el;
+        const scale = parseFloat(img.closest(".cursor-trail-transparent")?.dataset.trailScale) || 1;
+        const size = MAX_SIZE * scale;
         const w = img.naturalWidth;
         const h = img.naturalHeight;
 
         if (w >= h) {
-          img.style.width = MAX_SIZE + "px";
+          img.style.width = size + "px";
           img.style.height = "auto";
         } else {
-          img.style.height = MAX_SIZE + "px";
+          img.style.height = size + "px";
           img.style.width = "auto";
         }
       }
