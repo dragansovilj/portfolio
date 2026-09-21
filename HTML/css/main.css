@@ -6038,6 +6038,44 @@ form textarea:required:valid {
   color: var(--t-opp-bright) !important;
 }
 
+.menu-contact__switchers {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  color: var(--t-opp-medium);
+}
+.menu-contact__switchers .mxd-lang-switcher {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.6rem;
+  font: normal 500 1.4rem/1.4 var(--_font-accent);
+  text-transform: uppercase;
+  letter-spacing: -0.05rem;
+}
+.menu-contact__switchers .mxd-lang-switcher__item {
+  color: var(--t-opp-medium);
+}
+.menu-contact__switchers .mxd-lang-switcher__item.active {
+  color: var(--t-opp-bright);
+}
+@media only screen and (min-width: 1200px) {
+  .menu-contact__item.show-mobile-menu {
+    display: none;
+  }
+}
+
 .mxd-menu__shadow {
   display: none;
   position: absolute;
