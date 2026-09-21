@@ -21597,28 +21597,33 @@ form textarea:required:valid {
      object-fit: contain;
 }
 
-/* Header logo: color inverts against the page behind it, same as the hamburger.
-   app.js moves it out of the fixed header (which is its own stacking context) to <body>. */
-.mxd-header__logo.is-detached {
-  position: fixed;
-  top: 3rem;
-  left: 3rem;
+/* Header logo: color inverts against the page behind it (like the hamburger).
+   The header must not form its own stacking context or the blend has nothing to react against. */
+.mxd-header.mxd-header-permanent:not(.mxd-header--glass) {
+  -webkit-transform: none !important;
+     -moz-transform: none !important;
+      -ms-transform: none !important;
+          transform: none !important;
+  z-index: auto !important;
+  pointer-events: none;
+}
+.mxd-header.mxd-header-permanent:not(.mxd-header--glass) > * {
+  pointer-events: auto;
+}
+.mxd-header.mxd-header-permanent:not(.mxd-header--glass) .mxd-header__logo,
+.mxd-header.mxd-header-permanent:not(.mxd-header--glass) .mxd-header__nav {
+  position: relative;
   z-index: 11;
   mix-blend-mode: difference;
 }
-@media only screen and (min-width: 768px) {
-  .mxd-header__logo.is-detached {
-    left: 6rem;
-  }
-}
-@media only screen and (min-width: 1600px) {
-  .mxd-header__logo.is-detached {
-    left: 10rem;
-  }
-}
-.mxd-header__logo.is-detached .mxd-logo,
-.mxd-header__logo.is-detached .mxd-logo__text {
+.mxd-header.mxd-header-permanent:not(.mxd-header--glass) .mxd-logo,
+.mxd-header.mxd-header-permanent:not(.mxd-header--glass) .mxd-logo__text {
   color: #fff;
+}
+/* menu sits above the header logo; the menu's own logo takes over */
+.mxd-menu__overlay,
+.mxd-menu__content {
+  z-index: 3;
 }
 
 /* Menu logo: same Sudo font and size as the header logo */
@@ -21637,6 +21642,6 @@ form textarea:required:valid {
   }
 }
 /* header logo hands over to the menu's own logo while the menu is open */
-body:has(.mxd-menu__hamburger.active) .mxd-header__logo.is-detached {
+body:has(.mxd-menu__hamburger.active) .mxd-header.mxd-header-permanent .mxd-header__logo {
   visibility: hidden;
 }

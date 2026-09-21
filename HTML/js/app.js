@@ -1048,13 +1048,6 @@ function mxdCursor() {
 // --------------------------------------------- //
 // Global Effect - Header Scroll Behavior Start
 // --------------------------------------------- //
-// The header is position: fixed, i.e. its own stacking context, so a blend mode on
-// the logo inside it can't react to the page. Move the logo out to <body>.
-document.querySelectorAll(".mxd-header-permanent:not(.mxd-header--glass) .mxd-header__logo").forEach((logo) => {
-  logo.classList.add("is-detached");
-  document.body.appendChild(logo);
-});
-
 $(window).on("scroll", function() {
   if($(window).scrollTop() > 10) {
       $(".mxd-header").addClass("is-hidden");
