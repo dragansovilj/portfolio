@@ -7163,6 +7163,22 @@ form textarea:required:valid {
   position: relative;
   z-index: 1;
 }
+.inner-headline__title h1.hero-image-fill {
+  background-image: url(../img/demo/screens/abouthero-fill.png);
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--t-bright);
+}
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .inner-headline__title h1.hero-image-fill {
+    background-image: none;
+    -webkit-text-fill-color: initial;
+    color: var(--t-bright);
+  }
+}
 
 .headline-decor {
   position: absolute;
