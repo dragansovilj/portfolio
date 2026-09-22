@@ -99,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   mxdHeroTyped();
   mxdHeroWordLoop();
+  mxdLiquidAsciiTest();
   // features
   mxdBlur();
   mxdProjectsStack();
@@ -4361,4 +4362,207 @@ function mxdWorksViewSwitcher() {
 }
 // --------------------------------------------- //
 // Portfolio - List / Grid View Switcher End
+// --------------------------------------------- //
+
+// --------------------------------------------- //
+// Test - Liquid ASCII CTA Box Start
+// Temporary preview: real grid fluid sim (Stable Fluids method), rendered
+// through ASCII density glyphs. Guarded — only runs if .mxd-liquid-test exists.
+// --------------------------------------------- //
+function mxdLiquidAsciiTest() {
+  const box = document.querySelector(".mxd-liquid-test");
+  if (!box) return;
+  const canvas = box.querySelector(".mxd-liquid-test__canvas");
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  const RAMP = " \u00B7:-~=+*#%@";
+  const CELL = 12;
+  const GRAVITY = 22;
+  const FORCE = 90;
+  const RADIUS = 3;
+
+  let cssWidth = 0, cssHeight = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let N, M;
+  let vx, vy, vx0, vy0, dens, dens0, pressure, div;
+  const mouse = { x: -9999, y: -9999, px: -9999, py: -9999, active: false };
+
+  function idx(i, j) { return i + j * N; }
+
+  function initFluid() {
+    if (cssWidth === 0 || cssHeight === 0) return;
+    N = Math.max(10, Math.floor(cssWidth / CELL));
+    M = Math.max(10, Math.floor(cssHeight / CELL));
+    const n = N * M;
+    vx = new Float32Array(n); vy = new Float32Array(n);
+    vx0 = new Float32Array(n); vy0 = new Float32Array(n);
+    dens = new Float32Array(n); dens0 = new Float32Array(n);
+    pressure = new Float32Array(n); div = new Float32Array(n);
+    for (let j = 0; j < M; j++) {
+      for (let i = 0; i < N; i++) {
+        if (j > M * 0.78) dens[idx(i, j)] = 0.9;
+      }
+    }
+  }
+
+  function resize() {
+    const rect = box.getBoundingClientRect();
+    cssWidth = rect.width;
+    cssHeight = rect.height;
+    canvas.width = Math.round(cssWidth * dpr);
+    canvas.height = Math.round(cssHeight * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    initFluid();
+  }
+
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize, 150);
+  });
+
+  box.addEventListener("pointermove", (e) => {
+    const r = box.getBoundingClientRect();
+    mouse.px = mouse.x; mouse.py = mouse.y;
+    mouse.x = e.clientX - r.left;
+    mouse.y = e.clientY - r.top;
+    if (mouse.px === -9999) { mouse.px = mouse.x; mouse.py = mouse.y; }
+    mouse.active = true;
+  });
+  box.addEventListener("pointerleave", () => { mouse.active = false; });
+
+  function setBnd(b, x) {
+    for (let i = 1; i < N - 1; i++) {
+      x[idx(i, 0)] = b === 2 ? -x[idx(i, 1)] : x[idx(i, 1)];
+      x[idx(i, M - 1)] = b === 2 ? -x[idx(i, M - 2)] : x[idx(i, M - 2)];
+    }
+    for (let j = 1; j < M - 1; j++) {
+      x[idx(0, j)] = b === 1 ? -x[idx(1, j)] : x[idx(1, j)];
+      x[idx(N - 1, j)] = b === 1 ? -x[idx(N - 2, j)] : x[idx(N - 2, j)];
+    }
+    x[idx(0, 0)] = 0.5 * (x[idx(1, 0)] + x[idx(0, 1)]);
+    x[idx(0, M - 1)] = 0.5 * (x[idx(1, M - 1)] + x[idx(0, M - 2)]);
+    x[idx(N - 1, 0)] = 0.5 * (x[idx(N - 2, 0)] + x[idx(N - 1, 1)]);
+    x[idx(N - 1, M - 1)] = 0.5 * (x[idx(N - 2, M - 1)] + x[idx(N - 1, M - 2)]);
+  }
+
+  function project() {
+    const h = 1 / Math.max(N, M);
+    for (let j = 1; j < M - 1; j++) for (let i = 1; i < N - 1; i++) {
+      div[idx(i, j)] = -0.5 * h * (vx[idx(i + 1, j)] - vx[idx(i - 1, j)] + vy[idx(i, j + 1)] - vy[idx(i, j - 1)]);
+      pressure[idx(i, j)] = 0;
+    }
+    setBnd(0, div); setBnd(0, pressure);
+    for (let k = 0; k < 14; k++) {
+      for (let j = 1; j < M - 1; j++) for (let i = 1; i < N - 1; i++) {
+        pressure[idx(i, j)] = (div[idx(i, j)] + pressure[idx(i - 1, j)] + pressure[idx(i + 1, j)] + pressure[idx(i, j - 1)] + pressure[idx(i, j + 1)]) / 4;
+      }
+      setBnd(0, pressure);
+    }
+    for (let j = 1; j < M - 1; j++) for (let i = 1; i < N - 1; i++) {
+      vx[idx(i, j)] -= 0.5 * (pressure[idx(i + 1, j)] - pressure[idx(i - 1, j)]) / h;
+      vy[idx(i, j)] -= 0.5 * (pressure[idx(i, j + 1)] - pressure[idx(i, j - 1)]) / h;
+    }
+    setBnd(1, vx); setBnd(2, vy);
+  }
+
+  function advect(b, d, d0, vX, vY, dt) {
+    const dt0 = dt * Math.max(N, M);
+    for (let j = 1; j < M - 1; j++) for (let i = 1; i < N - 1; i++) {
+      let x = i - dt0 * vX[idx(i, j)];
+      let y = j - dt0 * vY[idx(i, j)];
+      x = Math.min(N - 1.5, Math.max(0.5, x));
+      y = Math.min(M - 1.5, Math.max(0.5, y));
+      const i0 = Math.floor(x), i1 = i0 + 1, j0 = Math.floor(y), j1 = j0 + 1;
+      const s1 = x - i0, s0 = 1 - s1, t1 = y - j0, t0 = 1 - t1;
+      d[idx(i, j)] = s0 * (t0 * d0[idx(i0, j0)] + t1 * d0[idx(i0, j1)]) + s1 * (t0 * d0[idx(i1, j0)] + t1 * d0[idx(i1, j1)]);
+    }
+    setBnd(b, d);
+  }
+
+  let waveT = 0;
+  function stepFluid(dt) {
+    for (let i = 0; i < N * M; i++) vy[i] += GRAVITY * dt * (0.3 + dens[i] * 0.7) * 0.02;
+
+    if (mouse.active) {
+      const gx = (mouse.x / cssWidth) * N;
+      const gy = (mouse.y / cssHeight) * M;
+      const dx = mouse.x - mouse.px, dy = mouse.y - mouse.py;
+      const speed = Math.min(6, Math.hypot(dx, dy) / 6);
+      if (speed > 0.02) {
+        for (let j = Math.max(1, Math.floor(gy - RADIUS)); j < Math.min(M - 1, Math.ceil(gy + RADIUS)); j++) {
+          for (let i = Math.max(1, Math.floor(gx - RADIUS)); i < Math.min(N - 1, Math.ceil(gx + RADIUS)); i++) {
+            const d = Math.hypot(i - gx, j - gy);
+            if (d > RADIUS) continue;
+            const falloff = 1 - d / RADIUS;
+            vx[idx(i, j)] += (dx / CELL) * (FORCE / 90) * falloff * 0.06;
+            vy[idx(i, j)] += (dy / CELL) * (FORCE / 90) * falloff * 0.06;
+            dens[idx(i, j)] = Math.min(1, dens[idx(i, j)] + falloff * 0.12);
+          }
+        }
+      }
+      mouse.px = mouse.x; mouse.py = mouse.y;
+    }
+
+    waveT += dt;
+    const wx = (0.5 + 0.35 * Math.sin(waveT * 0.6)) * N;
+    const wy = M * 0.7;
+    for (let j = Math.max(1, Math.floor(wy - 3)); j < Math.min(M - 1, wy + 3); j++) {
+      for (let i = Math.max(1, Math.floor(wx - 3)); i < Math.min(N - 1, wx + 3); i++) {
+        vy[idx(i, j)] -= 0.35;
+        dens[idx(i, j)] = Math.min(1, dens[idx(i, j)] + 0.02);
+      }
+    }
+
+    project();
+    vx0.set(vx); vy0.set(vy);
+    advect(1, vx, vx0, vx0, vy0, dt);
+    advect(2, vy, vy0, vx0, vy0, dt);
+    project();
+
+    dens0.set(dens);
+    advect(0, dens, dens0, vx, vy, dt);
+    for (let i = 0; i < N * M; i++) dens[i] = Math.max(0, dens[i] * 0.992);
+  }
+
+  function draw() {
+    if (cssWidth === 0 || !N) return;
+    ctx.fillStyle = "#000";
+    ctx.fillRect(0, 0, cssWidth, cssHeight);
+    ctx.font = `${CELL + 1}px "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace`;
+    ctx.textBaseline = "top";
+
+    for (let j = 0; j < M; j++) {
+      for (let i = 0; i < N; i++) {
+        const v = Math.max(0, Math.min(1, dens[idx(i, j)]));
+        const charIdx = Math.floor(v * (RAMP.length - 1));
+        const ch = RAMP[charIdx];
+        if (ch === " ") continue;
+
+        if (v < 0.6) {
+          const k = v / 0.6;
+          ctx.fillStyle = `rgb(${(10 + k * 51) | 0},${(10 + k * 81) | 0},${(12 + k * 243) | 0})`;
+        } else {
+          const k = (v - 0.6) / 0.4;
+          ctx.fillStyle = `rgb(${(61 + k * 174) | 0},${(91 + k * 149) | 0},255)`;
+        }
+        ctx.fillText(ch, i * CELL, j * CELL);
+      }
+    }
+  }
+
+  let lastT = 0;
+  function loop(t) {
+    const dt = Math.min(0.033, (t - lastT) / 1000 || 0.016);
+    lastT = t;
+    if (N) stepFluid(dt);
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  resize();
+  requestAnimationFrame(loop);
+}
+// --------------------------------------------- //
+// Test - Liquid ASCII CTA Box End
 // --------------------------------------------- //
