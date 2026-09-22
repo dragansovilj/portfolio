@@ -21687,3 +21687,6 @@ form textarea:required:valid {
 [data-active-view="grid"] [data-view-panel="list"] {
   display: none;
 }
+[data-view-panel="grid"] .mxd-project-item__media {
+  border-radius: 1.6rem;
+}
