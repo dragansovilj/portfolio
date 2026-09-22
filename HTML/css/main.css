@@ -21720,3 +21720,25 @@ form textarea:required:valid {
     margin-bottom: 2.3rem;
   }
 }
+
+/* Portfolio page: restore the title/list block's original vertical position
+   (it used to sit at the section's own padding-top-title offset — now that
+   the breadcrumb sits there instead, give the title the same offset itself). */
+.portfolio-title-offset {
+  margin-top: 12.3rem;
+}
+@media only screen and (min-width: 768px) {
+  .portfolio-title-offset {
+    margin-top: 14.9rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .portfolio-title-offset {
+    margin-top: 16.5rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .portfolio-title-offset {
+    margin-top: 18rem;
+  }
+}
