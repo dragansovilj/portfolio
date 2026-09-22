@@ -21704,3 +21704,11 @@ form textarea:required:valid {
     font-size: 3rem;
   }
 }
+
+/* Desktop: hide the hamburger when the full nav fits and is shown instead.
+   Scoped to pages that actually have a full nav (404 has none, so it keeps its hamburger). */
+@media only screen and (min-width: 1200px) {
+  body:has(.mxd-header__nav) .mxd-menu__contain {
+    display: none;
+  }
+}
