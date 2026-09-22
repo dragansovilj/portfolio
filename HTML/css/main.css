@@ -21712,3 +21712,11 @@ form textarea:required:valid {
     display: none;
   }
 }
+
+/* Mobile: hero tags sat too close to the headline below them — give them the
+   same gap the headline has above the "We are a creative..." caption. */
+@media only screen and (max-width: 767px) {
+  .mxd-hero-06__tags {
+    margin-bottom: 2.3rem;
+  }
+}
