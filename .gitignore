@@ -4,3 +4,9 @@ node_modules/
 
 # Disabled WebGPU hero experiment (dev source + node_modules, not used in production)
 HTML/hero-vgpu/
+
+# Not used by any live page — dev/vendor source, build tooling, template docs
+HTML/source-files/
+AzurioGULP/
+Documentation/
+triangle-led-front/
