@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mxdPin();
   mxdToTop();
   mxdSmoothScroll();
+  mxdWorksViewSwitcher();
   mxdGravity();
   mxdStats();
   mxdPerspectiveList();
@@ -4328,4 +4329,36 @@ function mxdHeroWordLoop() {
 }
 // --------------------------------------------- //
 // Hero Word Loop End
+// --------------------------------------------- //
+
+// --------------------------------------------- //
+// Portfolio - List / Grid View Switcher Start
+// --------------------------------------------- //
+function mxdWorksViewSwitcher() {
+  const switcher = document.querySelector("[data-view-switcher]");
+  if (!switcher) return;
+
+  const container = switcher.closest(".grid-l-container");
+  if (!container) return;
+
+  const buttons = switcher.querySelectorAll("[data-view]");
+  if (!buttons.length) return;
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const view = btn.dataset.view;
+      if (container.dataset.activeView === view) return;
+
+      container.dataset.activeView = view;
+      buttons.forEach((b) => b.classList.toggle("active", b === btn));
+
+      // grid/list have different heights, refresh scroll-driven triggers (pin, batch reveals) to match
+      if (window.ScrollTrigger) {
+        requestAnimationFrame(() => ScrollTrigger.refresh());
+      }
+    });
+  });
+}
+// --------------------------------------------- //
+// Portfolio - List / Grid View Switcher End
 // --------------------------------------------- //

@@ -21618,3 +21618,72 @@ form textarea:required:valid {
 .word-loop__inner {
   display: inline-block;
 }
+
+/* Portfolio page: List / Grid view switcher */
+.mxd-view-switcher-wrap {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+     -moz-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 2.4rem;
+}
+.mxd-view-switcher {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.8rem;
+}
+.mxd-view-switcher__item {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+  border: none;
+  background: none;
+  font: normal 700 1.4rem/1.6 var(--_font-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.02rem;
+  color: var(--t-bright);
+  opacity: 0.5;
+  cursor: pointer;
+  -webkit-transition: opacity var(--_animspeed-medium);
+  -moz-transition: opacity var(--_animspeed-medium);
+  transition: opacity var(--_animspeed-medium);
+}
+.mxd-view-switcher__item.active {
+  opacity: 1;
+}
+.no-touch .mxd-view-switcher__item:not(.active):hover {
+  opacity: 0.8;
+}
+.mxd-view-switcher__divider {
+  opacity: 0.3;
+  color: var(--t-medium);
+  font-size: 1.4rem;
+}
+@media only screen and (min-width: 768px) {
+  .mxd-view-switcher__item {
+    font-size: 1.6rem;
+  }
+}
+
+/* Portfolio page: view panels (list is the default view) */
+[data-active-view] [data-view-panel="grid"] {
+  display: none;
+}
+[data-active-view="grid"] [data-view-panel="grid"] {
+  display: block;
+}
+[data-active-view="grid"] [data-view-panel="list"] {
+  display: none;
+}

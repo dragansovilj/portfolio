@@ -35,7 +35,7 @@
     <!-- Template Styles Start -->
     <link rel="stylesheet" type="text/css" href="css/loader.css">
     <link rel="stylesheet" type="text/css" href="css/plugins.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css?v=2">
     <!-- Template Styles End -->
 
     <!-- Custom Styles - Sticky Header Nav Start -->
@@ -417,7 +417,7 @@
       <!-- Section - Projects List Start -->
       <div class="mxd-section blur-section pinned-section padding-top-title padding-bottom-default">
         <div class="pinned-section__inner">
-          <div class="mxd-container grid-l-container">
+          <div class="mxd-container grid-l-container" data-active-view="list">
 
             <!-- Block - Section Title v03 Start -->
             <div class="mxd-block">
@@ -448,10 +448,22 @@
             </div>
             <!-- Block - Section Title v03 End -->
 
+            <!-- Block - View Switcher Start -->
+            <div class="mxd-block">
+              <div class="mxd-view-switcher-wrap">
+                <div class="mxd-view-switcher" data-view-switcher>
+                  <button type="button" class="mxd-view-switcher__item active" data-view="list" data-en="List View" data-sr="Lista">List View</button>
+                  <span class="mxd-view-switcher__divider">/</span>
+                  <button type="button" class="mxd-view-switcher__item" data-view="grid" data-en="Grid View" data-sr="Mreža">Grid View</button>
+                </div>
+              </div>
+            </div>
+            <!-- Block - View Switcher End -->
+
             <!-- Block - Projects List Start -->
             <div class="mxd-block">
               <!-- projects list -->
-              <div class="mxd-projects-list no-margin-bottom">
+              <div class="mxd-projects-list no-margin-bottom" data-view-panel="list">
                 <a class="mxd-projects-list__item active-cursor-image active-cursor-permanent" data-cursor-image="img/works/eds-energy/thumbnail.png" data-cursor-text="View Work" href="project-eds-energy-monitoring-platform.html">
                   <div class="mxd-projects-list__divider top"></div>
                   <div class="container-fluid px-0 mxd-projects-list__inner">
@@ -641,6 +653,119 @@
               </div>
             </div>
             <!-- Block - Projects List End -->
+
+            <!-- Block - Projects Grid Start -->
+            <div class="mxd-block">
+              <div class="mxd-projects-grid" data-view-panel="grid">
+                <div class="container-fluid p-0">
+                  <div class="row g-0 mxd-projects-grid__gallery">
+                    <div class="col-12 col-md-6 mxd-project-item">
+                      <a class="mxd-project-item__media mxd-img-anim active-cursor-permanent" data-cursor-text="View Work" href="project-eds-energy-monitoring-platform.html">
+                        <img class="mxd-img-anim__absolute" src="img/works/eds-energy/thumbnail.png" alt="EDN Energy Monitoring Platform Preview Image">
+                        <img class="mxd-img-anim__absolute" src="img/works/eds-energy/thumbnail.png" alt="EDN Energy Monitoring Platform Preview Image">
+                        <img class="mxd-img-anim__main" src="img/works/eds-energy/thumbnail.png" alt="EDN Energy Monitoring Platform Preview Image">
+                      </a>
+                      <div class="mxd-project-item__caption">
+                        <div class="mxd-project-item__name">
+                          <a class="project-name-s" href="project-eds-energy-monitoring-platform.html">EDN Energy <span>Monitoring Platform</span></a>
+                        </div>
+                        <div class="mxd-project-item__tags">
+                          <span class="tag tag-s tag-medium mxd-scramble">UI/UX</span>
+                          <span class="tag tag-s tag-medium mxd-scramble">SaaS</span>
+                          <span class="tag tag-s tag-medium mxd-scramble">Dashboard</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 mxd-project-item">
+                      <a class="mxd-project-item__media mxd-img-anim active-cursor-permanent" data-cursor-text="View Work" href="project-swift-pay-fintech-app.html">
+                        <img class="mxd-img-anim__absolute" src="img/works/swift-pay/thumbnail.jpg" alt="Swift Pay Preview Image">
+                        <img class="mxd-img-anim__absolute" src="img/works/swift-pay/thumbnail.jpg" alt="Swift Pay Preview Image">
+                        <img class="mxd-img-anim__main" src="img/works/swift-pay/thumbnail.jpg" alt="Swift Pay Preview Image">
+                      </a>
+                      <div class="mxd-project-item__caption">
+                        <div class="mxd-project-item__name">
+                          <a class="project-name-s" href="project-swift-pay-fintech-app.html">Swift <span>Pay</span></a>
+                        </div>
+                        <div class="mxd-project-item__tags">
+                          <span class="tag tag-s tag-medium mxd-scramble">UI/UX</span>
+                          <span class="tag tag-s tag-medium mxd-scramble">Mobile App</span>
+                          <span class="tag tag-s tag-medium mxd-scramble">Fintech</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 mxd-project-item">
+                      <a class="mxd-project-item__media mxd-img-anim active-cursor-permanent" data-cursor-text="View Work" href="project-meta-real-estate-app.html">
+                        <img class="mxd-img-anim__absolute" src="img/works/meta-real-estate/thumbnail.png" alt="Meta Real Estate Preview Image">
+                        <img class="mxd-img-anim__absolute" src="img/works/meta-real-estate/thumbnail.png" alt="Meta Real Estate Preview Image">
+                        <img class="mxd-img-anim__main" src="img/works/meta-real-estate/thumbnail.png" alt="Meta Real Estate Preview Image">
+                      </a>
+                      <div class="mxd-project-item__caption">
+                        <div class="mxd-project-item__name">
+                          <a class="project-name-s" href="project-meta-real-estate-app.html">Meta <span>Real Estate</span></a>
+                        </div>
+                        <div class="mxd-project-item__tags">
+                          <span class="tag tag-s tag-medium mxd-scramble">UI/UX</span>
+                          <span class="tag tag-s tag-medium mxd-scramble">Mobile App</span>
+                          <span class="tag tag-s tag-medium mxd-scramble">Real Estate</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 mxd-project-item">
+                      <a class="mxd-project-item__media mxd-img-anim active-cursor-permanent" data-cursor-text="View Work" href="project-podrum-berlin.html">
+                        <img class="mxd-img-anim__absolute" src="img/works/podrum-berlin/podrum berlin bottle gin.png" alt="Podrum Berlin Preview Image">
+                        <img class="mxd-img-anim__absolute" src="img/works/podrum-berlin/podrum berlin bottle gin.png" alt="Podrum Berlin Preview Image">
+                        <img class="mxd-img-anim__main" src="img/works/podrum-berlin/podrum berlin bottle gin.png" alt="Podrum Berlin Preview Image">
+                      </a>
+                      <div class="mxd-project-item__caption">
+                        <div class="mxd-project-item__name">
+                          <a class="project-name-s" href="project-podrum-berlin.html">Podrum <span>Berlin</span></a>
+                        </div>
+                        <div class="mxd-project-item__tags">
+                          <span class="tag tag-s tag-medium mxd-scramble">Branding</span>
+                          <span class="tag tag-s tag-medium mxd-scramble">Packaging</span>
+                          <span class="tag tag-s tag-medium mxd-scramble">Spirits</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 mxd-project-item">
+                      <a class="mxd-project-item__media mxd-img-anim active-cursor-permanent" data-cursor-text="View Work" href="project-beats-per-hour.html">
+                        <img class="mxd-img-anim__absolute" src="img/works/beats-per-hour/Bphlogo2.jpg" alt="Beats Per Hour Preview Image">
+                        <img class="mxd-img-anim__absolute" src="img/works/beats-per-hour/Bphlogo2.jpg" alt="Beats Per Hour Preview Image">
+                        <img class="mxd-img-anim__main" src="img/works/beats-per-hour/Bphlogo2.jpg" alt="Beats Per Hour Preview Image">
+                      </a>
+                      <div class="mxd-project-item__caption">
+                        <div class="mxd-project-item__name">
+                          <a class="project-name-s" href="project-beats-per-hour.html">Beats <span>Per Hour</span></a>
+                        </div>
+                        <div class="mxd-project-item__tags">
+                          <span class="tag tag-s tag-medium mxd-scramble">Branding</span>
+                          <span class="tag tag-s tag-medium mxd-scramble">Website</span>
+                          <span class="tag tag-s tag-medium mxd-scramble">Packaging</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 mxd-project-item">
+                      <a class="mxd-project-item__media mxd-img-anim active-cursor-permanent" data-cursor-text="View Work" href="project-women-entrepreneurship.html">
+                        <img class="mxd-img-anim__absolute" src="img/works/women-entrepreneurship/ZNGV-iphone-2.jpg" alt="Women Entrepreneurship Preview Image">
+                        <img class="mxd-img-anim__absolute" src="img/works/women-entrepreneurship/ZNGV-iphone-2.jpg" alt="Women Entrepreneurship Preview Image">
+                        <img class="mxd-img-anim__main" src="img/works/women-entrepreneurship/ZNGV-iphone-2.jpg" alt="Women Entrepreneurship Preview Image">
+                      </a>
+                      <div class="mxd-project-item__caption">
+                        <div class="mxd-project-item__name">
+                          <a class="project-name-s" href="project-women-entrepreneurship.html">Women <span>Entrepreneurship</span></a>
+                        </div>
+                        <div class="mxd-project-item__tags">
+                          <span class="tag tag-s tag-medium mxd-scramble">Branding</span>
+                          <span class="tag tag-s tag-medium mxd-scramble">Web Design</span>
+                          <span class="tag tag-s tag-medium mxd-scramble">Community</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Block - Projects Grid End -->
 
           </div>
           <div class="pinned-section__trigger"></div>
@@ -986,7 +1111,7 @@
 
     <!-- Load Scripts Start -->
     <script src="js/libs.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=5"></script>
     <!-- Load Scripts End -->
     
   </body>
