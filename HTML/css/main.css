@@ -21693,3 +21693,14 @@ form textarea:required:valid {
 [data-view-panel="grid"] .mxd-project-item__media {
   border-radius: 1.6rem;
 }
+
+/* About page bio: match hero caption's text size (index .mxd-hero-06__caption p) */
+.descr-hero-size p.manifest {
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+@media only screen and (min-width: 1200px) {
+  .descr-hero-size p.manifest {
+    font-size: 3rem;
+  }
+}
