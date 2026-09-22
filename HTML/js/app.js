@@ -3708,6 +3708,11 @@ function mxdLanguageSwitcher() {
         el.dataset.original = text;
       }
     });
+    // Typed.js snapshots #typed-strings once at construction, so re-run it
+    // after the swap above updates those <b> tags to the new language.
+    if (typeof window._mxdInitTyped === "function") {
+      window._mxdInitTyped();
+    }
     items.forEach((item) => {
       item.classList.toggle("active", item.dataset.lang === lang);
     });
@@ -4275,15 +4280,21 @@ function mxdHeroTyped() {
   var animatedHeadline = $(".animated-type");
   if (!animatedHeadline) return;
   if(animatedHeadline.length){
-    var typed = new Typed('#typed', {
-      stringsElement: '#typed-strings',
-      showCursor: true,
-      cursorChar: '_',
-      loop: true,
-      typeSpeed: 70,
-      backSpeed: 30,
-      backDelay: 2500
-    });
+    window._mxdInitTyped = function () {
+      if (window._mxdTypedInstance) {
+        try { window._mxdTypedInstance.destroy(); } catch (e) {}
+      }
+      window._mxdTypedInstance = new Typed('#typed', {
+        stringsElement: '#typed-strings',
+        showCursor: true,
+        cursorChar: '_',
+        loop: true,
+        typeSpeed: 70,
+        backSpeed: 30,
+        backDelay: 2500
+      });
+    };
+    window._mxdInitTyped();
   }
 }
 // --------------------------------------------- //
