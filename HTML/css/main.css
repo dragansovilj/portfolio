@@ -21742,3 +21742,10 @@ form textarea:required:valid {
     margin-top: 18rem;
   }
 }
+
+/* Portfolio page: breadcrumb was 3rem higher than Contact/About because
+   those pages wrap it in .inner-headline (padding-top: 3rem), which
+   Portfolio's simpler block structure doesn't have. Match it directly. */
+.portfolio-breadcrumbs-offset {
+  padding-top: 3rem;
+}
