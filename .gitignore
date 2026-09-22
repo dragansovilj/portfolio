@@ -10,3 +10,27 @@ HTML/source-files/
 AzurioGULP/
 Documentation/
 triangle-led-front/
+
+# Unlinked template demo pages — the real site is index/about-us/works-grid-sticky/
+# contact + the 6 project-*.html pages they link to, plus 404.html
+HTML/about-me.html
+HTML/blog-article.html
+HTML/blog-creative.html
+HTML/blog-standard.html
+HTML/faq.html
+HTML/index-branding-studio.html
+HTML/index-creative-agency.html
+HTML/index-design-studio.html
+HTML/index-digital-agency.html
+HTML/index-digital-designer.html
+HTML/index-freelancer-portfolio.html
+HTML/index-personal-portfolio.html
+HTML/index-software-development-company.html
+HTML/index-web-developer.html
+HTML/index-web-studio.html
+HTML/pricing.html
+HTML/project-details.html
+HTML/services.html
+HTML/team.html
+HTML/works-default.html
+HTML/works-grid.html
