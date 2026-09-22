@@ -563,14 +563,19 @@ function mxdMenuSonar() {
 
   // knobs - same per-dot wave shape as the About page process icons
   // (.mxd-process-icon-grid .dot / @keyframes mxd-process-dot-wave)
-  const spacing     = 16;   // distance between dots, css px
-  const dotRadius   = 1.4;  // resting dot radius, css px
-  const baseOpacity = 0.3;  // resting dot opacity
-  const peakOpacity = 1;    // dot opacity at wave peak
-  const amplitude   = 0.25; // dot growth at wave peak (+25% radius)
-  const speed       = 250;  // wavefront travel speed, css px/sec
-  const riseFrac    = 0.08; // fraction of the cycle spent rising to peak
-  const fallEndFrac = 0.18; // fraction of the cycle back at rest
+  const spacing        = 16;   // distance between dots, css px
+  const dotRadius      = 1.4;  // resting dot radius, css px
+  const baseOpacityMax = 0.3;  // resting dot opacity (desktop/tablet)
+  const peakOpacityMax = 1;    // dot opacity at wave peak (desktop/tablet)
+  const amplitude      = 0.25; // dot growth at wave peak (+25% radius)
+  const speed          = 250;  // wavefront travel speed, css px/sec
+  const riseFrac       = 0.08; // fraction of the cycle spent rising to peak
+  const fallEndFrac    = 0.18; // fraction of the cycle back at rest
+
+  const mobileQuery = window.matchMedia("(max-width: 767px)");
+  const mobileFactor = 0.7; // dots read too strong on phones — dial opacity back 30% there
+  let baseOpacity = baseOpacityMax;
+  let peakOpacity = peakOpacityMax;
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let width = 0, height = 0, raf = 0, running = false;
@@ -591,6 +596,9 @@ function mxdMenuSonar() {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     // one full wave sweeps the diagonal, then the next one is already queued
     period = Math.hypot(width, height) / speed;
+    const factor = mobileQuery.matches ? mobileFactor : 1;
+    baseOpacity = baseOpacityMax * factor;
+    peakOpacity = peakOpacityMax * factor;
   }
 
   function pulse(frac) {
