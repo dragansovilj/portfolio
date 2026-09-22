@@ -21749,3 +21749,36 @@ form textarea:required:valid {
 .portfolio-breadcrumbs-offset {
   padding-top: 3rem;
 }
+
+/* 404 page: About hero image as an ambient blurred background */
+.mxd-error__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.mxd-error__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.mxd-error__bg-blur {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: blur(28px);
+          filter: blur(28px);
+}
+.mxd-error__bg-scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--base);
+  opacity: 0.72;
+}

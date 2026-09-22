@@ -72,7 +72,7 @@
     <!-- Loader End -->
 
     <!-- Menu Hamburger Start -->
-    <div class="mxd-menu__contain loading-fade">
+    <div class="mxd-menu__contain loading-fade" style="display: none;">
       <div class="mxd-menu__toggle">
         <a href="#0" class="mxd-menu__hamburger" aria-label="Menu">
           <div class="hamburger__line"></div>
@@ -233,15 +233,12 @@
     <header id="header" class="mxd-header">
       <!-- header logo -->
       <div class="mxd-header__logo loading-fade">
-        <a class="mxd-logo" href="index-branding-studio.html">
+        <a class="mxd-logo" href="index.html">
           <!-- logo icon -->
-          <svg class="mxd-logo__image" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 42.4 36">
-            <path d="M25.8,13.8h2.8v5.5h-2.8v-5.5ZM13.8,16.6v2.8h2.8v-5.5h-2.8v2.8ZM32.2,0v2.8h-2.8V0h2.8ZM26.7,5.5h2.8v-2.8h-2.8v2.8ZM21.2,5.5h-5.5v2.8h11.1v-2.8h-5.5ZM12.8,2.8v2.8h2.8v-2.8h-2.8ZM10.1,0v2.8h2.8V0h-2.8ZM7.3,5.5v5.5h2.8V2.8h-2.8v2.8ZM4.5,13.8v2.8H0v2.8h2.8v2.8H0v2.8h2.8v11.1h2.8v-8.3h5.5v-2.8h-5.5v-8.3h1.9v-5.5h-2.9v2.8ZM35,5.5v-2.8h-2.8v8.3h2.8v-5.5ZM42.4,19.4v-2.8h-4.7v-5.5h-2.8v5.5h1.9v8.3h-5.5v2.8h5.5v8.3h2.8v-11.1h2.8v-2.8h-2.8v-2.8h2.8Z"/>
-          </svg>
+          <picture style="display:contents"><source srcset="img/logo/logo2.webp" type="image/webp"><img class="mxd-logo__image" src="img/logo/logo2.png" alt="Sovilj Design" style="display: none;"></picture>
           <!-- logo text -->
           <div class="mxd-logo__text">
-            <span class="mxd-scramble">Sovilj</span>
-            <span class="mxd-scramble">Template</span>
+            <span class="mxd-logo-loop" data-alt="Design">Sovilj</span>
           </div>
         </a>
       </div>
@@ -271,6 +268,11 @@
 
           <!-- Block - 404 Background Start -->
           <div class="mxd-error__background">
+            <div class="mxd-error__bg">
+              <picture style="display:contents"><source srcset="img/demo/screens/abouthero.webp" type="image/webp"><img src="img/demo/screens/abouthero.png" alt="" aria-hidden="true"></picture>
+              <div class="mxd-error__bg-blur" style="background-image: url('img/demo/screens/abouthero.webp');"></div>
+              <div class="mxd-error__bg-scrim"></div>
+            </div>
             <div class="card__marquees">
 
               <!-- Marquee Divider Start -->
@@ -379,22 +381,10 @@
                   <span>4</span>
                   <span>0</span>
                   <span>4</span>
-                  <div class="mxd-error__image image-1 mxd-move-slow loading-fade">
-                    <img src="https://dummyimage.com/600x250/5d5d5d/838383" alt="Sovilj Template Sample Image">
-                  </div>
-                  <div class="mxd-error__image image-2">
-                    <img src="https://dummyimage.com/400x480/5d5d5d/838383" alt="Sovilj Template Sample Image">
-                  </div>
-                  <div class="mxd-error__image image-3">
-                    <img src="https://dummyimage.com/480x400/5d5d5d/838383" alt="Sovilj Template Sample Image">
-                  </div>
-                  <div class="mxd-error__image image-4 mxd-move-slow loading-fade">
-                    <img src="https://dummyimage.com/485x200/5d5d5d/838383" alt="Sovilj Template Sample Image">
-                  </div>
                 </div>
                 <div class="mxd-error__caption">
                   <p class="loading-split">This page doesn't exist. <span>Sorry.</span></p>
-                  <a class="btn btn-default-icon btn-default-icon-left btn-default-outline slide-left loading-fade" href="index-branding-studio.html">
+                  <a class="btn btn-default-icon btn-default-icon-left btn-default-outline slide-left loading-fade" href="index.html">
                     <i class="btn-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 18 18">
                         <path d="M7.2,18v-3.6h3.6v3.6h-3.6ZM3.6,7.2H0v3.6h3.6v3.6h3.6v-3.6h10.8v-3.6H7.2v-3.6h-3.6s0,3.6,0,3.6ZM7.2,3.6h3.6V0h-3.6v3.6Z"/>
