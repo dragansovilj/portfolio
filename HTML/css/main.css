@@ -21629,6 +21629,7 @@ form textarea:required:valid {
      -moz-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  padding: 0 3rem;
   margin-bottom: 2.4rem;
 }
 .mxd-view-switcher {
