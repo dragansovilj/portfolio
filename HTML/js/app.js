@@ -99,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   mxdHeroTyped();
   mxdHeroWordLoop();
+  mxdProtectImages();
   // features
   mxdBlur();
   mxdProjectsStack();
@@ -4380,4 +4381,22 @@ function mxdWorksViewSwitcher() {
 }
 // --------------------------------------------- //
 // Portfolio - List / Grid View Switcher End
+// --------------------------------------------- //
+
+// --------------------------------------------- //
+// Global - Deter Casual Image Downloading Start
+// Not real protection (anything a browser renders can be saved via
+// devtools/screenshot) — just raises the friction against a right-click
+// "Save Image As" or a drag-to-desktop copy.
+// --------------------------------------------- //
+function mxdProtectImages() {
+  document.addEventListener("contextmenu", (e) => {
+    if (e.target.tagName === "IMG") e.preventDefault();
+  });
+  document.addEventListener("dragstart", (e) => {
+    if (e.target.tagName === "IMG") e.preventDefault();
+  });
+}
+// --------------------------------------------- //
+// Global - Deter Casual Image Downloading End
 // --------------------------------------------- //

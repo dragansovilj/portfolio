@@ -21771,3 +21771,12 @@ form textarea:required:valid {
   background: var(--base);
   opacity: 0.72;
 }
+
+/* Deter casual image saving: no drag-to-desktop copy, no long-press
+   "Save Image" callout on iOS Safari. Right-click is blocked separately
+   in app.js (mxdProtectImages). Not real protection — see that comment. */
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+}
