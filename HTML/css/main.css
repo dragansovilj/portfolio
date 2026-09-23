@@ -21805,14 +21805,11 @@ img {
   }
 }
 
-/* Mobile: hero tags block sat too high, overlapping the fixed header
-   logo (negative margin-top was tuned for a taller stack on desktop).
-   Also show only 3 of the 5 tags on phones — Development and Motion
-   hidden, IU/UX / App design / Branding stay. */
+/* Mobile: show only 3 of the 5 hero tags on phones — Development and
+   Motion hidden, IU/UX / App design / Branding stay. (margin-top on
+   .mxd-hero-06__top left at its original value — changing it moved the
+   whole tags+headline block, which disturbed the caption text below.) */
 @media only screen and (max-width: 767px) {
-  .mxd-hero-06__top {
-    margin-top: -6rem;
-  }
   .mxd-hero-06__tags .tags-column ul li:nth-child(3),
   .mxd-hero-06__tags .tags-column ul li:nth-child(5) {
     display: none;
