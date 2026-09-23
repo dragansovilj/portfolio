@@ -21780,3 +21780,27 @@ img {
   user-drag: none;
   -webkit-touch-callout: none;
 }
+
+/* Mobile: footer "Sovilj" wordmark's letter-spacing pushed it wider than
+   its own container, overflowing past the right edge (looked shifted/
+   off-center) — same left inset as the hero tags already comes from
+   .mxd-grid-item's 3rem padding, just needed to stop overflowing it.
+   Also more breathing room above it, it sat too close to the block above. */
+@media only screen and (max-width: 767px) {
+  .mxd-footer__fw-mark {
+    margin-top: 6rem;
+  }
+  .fw-mark__content span {
+    letter-spacing: 0.6cqw;
+  }
+}
+
+/* Mobile: Portfolio's typed heading ("Projects Archive" / "Arhiva
+   projekata") can't wrap (Typed.js needs nowrap for the typing effect),
+   so at 4.4rem the longest string ran past the viewport and its last
+   character got clipped. */
+@media only screen and (max-width: 767px) {
+  h2.animated-type {
+    font-size: 3.4rem;
+  }
+}
