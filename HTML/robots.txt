@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://soviljdesign.com/sitemap.xml
+Sitemap: https://www.soviljdesign.com/sitemap.xml
