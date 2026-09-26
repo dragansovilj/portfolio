@@ -3522,13 +3522,19 @@ $(function() {
   // --------------------------------------------- //
   // Contact Form Start
   // --------------------------------------------- //
-  $("#contact-form").submit(function() { //Change
+  $("#contact-form").submit(function() {
     var th = $(this);
+    var data = {};
+    $.each(th.serializeArray(), function(_, field) { data[field.name] = field.value; });
+    data.replyto = data["E-mail"];
     $.ajax({
       type: "POST",
-      url: "mail.php", //Change
-      data: th.serialize()
-    }).done(function() {
+      url: "https://api.web3forms.com/submit",
+      contentType: "application/json",
+      dataType: "json",
+      data: JSON.stringify(data)
+    }).done(function(res) {
+      if (!res || !res.success) return console.error("Contact form:", res);
       $('.contact').find('.form').addClass('is-hidden');
       $('.contact').find('.form__reply').addClass('is-visible');
       setTimeout(function() {
