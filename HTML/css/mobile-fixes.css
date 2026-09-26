@@ -1,0 +1,64 @@
+/* ------------------------------------------------*/
+/* Mobile Typography Fixes (< 768px only)
+/* Loaded after main.css; desktop and tablet styles are untouched.
+/* ------------------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+  /* Overview / Challenge / Solution paragraphs */
+  p.manifest,
+  p.manifest.manifest-s {
+    font-size: 20px;
+    line-height: 1.45;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+  }
+
+  /* Project page title (h1.large); !important overrides the nowrap/vw rule in main.css */
+  body:has(.mxd-next-prj__data) .inner-headline__title h1.large {
+    font-size: 40px !important;
+    line-height: 1.05;
+    white-space: normal !important;
+  }
+
+  /* Project page subtitle under the title */
+  .inner-headline__subtitle p.loading-split {
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 500;
+  }
+
+  /* Services / design stack item titles ("Art direction", "Figma") */
+  .split-data__name p {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  /* Body text */
+  p.t-medium:not(.t-bold) {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* Project Details: Name / Client / Industries */
+  .split-info__details p {
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  /* Home hero title */
+  .mxd-hero-06__headline h1 {
+    font-size: 42px;
+    line-height: 1.05;
+  }
+
+  /* Home section titles */
+  h2.reveal-type {
+    font-size: 36px;
+  }
+
+  /* "Next project" caption */
+  .mxd-next-prj__caption p {
+    font-size: 40px;
+  }
+}
